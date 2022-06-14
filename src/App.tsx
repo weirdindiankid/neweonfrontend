@@ -1,17 +1,26 @@
-import React, { useState } from 'react';
-import LocationMainPage from './components/LocationMainPage';
+import React, { useEffect, useState } from "react";
+import LocationMainPage from "./components/LocationMainPage";
 import { ThemeProvider } from "styled-components";
 import { GlobalStyles } from "./GlobalStyles";
-import { lightTheme, darkTheme } from "./Themes"
-import './App.css';
+import { lightTheme, darkTheme } from "./Themes";
+import "./App.css";
 
 function App() {
-  const [theme, setTheme] = useState('light');
+  const [themeMode, setThemeMode] = useState<String>("");
+
+  useEffect(() => {
+    setThemeMode(localStorage.getItem("themeMode") || "light");
+  }, []);
+
   const themeToggler = () => {
-    theme === 'light' ? setTheme('dark') : setTheme('light')
-  }
+    const updatedThemeMode = themeMode === "light" ? "dark" : "light";
+    setThemeMode(updatedThemeMode);
+    localStorage.setItem("themeMode", updatedThemeMode);
+    window.location.reload();
+  };
+
   return (
-    <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
+    <ThemeProvider theme={themeMode === "light" ? lightTheme : darkTheme}>
       <GlobalStyles />
       <button onClick={themeToggler}>Switch Theme</button>
       <LocationMainPage />

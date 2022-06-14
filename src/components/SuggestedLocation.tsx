@@ -1,8 +1,11 @@
-import React, { useState } from "react";
+import React from "react";
 import arrowIcon from "../assets/arrow_back_ios_new.png";
-let themeMode = "light";
 
-const SuggestedLocation = () => {
+interface Types {
+  themeMode: String;
+}
+
+export const SuggestedLocation: React.FC<Types> = ({ themeMode }: Types) => {
   const mystyle = {
     backgroundColor: themeMode === "light" ? "#F5F5F5" : "#1F1F1F",
   };
@@ -141,5 +144,3 @@ const SuggestedLocation = () => {
     </>
   );
 };
-
-export default SuggestedLocation;
