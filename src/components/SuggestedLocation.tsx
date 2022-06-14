@@ -1,7 +1,12 @@
 import React, { useState } from "react";
 import arrowIcon from "../assets/arrow_back_ios_new.png";
+let themeMode = "light";
 
 const SuggestedLocation = () => {
+  const mystyle = {
+    backgroundColor: themeMode === "light" ? "#F5F5F5" : "#1F1F1F",
+  };
+
   return (
     <>
       <div className="p-3 border-end" style={{ width: "480px" }}>
@@ -11,8 +16,8 @@ const SuggestedLocation = () => {
         <div className="mt-4">
           <span className="fs-6 fw-bold">Suggested</span>
           <div
-            className="py-2 px-3 mt-2 d-flex justify-content-between"
-            style={{ backgroundColor: "#F5F5F5", borderRadius: "10px" }}
+            className="py-2 px-3 mt-2 rounded d-flex justify-content-between"
+            style={mystyle}
           >
             <div className="d-flex flex-column">
               <span style={{ fontSize: "13px" }}>Boston</span>
@@ -27,8 +32,8 @@ const SuggestedLocation = () => {
         <div className="mt-4">
           <span className="fs-6 fw-bold">Other</span>
           <div
-            className="py-2 px-3 mt-2 d-flex justify-content-between"
-            style={{ backgroundColor: "#F5F5F5", borderRadius: "10px" }}
+            className="py-2 px-3 mt-2 rounded d-flex justify-content-between"
+            style={mystyle}
           >
             <div className="d-flex flex-column">
               <span style={{ fontSize: "13px" }}>Chicago</span>
@@ -40,8 +45,8 @@ const SuggestedLocation = () => {
           </div>
 
           <div
-            className="py-2 px-3 mt-2 d-flex justify-content-between"
-            style={{ backgroundColor: "#F5F5F5", borderRadius: "10px" }}
+            className="py-2 px-3 mt-2 rounded d-flex justify-content-between"
+            style={mystyle}
           >
             <div className="d-flex flex-column">
               <span style={{ fontSize: "13px" }}>Denver / Boulder</span>
@@ -53,8 +58,8 @@ const SuggestedLocation = () => {
           </div>
 
           <div
-            className="py-2 px-3 mt-2 d-flex justify-content-between"
-            style={{ backgroundColor: "#F5F5F5", borderRadius: "10px" }}
+            className="py-2 px-3 mt-2 rounded d-flex justify-content-between"
+            style={mystyle}
           >
             <div className="d-flex flex-column">
               <span style={{ fontSize: "13px" }}>Las Vegas</span>
@@ -66,8 +71,8 @@ const SuggestedLocation = () => {
           </div>
 
           <div
-            className="py-2 px-3 mt-2 d-flex justify-content-between"
-            style={{ backgroundColor: "#F5F5F5", borderRadius: "10px" }}
+            className="py-2 px-3 mt-2 rounded d-flex justify-content-between"
+            style={mystyle}
           >
             <div className="d-flex flex-column">
               <span style={{ fontSize: "13px" }}>Los Angeles</span>
@@ -79,8 +84,8 @@ const SuggestedLocation = () => {
           </div>
 
           <div
-            className="py-2 px-3 mt-2 d-flex justify-content-between"
-            style={{ backgroundColor: "#F5F5F5", borderRadius: "10px" }}
+            className="py-2 px-3 mt-2 rounded d-flex justify-content-between"
+            style={mystyle}
           >
             <div className="d-flex flex-column">
               <span style={{ fontSize: "13px" }}>Miami</span>
@@ -92,8 +97,8 @@ const SuggestedLocation = () => {
           </div>
 
           <div
-            className="py-2 px-3 mt-2 d-flex justify-content-between"
-            style={{ backgroundColor: "#F5F5F5", borderRadius: "10px" }}
+            className="py-2 px-3 mt-2 rounded d-flex justify-content-between"
+            style={mystyle}
           >
             <div className="d-flex flex-column">
               <span style={{ fontSize: "13px" }}>
@@ -107,8 +112,8 @@ const SuggestedLocation = () => {
           </div>
 
           <div
-            className="py-2 px-3 mt-2 d-flex justify-content-between"
-            style={{ backgroundColor: "#F5F5F5", borderRadius: "10px" }}
+            className="py-2 px-3 mt-2 rounded d-flex justify-content-between"
+            style={mystyle}
           >
             <div className="d-flex flex-column">
               <span style={{ fontSize: "13px" }}>Oklahoma City</span>
@@ -120,8 +125,8 @@ const SuggestedLocation = () => {
           </div>
 
           <div
-            className="py-2 px-3 mt-2 d-flex justify-content-between"
-            style={{ backgroundColor: "#F5F5F5", borderRadius: "10px" }}
+            className="py-2 px-3 mt-2 rounded d-flex justify-content-between"
+            style={mystyle}
           >
             <div className="d-flex flex-column">
               <span style={{ fontSize: "13px" }}>Portsmouth</span>
