@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import LocationMainPage from './components/LocationMainPage';
 import { ThemeProvider } from "styled-components";
 import { GlobalStyles } from "./GlobalStyles";
 import { lightTheme, darkTheme } from "./Themes"
@@ -13,7 +14,7 @@ function App() {
     <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
       <GlobalStyles />
       <button onClick={themeToggler}>Switch Theme</button>
-      <h1>Eon</h1>
+      <LocationMainPage />
     </ThemeProvider>
   );
 }
