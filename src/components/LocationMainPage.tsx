@@ -165,6 +165,7 @@ const data2 = [
 
 const LocationMainPage = () => {
   const [themeMode, setThemeMode] = useState<String>("");
+  const [activeSection, setActiveSection] = useState<String>("section1");
 
   useEffect(() => {
     setThemeMode(localStorage.getItem("themeMode") || "light");
@@ -173,10 +174,16 @@ const LocationMainPage = () => {
   return (
     <>
       <div className="d-flex justify-content-between">
-        {/* <SuggestedLocation themeMode={themeMode} data={data1} /> */}
-        <CarList themeMode={themeMode} data={data2} />
-        {/* <DeliverTo themeMode={themeMode} data={undefined} /> */}
-        <DetailView themeMode={themeMode} data={data2} />
+        {activeSection === "section1" ? (
+          <SuggestedLocation themeMode={themeMode} data={data1} />
+        ) : activeSection === "section2" ? (
+          <CarList themeMode={themeMode} data={data2} />
+        ) : (
+          <>
+            <DeliverTo themeMode={themeMode} data={[]} />
+            <DetailView themeMode={themeMode} data={data2} />
+          </>
+        )}
         <Map />
       </div>
     </>
