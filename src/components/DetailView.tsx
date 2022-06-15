@@ -11,9 +11,14 @@ import Form from "react-bootstrap/Form";
 interface Types {
   themeMode: String;
   data: any;
+  onChangeSection: any;
 }
 
-export const DetailView: React.FC<Types> = ({ themeMode, data }: Types) => {
+export const DetailView: React.FC<Types> = ({
+  themeMode,
+  data,
+  onChangeSection,
+}: Types) => {
   const mystyle = {
     backgroundColor: themeMode === "light" ? "#F5F5F5" : "#1F1F1F",
     borderRadius: "20px",
@@ -26,6 +31,7 @@ export const DetailView: React.FC<Types> = ({ themeMode, data }: Types) => {
           <div className="d-flex justify-content-between m-2">
             <div className="d-flex">
               <div
+                onClick={() => onChangeSection()}
                 style={mystyle}
                 className="d-flex justify-content-center align-items-center rounded-circle mx-3"
               >

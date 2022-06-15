@@ -194,7 +194,7 @@ const LocationMainPage = () => {
               onChangeSection={(e: String) => setActiveSection(e)}
             />
             {/* <DeliverTo themeMode={themeMode} data={[]} /> */}
-            <DetailView themeMode={themeMode} data={data2} />
+            <DetailView themeMode={themeMode} data={data2} onChangeSection={() => setActiveSection("section2")} />
           </>
         )}
         <Map />
