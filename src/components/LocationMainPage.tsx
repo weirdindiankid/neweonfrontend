@@ -23,7 +23,7 @@ const LocationMainPage = () => {
         }}
       >
         <div>
-          <SuggestedLocation themeMode={themeMode} data={data1} />
+          {/* <SuggestedLocation themeMode={themeMode} data={data1} /> */}
           <CarList themeMode={themeMode} data={data2} />
         </div>
         <div>
