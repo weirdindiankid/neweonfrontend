@@ -23,7 +23,7 @@ function App() {
     <ThemeProvider theme={themeMode === "light" ? lightTheme : darkTheme}>
       <GlobalStyles />
       {/* <button className="btn btn-primary m-2" onClick={themeToggler}>Switch Theme</button> */}
-      <div className="mt-2">
+      <div>
         <LocationMainPage />
       </div>
     </ThemeProvider>

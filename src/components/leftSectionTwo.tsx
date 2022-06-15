@@ -17,7 +17,14 @@ export const LeftSectionTwo: React.FC<Types> = ({
     useState<Boolean>(false);
   return (
     <>
-      <div style={{ minWidth: "480px" }}>
+      <div
+        style={{
+          minWidth: "480px",
+          height: "100vh",
+          overflow: "scroll",
+          overflowX: "hidden",
+        }}
+      >
         <div className="p-3 border-end d-flex justify-content-between">
           <div
             className="btn-group border rounded-pill"
@@ -76,7 +83,11 @@ export const LeftSectionTwo: React.FC<Types> = ({
           </div>
         </div>
         {displayDeliverySection ? (
-          <DeliverTo themeMode={themeMode} data={data} onChangeSection={onChangeSection} />
+          <DeliverTo
+            themeMode={themeMode}
+            data={data}
+            onChangeSection={onChangeSection}
+          />
         ) : (
           <CarList
             themeMode={themeMode}

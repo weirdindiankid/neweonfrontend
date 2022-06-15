@@ -26,7 +26,14 @@ export const DetailView: React.FC<Types> = ({
 
   return (
     <>
-      <div style={{ minWidth: "480px" }}>
+      <div
+        style={{
+          minWidth: "480px",
+          height: "100vh",
+          overflow: "scroll",
+          overflowX: "hidden",
+        }}
+      >
         <div>
           <div className="d-flex justify-content-between m-2">
             <div className="d-flex">
@@ -46,6 +53,7 @@ export const DetailView: React.FC<Types> = ({
               <small>438 / total</small>
             </div>
           </div>
+
           <div className="m-3">
             <div className="card border-0" style={mystyle}>
               <div className="m-3">
@@ -57,6 +65,7 @@ export const DetailView: React.FC<Types> = ({
               </div>
             </div>
           </div>
+
           <div className="m-4">
             <p>
               The Tesla Model X P100D is a battery electric mid-size luxury
@@ -142,7 +151,7 @@ export const DetailView: React.FC<Types> = ({
               </div>
             </div>
 
-            <div className="mt-4">
+            <div className="mt-5">
               <div>
                 <span className="fs-4 fw-bold">Included</span>
               </div>
@@ -163,7 +172,7 @@ export const DetailView: React.FC<Types> = ({
               </div>
             </div>
 
-            <div className="mt-4">
+            <div className="mt-5 pt-4">
               <div>
                 <span className="fs-4 fw-bold">Choose insurance</span>
               </div>
@@ -187,7 +196,111 @@ export const DetailView: React.FC<Types> = ({
                   <span className="fs-6 fw-bold">Free</span>
                 </div>
               </div>
+              <div className="w-100">
+                <div
+                  className="py-2 px-3 my-3 shadow-sm rounded d-flex justify-content-between"
+                  style={{ background: "rgba(0, 0, 0, 0.04)" }}
+                >
+                  <div className="me-2">
+                    <Form>
+                      <Form.Check
+                        className="fs-6 fw-bold"
+                        inline
+                        label="Our insurance"
+                        name="group1"
+                        type="radio"
+                      />
+                    </Form>
+                  </div>
+                  <div>
+                    <span
+                      className="fs-6 fw-bold"
+                      style={{ color: "GrayText" }}
+                    >
+                      +167.30 / day
+                    </span>
+                  </div>
+                </div>
+              </div>
             </div>
+
+            <div className="mt-5 pt-5">
+              <div>
+                <span className="fs-4 fw-bold">Choose insurance</span>
+              </div>
+
+              <div className="w-100">
+                <div
+                  className="py-2 px-3 my-3 shadow-sm rounded d-flex justify-content-between"
+                  style={{ background: "rgba(0, 0, 0, 0.04)" }}
+                >
+                  <div className="me-2">
+                    <Form>
+                      <Form.Check
+                        className="fs-6 fw-bold"
+                        inline
+                        label="Unlimited toll usage"
+                        name="group1"
+                      />
+                    </Form>
+                  </div>
+                  <div>
+                    <span
+                      className="fs-6 fw-bold"
+                      style={{ color: "GrayText" }}
+                    >
+                      +9 / day
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <div className="w-100">
+                <div
+                  className="py-2 px-3 my-3 shadow-sm rounded d-flex justify-content-between"
+                  style={{ background: "rgba(0, 0, 0, 0.04)" }}
+                >
+                  <div className="me-2">
+                    <Form>
+                      <Form.Check
+                        className="fs-6 fw-bold"
+                        inline
+                        label="Roadside protection"
+                        name="group1"
+                      />
+                    </Form>
+                  </div>
+                  <div>
+                    <span
+                      className="fs-6 fw-bold"
+                      style={{ color: "GrayText" }}
+                    >
+                      +13 / day
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <div className="w-100">
+                <div
+                  className="py-2 px-3 my-3 shadow-sm rounded"
+                  style={{ background: "rgba(0, 0, 0, 0.04)" }}
+                >
+                  <div className="me-2">
+                    <Form>
+                      <Form.Check
+                        className="fs-6 fw-bold"
+                        inline
+                        label="Add discount code"
+                        name="group1"
+                      />
+                    </Form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="m-4">
+            <button className="btn btn-primary">Checkout</button>
           </div>
         </div>
       </div>
