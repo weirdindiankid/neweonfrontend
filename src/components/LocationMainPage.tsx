@@ -181,10 +181,19 @@ const LocationMainPage = () => {
             onChangeSection={() => setActiveSection("section2")}
           />
         ) : activeSection === "section2" ? (
-          <CarList themeMode={themeMode} data={data2} />
+          <CarList
+            themeMode={themeMode}
+            data={data2}
+            onChangeSection={(e: String) => setActiveSection(e)}
+          />
         ) : (
           <>
-            <DeliverTo themeMode={themeMode} data={[]} />
+            <CarList
+              themeMode={themeMode}
+              data={data2}
+              onChangeSection={(e: String) => setActiveSection(e)}
+            />
+            {/* <DeliverTo themeMode={themeMode} data={[]} /> */}
             <DetailView themeMode={themeMode} data={data2} />
           </>
         )}

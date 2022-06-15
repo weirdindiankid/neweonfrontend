@@ -4,9 +4,14 @@ import arrowLeft from "../assets/arrow_back_ios.svg";
 interface Types {
   themeMode: String;
   data: any;
+  onChangeSection: any;
 }
 
-export const CarList: React.FC<Types> = ({ themeMode, data }: Types) => {
+export const CarList: React.FC<Types> = ({
+  themeMode,
+  data,
+  onChangeSection,
+}: Types) => {
   const mystyle = {
     backgroundColor: themeMode === "light" ? "#F5F5F5" : "#1F1F1F",
     borderRadius: "20px",
@@ -74,6 +79,7 @@ export const CarList: React.FC<Types> = ({ themeMode, data }: Types) => {
         <div className="mt-5">
           <div className="d-flex">
             <div
+              onClick={() => onChangeSection("section1")}
               style={mystyle}
               className="d-flex justify-content-center align-items-center rounded-circle mx-3"
             >
@@ -85,7 +91,7 @@ export const CarList: React.FC<Types> = ({ themeMode, data }: Types) => {
           </div>
           {data.map((item: any) => {
             return (
-              <div className="m-4">
+              <div className="m-4" onClick={() => onChangeSection("section3")}>
                 <div
                   className="card border-0 p-4 position-relative"
                   style={mystyle}
