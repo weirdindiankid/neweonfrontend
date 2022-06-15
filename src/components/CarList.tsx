@@ -1,11 +1,5 @@
-import React, { useState } from "react";
+import React from "react";
 import arrowIcon from "../assets/arrow_back_ios.svg";
-import carImg from "../assets/car_img.png";
-import cartoonIcon from "../assets/smart_toy.svg";
-import spaeedIcon from "../assets/speed.svg";
-import mileIcon from "../assets/battery_4_bar.svg";
-import seatIcon from "../assets/airline_seat_recline_extra.svg";
-import intrImg from "../assets/white.png";
 
 interface Types {
   themeMode: String;
@@ -89,102 +83,56 @@ export const CarList: React.FC<Types> = ({ themeMode, data }: Types) => {
               <span className="fs-2 fw-bold">Choose a car</span>
             </div>
           </div>
-          <div className="m-4">
-            <div
-              className="card border-0 p-4 position-relative"
-              style={mystyle}
-            >
-              <div className="m-3">
-                <img src={carImg} className="card-img img-fluid" alt="..." />
-              </div>
-              <div className="d-flex flex-column ps-3 pt-2 position-absolute start-0 top-0">
-                <span className="fs-4 fw-bold">Model 3</span>
-                <small>Performance</small>
-              </div>
-              <div className="d-flex flex-column align-items-end pe-3 pt-2 position-absolute end-0 top-0">
-                <span className="fs-6 fw-bold">169 / day</span>
-                <small>338 / total</small>
-              </div>
-
-              <div className="mt-4">
-                <div className="d-flex justify-content-between">
-                  <div className="w-100">
-                    <div
-                      className="py-2 m-1 px-3 shadow rounded d-flex"
-                      style={{ background: "rgba(0, 0, 0, 0.04)" }}
-                    >
-                      <div className="me-3">
-                        <img src={cartoonIcon} alt="" />
-                      </div>
-                      <div>
-                        <small style={{ fontSize: "12px" }}>
-                          Enhanced autopilot
-                        </small>
-                      </div>
-                    </div>
+          {data.map((item: any) => {
+            return (
+              <div className="m-4">
+                <div
+                  className="card border-0 p-4 position-relative"
+                  style={mystyle}
+                >
+                  <div className="m-3">
+                    <img
+                      src={item.img}
+                      className="card-img img-fluid"
+                      alt="..."
+                    />
+                  </div>
+                  <div className="d-flex flex-column ps-3 pt-2 position-absolute start-0 top-0">
+                    <span className="fs-4 fw-bold">{item.model}</span>
+                    <small>{item.disc}</small>
+                  </div>
+                  <div className="d-flex flex-column align-items-end pe-3 pt-2 position-absolute end-0 top-0">
+                    <span className="fs-6 fw-bold">{item.numDays}</span>
+                    <small>{item.numHours}</small>
                   </div>
 
-                  <div className="w-100">
-                    <div
-                      className="py-2 m-1 px-3 shadow rounded d-flex"
-                      style={{ background: "rgba(0, 0, 0, 0.04)" }}
-                    >
-                      <div className="me-3">
-                        <img src={spaeedIcon} alt="" />
-                      </div>
-                      <div>
-                        <small style={{ fontSize: "12px" }}>0-60 in 4.4s</small>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="d-flex justify-content-between">
-                  <div className="w-100">
-                    <div
-                      className="py-2 px-3 m-1 shadow rounded d-flex"
-                      style={{ background: "rgba(0, 0, 0, 0.04)" }}
-                    >
-                      <div className="me-2">
-                        <img src={mileIcon} alt="" />
-                      </div>
-                      <div>
-                        <small style={{ fontSize: "12px" }}>326 miles</small>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="w-100">
-                    <div
-                      className="py-2 px-3 m-1 shadow rounded d-flex"
-                      style={{ background: "rgba(0, 0, 0, 0.04)" }}
-                    >
-                      <div className="me-2">
-                        <img src={seatIcon} alt="" />
-                      </div>
-                      <div>
-                        <small style={{ fontSize: "12px" }}>5 seats</small>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="w-100">
-                    <div
-                      className="py-2 px-3 m-1 shadow rounded d-flex"
-                      style={{ background: "rgba(0, 0, 0, 0.04)" }}
-                    >
-                      <div className="me-2">
-                        <img src={intrImg} alt="" />
-                      </div>
-                      <div>
-                        <small style={{ fontSize: "12px" }}>Interior</small>
-                      </div>
+                  <div className="mt-4">
+                    <div className="d-flex flex-wrap justify-content-between">
+                      {item.features.map((feature: any) => {
+                        return (
+                          <div>
+                            <div
+                              className="py-2 m-1 px-3 shadow rounded d-flex"
+                              style={{ background: "rgba(0, 0, 0, 0.04)" }}
+                            >
+                              <div className="me-3">
+                                <img src={feature.icon} alt="" />
+                              </div>
+                              <div>
+                                <small style={{ fontSize: "12px" }}>
+                                  {feature.title}
+                                </small>
+                              </div>
+                            </div>
+                          </div>
+                        );
+                      })}
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
+            );
+          })}
         </div>
       </div>
     </>
