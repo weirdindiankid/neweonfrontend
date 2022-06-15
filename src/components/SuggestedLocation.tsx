@@ -1,12 +1,15 @@
 import React from "react";
-import arrowIcon from "../assets/arrow_back_ios_new.png";
+import arrowRight from "../assets/arrow_back_ios_new.png";
 
 interface Types {
   themeMode: String;
   data: any;
 }
 
-export const SuggestedLocation: React.FC<Types> = ({ themeMode, data }: Types) => {
+export const SuggestedLocation: React.FC<Types> = ({
+  themeMode,
+  data,
+}: Types) => {
   const mystyle = {
     backgroundColor: themeMode === "light" ? "#F5F5F5" : "#1F1F1F",
   };
@@ -28,7 +31,7 @@ export const SuggestedLocation: React.FC<Types> = ({ themeMode, data }: Types) =
               <span style={{ fontSize: "10px" }}>Massachusetts</span>
             </div>
             <div>
-              <img src={arrowIcon} alt="" />
+              <img src={arrowRight} alt="" />
             </div>
           </div>
         </div>
@@ -44,7 +47,7 @@ export const SuggestedLocation: React.FC<Types> = ({ themeMode, data }: Types) =
               <span style={{ fontSize: "10px" }}>Illinois</span>
             </div>
             <div>
-              <img src={arrowIcon} alt="" />
+              <img src={arrowRight} alt="" />
             </div>
           </div>
 
@@ -57,7 +60,7 @@ export const SuggestedLocation: React.FC<Types> = ({ themeMode, data }: Types) =
               <span style={{ fontSize: "10px" }}>Colorado</span>
             </div>
             <div>
-              <img src={arrowIcon} alt="" />
+              <img src={arrowRight} alt="" />
             </div>
           </div>
 
@@ -70,7 +73,7 @@ export const SuggestedLocation: React.FC<Types> = ({ themeMode, data }: Types) =
               <span style={{ fontSize: "10px" }}>Nevada</span>
             </div>
             <div>
-              <img src={arrowIcon} alt="" />
+              <img src={arrowRight} alt="" />
             </div>
           </div>
 
@@ -83,7 +86,7 @@ export const SuggestedLocation: React.FC<Types> = ({ themeMode, data }: Types) =
               <span style={{ fontSize: "10px" }}>California</span>
             </div>
             <div>
-              <img src={arrowIcon} alt="" />
+              <img src={arrowRight} alt="" />
             </div>
           </div>
 
@@ -96,7 +99,7 @@ export const SuggestedLocation: React.FC<Types> = ({ themeMode, data }: Types) =
               <span style={{ fontSize: "10px" }}>Florida</span>
             </div>
             <div>
-              <img src={arrowIcon} alt="" />
+              <img src={arrowRight} alt="" />
             </div>
           </div>
 
@@ -111,7 +114,7 @@ export const SuggestedLocation: React.FC<Types> = ({ themeMode, data }: Types) =
               <span style={{ fontSize: "10px" }}>New York</span>
             </div>
             <div>
-              <img src={arrowIcon} alt="" />
+              <img src={arrowRight} alt="" />
             </div>
           </div>
 
@@ -124,7 +127,7 @@ export const SuggestedLocation: React.FC<Types> = ({ themeMode, data }: Types) =
               <span style={{ fontSize: "10px" }}>Oklahoma</span>
             </div>
             <div>
-              <img src={arrowIcon} alt="" />
+              <img src={arrowRight} alt="" />
             </div>
           </div>
 
@@ -137,7 +140,7 @@ export const SuggestedLocation: React.FC<Types> = ({ themeMode, data }: Types) =
               <span style={{ fontSize: "10px" }}>New Hampshire</span>
             </div>
             <div>
-              <img src={arrowIcon} alt="" />
+              <img src={arrowRight} alt="" />
             </div>
           </div>
         </div>
