@@ -76,7 +76,7 @@ export const LeftSectionTwo: React.FC<Types> = ({
           </div>
         </div>
         {displayDeliverySection ? (
-          <DeliverTo themeMode={themeMode} data={data} />
+          <DeliverTo themeMode={themeMode} data={data} onChangeSection={onChangeSection} />
         ) : (
           <CarList
             themeMode={themeMode}

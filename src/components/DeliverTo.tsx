@@ -6,9 +6,10 @@ import Form from "react-bootstrap/Form";
 interface Types {
   themeMode: String;
   data: any;
+  onChangeSection: any;
 }
 
-export const DeliverTo: React.FC<Types> = ({ themeMode, data }: Types) => {
+export const DeliverTo: React.FC<Types> = ({ themeMode, data, onChangeSection }: Types) => {
   const mystyle = {
     backgroundColor: themeMode === "light" ? "#F5F5F5" : "#1F1F1F",
     borderRadius: "20px",
@@ -20,6 +21,7 @@ export const DeliverTo: React.FC<Types> = ({ themeMode, data }: Types) => {
         <div className="mt-5">
           <div className="d-flex">
             <div
+              onClick={() => onChangeSection("section1")}
               style={mystyle}
               className="d-flex justify-content-center align-items-center rounded-circle mx-3"
             >
