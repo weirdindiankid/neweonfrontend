@@ -34,7 +34,7 @@ export const DeliverTo: React.FC<Types> = ({ themeMode, data, onChangeSection }:
 
           <div className="container mt-3 px-4">
             <FloatingLabel controlId="floatingInputGrid" label="Address">
-              <Form.Control type="searxh" placeholder="Type address" />
+              <Form.Control type="search" placeholder="Type address" />
             </FloatingLabel>
             <div className="ms-2 me-5 lh-1">
               <small
