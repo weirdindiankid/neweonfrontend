@@ -108,11 +108,11 @@ export const CarList: React.FC<Types> = ({ themeMode, data }: Types) => {
 
                   <div className="mt-4">
                     <div className="d-flex flex-wrap justify-content-between">
-                      {item.features.map((feature: any) => {
+                      {item.features.map((feature: any, i: number) => {
                         return (
-                          <div>
+                          <div className={i < 2 ? "w-50" : ""}>
                             <div
-                              className="py-2 m-1 px-3 shadow rounded d-flex"
+                              className="py-2 m-2 px-3 shadow-sm rounded d-flex"
                               style={{ background: "rgba(0, 0, 0, 0.04)" }}
                             >
                               <div className="me-3">
