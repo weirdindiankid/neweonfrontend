@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import { CarList } from "./CarList";
+import { DeliverTo } from "./DeliverTo";
 
 interface Types {
   themeMode: String;
@@ -12,6 +13,8 @@ export const LeftSectionTwo: React.FC<Types> = ({
   data,
   onChangeSection,
 }: Types) => {
+  const [displayDeliverySection, setDisplayDeliverySection] =
+    useState<Boolean>(false);
   return (
     <>
       <div style={{ minWidth: "480px" }}>
@@ -22,6 +25,7 @@ export const LeftSectionTwo: React.FC<Types> = ({
             aria-label="Basic radio toggle button group"
           >
             <input
+              onClick={() => setDisplayDeliverySection(false)}
               type="radio"
               className="btn-check"
               name="btnradio"
@@ -37,6 +41,7 @@ export const LeftSectionTwo: React.FC<Types> = ({
             </label>
 
             <input
+              onClick={() => setDisplayDeliverySection(true)}
               type="radio"
               className="btn-check"
               name="btnradio"
@@ -70,11 +75,15 @@ export const LeftSectionTwo: React.FC<Types> = ({
             />
           </div>
         </div>
-        <CarList
-          themeMode={themeMode}
-          data={data}
-          onChangeSection={(e: String) => onChangeSection(e)}
-        />
+        {displayDeliverySection ? (
+          <DeliverTo themeMode={themeMode} data={data} />
+        ) : (
+          <CarList
+            themeMode={themeMode}
+            data={data}
+            onChangeSection={(e: String) => onChangeSection(e)}
+          />
+        )}
       </div>
     </>
   );
