@@ -12,6 +12,7 @@ import intrImg from "../assets/white.png";
 import Map from "./Map";
 import { CarList } from "./CarList";
 import { DeliverTo } from "./DeliverTo";
+import DetailView from "./DetailView";
 
 const data1 = [{}];
 const data2 = [
@@ -171,15 +172,12 @@ const LocationMainPage = () => {
 
   return (
     <>
-      <div className="d-flex">
-        <div>
-          {/* <SuggestedLocation themeMode={themeMode} data={data1} /> */}
-          {/* <CarList themeMode={themeMode} data={data2} /> */}
-          <DeliverTo themeMode={themeMode} data={undefined} />
-        </div>
-        <div className="w-100">
-          <Map />
-        </div>
+      <div className="d-flex justify-content-between">
+        {/* <SuggestedLocation themeMode={themeMode} data={data1} /> */}
+        <CarList themeMode={themeMode} data={data2} />
+        {/* <DeliverTo themeMode={themeMode} data={undefined} /> */}
+        <DetailView themeMode={themeMode} data={data2} />
+        <Map />
       </div>
     </>
   );

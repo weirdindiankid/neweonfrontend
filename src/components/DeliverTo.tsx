@@ -16,7 +16,7 @@ export const DeliverTo: React.FC<Types> = ({ themeMode, data }: Types) => {
 
   return (
     <>
-      <div style={{ width: "480px" }}>
+      <div style={{ minWidth: "480px" }}>
         <div className="p-3 border-end d-flex justify-content-between">
           <div
             className="btn-group border rounded-pill"
