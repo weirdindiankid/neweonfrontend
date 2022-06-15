@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { SuggestedLocation } from "./SuggestedLocation";
 import carImg from "../assets/car_img.png";
-import blackCar from "../assets/black-car.png"
-import grayCar from "../assets/gray_car.png"
-import whiteCar from "../assets/white_car.png"
+import blackCar from "../assets/black-car.png";
+import grayCar from "../assets/gray_car.png";
+import whiteCar from "../assets/white_car.png";
 import cartoonIcon from "../assets/smart_toy.svg";
 import spaeedIcon from "../assets/speed.svg";
 import mileIcon from "../assets/battery_4_bar.svg";
@@ -11,6 +11,7 @@ import seatIcon from "../assets/airline_seat_recline_extra.svg";
 import intrImg from "../assets/white.png";
 import Map from "./Map";
 import { CarList } from "./CarList";
+import { DeliverTo } from "./DeliverTo";
 
 const data1 = [{}];
 const data2 = [
@@ -173,7 +174,8 @@ const LocationMainPage = () => {
       <div className="d-flex">
         <div>
           {/* <SuggestedLocation themeMode={themeMode} data={data1} /> */}
-          <CarList themeMode={themeMode} data={data2} />
+          {/* <CarList themeMode={themeMode} data={data2} /> */}
+          <DeliverTo themeMode={themeMode} data={undefined} />
         </div>
         <div className="w-100">
           <Map />
