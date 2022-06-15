@@ -4,11 +4,13 @@ import arrowRight from "../assets/arrow_back_ios_new.png";
 interface Types {
   themeMode: String;
   data: any;
+  onChangeSection: any;
 }
 
 export const SuggestedLocation: React.FC<Types> = ({
   themeMode,
   data,
+  onChangeSection,
 }: Types) => {
   const mystyle = {
     backgroundColor: themeMode === "light" ? "#F5F5F5" : "#1F1F1F",
@@ -30,7 +32,7 @@ export const SuggestedLocation: React.FC<Types> = ({
               <span style={{ fontSize: "13px" }}>Boston</span>
               <span style={{ fontSize: "10px" }}>Massachusetts</span>
             </div>
-            <div>
+            <div onClick={() => onChangeSection()}>
               <img src={arrowRight} alt="" />
             </div>
           </div>
@@ -46,7 +48,7 @@ export const SuggestedLocation: React.FC<Types> = ({
               <span style={{ fontSize: "13px" }}>Chicago</span>
               <span style={{ fontSize: "10px" }}>Illinois</span>
             </div>
-            <div>
+            <div onClick={() => onChangeSection()}>
               <img src={arrowRight} alt="" />
             </div>
           </div>
@@ -59,7 +61,7 @@ export const SuggestedLocation: React.FC<Types> = ({
               <span style={{ fontSize: "13px" }}>Denver / Boulder</span>
               <span style={{ fontSize: "10px" }}>Colorado</span>
             </div>
-            <div>
+            <div onClick={() => onChangeSection()}>
               <img src={arrowRight} alt="" />
             </div>
           </div>
@@ -72,7 +74,7 @@ export const SuggestedLocation: React.FC<Types> = ({
               <span style={{ fontSize: "13px" }}>Las Vegas</span>
               <span style={{ fontSize: "10px" }}>Nevada</span>
             </div>
-            <div>
+            <div onClick={() => onChangeSection()}>
               <img src={arrowRight} alt="" />
             </div>
           </div>
@@ -85,7 +87,7 @@ export const SuggestedLocation: React.FC<Types> = ({
               <span style={{ fontSize: "13px" }}>Los Angeles</span>
               <span style={{ fontSize: "10px" }}>California</span>
             </div>
-            <div>
+            <div onClick={() => onChangeSection()}>
               <img src={arrowRight} alt="" />
             </div>
           </div>
@@ -98,7 +100,7 @@ export const SuggestedLocation: React.FC<Types> = ({
               <span style={{ fontSize: "13px" }}>Miami</span>
               <span style={{ fontSize: "10px" }}>Florida</span>
             </div>
-            <div>
+            <div onClick={() => onChangeSection()}>
               <img src={arrowRight} alt="" />
             </div>
           </div>
@@ -113,7 +115,7 @@ export const SuggestedLocation: React.FC<Types> = ({
               </span>
               <span style={{ fontSize: "10px" }}>New York</span>
             </div>
-            <div>
+            <div onClick={() => onChangeSection()}>
               <img src={arrowRight} alt="" />
             </div>
           </div>
@@ -126,7 +128,7 @@ export const SuggestedLocation: React.FC<Types> = ({
               <span style={{ fontSize: "13px" }}>Oklahoma City</span>
               <span style={{ fontSize: "10px" }}>Oklahoma</span>
             </div>
-            <div>
+            <div onClick={() => onChangeSection()}>
               <img src={arrowRight} alt="" />
             </div>
           </div>
@@ -139,7 +141,7 @@ export const SuggestedLocation: React.FC<Types> = ({
               <span style={{ fontSize: "13px" }}>Portsmouth</span>
               <span style={{ fontSize: "10px" }}>New Hampshire</span>
             </div>
-            <div>
+            <div onClick={() => onChangeSection()}>
               <img src={arrowRight} alt="" />
             </div>
           </div>

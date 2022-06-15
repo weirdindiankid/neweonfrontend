@@ -175,7 +175,11 @@ const LocationMainPage = () => {
     <>
       <div className="d-flex justify-content-between">
         {activeSection === "section1" ? (
-          <SuggestedLocation themeMode={themeMode} data={data1} />
+          <SuggestedLocation
+            themeMode={themeMode}
+            data={data1}
+            onChangeSection={() => setActiveSection("section2")}
+          />
         ) : activeSection === "section2" ? (
           <CarList themeMode={themeMode} data={data2} />
         ) : (
