@@ -15,18 +15,12 @@ const LocationMainPage = () => {
 
   return (
     <>
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "flex-start",
-          alignItems: "center",
-        }}
-      >
+      <div className="d-flex">
         <div>
           {/* <SuggestedLocation themeMode={themeMode} data={data1} /> */}
           <CarList themeMode={themeMode} data={data2} />
         </div>
-        <div>
+        <div className="w-100">
           <Map />
         </div>
       </div>
