@@ -9,7 +9,7 @@ import spaeedIcon from "../assets/speed.svg";
 import mileIcon from "../assets/battery_4_bar.svg";
 import seatIcon from "../assets/airline_seat_recline_extra.svg";
 import intrImg from "../assets/white.png";
-import Map from "./Map";
+import { Map } from "./Map";
 import { LeftSectionTwo } from "./leftSectionTwo";
 import DetailView from "./DetailView";
 
@@ -199,7 +199,12 @@ const LocationMainPage = () => {
             />
           </>
         )}
-        <Map />
+
+        <Map
+          themeMode={themeMode}
+          data={data1}
+          activeSection={activeSection}
+        />
       </div>
     </>
   );
