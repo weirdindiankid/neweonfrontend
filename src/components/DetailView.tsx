@@ -1,8 +1,8 @@
 import React from "react";
-import arrowIcon from "../assets/arrow_back_ios.svg";
+import arrowLeft from "../assets/arrow_back_ios.svg";
 import grayCarDettail from "../assets/gray_car_detail.png";
 import cartoonIcon from "../assets/smart_toy.svg";
-import spaeedIcon from "../assets/speed.svg";
+import speedIcon from "../assets/speed.svg";
 import mileIcon from "../assets/battery_4_bar.svg";
 import seatIcon from "../assets/airline_seat_recline_extra.svg";
 import intrImg from "../assets/white.png";
@@ -29,7 +29,7 @@ export const DetailView: React.FC<Types> = ({ themeMode, data }: Types) => {
                 style={mystyle}
                 className="d-flex justify-content-center align-items-center rounded-circle mx-3"
               >
-                <img className="px-3 img-fluid" src={arrowIcon} alt="" />
+                <img className="px-3 img-fluid" src={arrowLeft} alt="" />
               </div>
               <div>
                 <span className="fs-2 fw-bold">Model X</span>
@@ -82,7 +82,7 @@ export const DetailView: React.FC<Types> = ({ themeMode, data }: Types) => {
                     style={{ background: "rgba(0, 0, 0, 0.04)" }}
                   >
                     <div className="me-3">
-                      <img src={spaeedIcon} alt="" />
+                      <img src={speedIcon} alt="" />
                     </div>
                     <div>
                       <small style={{ fontSize: "12px" }}>0-60 in 4.9s</small>
