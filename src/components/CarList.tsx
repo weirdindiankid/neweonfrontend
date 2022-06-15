@@ -1,5 +1,5 @@
 import React from "react";
-import arrowIcon from "../assets/arrow_back_ios.svg";
+import arrowLeft from "../assets/arrow_back_ios.svg";
 
 interface Types {
   themeMode: String;
@@ -77,7 +77,7 @@ export const CarList: React.FC<Types> = ({ themeMode, data }: Types) => {
               style={mystyle}
               className="d-flex justify-content-center align-items-center rounded-circle mx-3"
             >
-              <img className="px-3 img-fluid" src={arrowIcon} alt="" />
+              <img className="px-3 img-fluid" src={arrowLeft} alt="" />
             </div>
             <div>
               <span className="fs-2 fw-bold">Choose a car</span>
