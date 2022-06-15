@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { SuggestedLocation } from "./SuggestedLocation";
 import Map from "./Map";
-import {CarList} from "./CarList";
+import { CarList } from "./CarList";
+
+const data1 = [{}];
+const data2 = [{}];
 
 const LocationMainPage = () => {
   const [themeMode, setThemeMode] = useState<String>("");
@@ -20,8 +23,8 @@ const LocationMainPage = () => {
         }}
       >
         <div>
-          {/* <SuggestedLocation themeMode={themeMode} /> */}
-          <CarList themeMode={themeMode} />
+          <SuggestedLocation themeMode={themeMode} data={data1} />
+          <CarList themeMode={themeMode} data={data2} />
         </div>
         <div>
           <Map />

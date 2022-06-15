@@ -3,9 +3,10 @@ import arrowIcon from "../assets/arrow_back_ios_new.png";
 
 interface Types {
   themeMode: String;
+  data: any;
 }
 
-export const SuggestedLocation: React.FC<Types> = ({ themeMode }: Types) => {
+export const SuggestedLocation: React.FC<Types> = ({ themeMode, data }: Types) => {
   const mystyle = {
     backgroundColor: themeMode === "light" ? "#F5F5F5" : "#1F1F1F",
   };
