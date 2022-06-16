@@ -5,6 +5,7 @@ import { GlobalStyles } from "./GlobalStyles";
 import { lightTheme, darkTheme } from "./Themes";
 // import CheckoutStepOne from "./components/CheckoutStepOne";
 import CheckoutStepTwo from "./components/CheckoutStepTwo";
+import BookingComplete from "./components/BookingComplete";
 import "./App.css";
 
 function App() {
@@ -29,7 +30,8 @@ function App() {
         {/* <CheckoutStepOne
           themeMode={themeMode}
         /> */}
-        <CheckoutStepTwo themeMode={themeMode} />
+        {/* <CheckoutStepTwo themeMode={themeMode} /> */}
+        <BookingComplete themeMode={themeMode} />
         {/* <LocationMainPage /> */}
       </div>
     </ThemeProvider>
