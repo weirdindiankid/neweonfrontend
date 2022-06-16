@@ -14,6 +14,7 @@ import { LeftSectionTwo } from "./leftSectionTwo";
 import DetailView from "./DetailView";
 import { CheckoutStepOne } from "./CheckoutStepOne";
 import { CheckoutStepTwo } from "./CheckoutStepTwo";
+import { BookingComplete } from "./BookingComplete";
 
 const data1 = [{}];
 const data2 = [
@@ -204,11 +205,13 @@ const LocationMainPage = () => {
             themeMode={themeMode}
             onChangeSection={(e: String) => setActiveSection(e)}
           />
-        ) : (
+        ) : activeSection === "section5" ? (
           <CheckoutStepTwo
             themeMode={themeMode}
             onChangeSection={(e: String) => setActiveSection(e)}
           />
+        ) : (
+          <BookingComplete themeMode={themeMode} />
         )}
 
         <Map themeMode={themeMode} activeSection={activeSection} />

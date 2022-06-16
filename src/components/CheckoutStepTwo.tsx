@@ -220,7 +220,7 @@ export const CheckoutStepTwo: React.FC<Types> = ({ themeMode, onChangeSection }:
               </div>
             </div>
             <div>
-              <button className="btn btn-primary ms-2">Pay and book</button>
+              <button className="btn btn-primary ms-2" onClick={() => onChangeSection("section6")}>Pay and book</button>
             </div>
           </div>
         </div>
