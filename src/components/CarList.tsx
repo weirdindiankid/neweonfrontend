@@ -16,18 +16,23 @@ export const CarList: React.FC<Types> = ({
     backgroundColor: themeMode === "light" ? "#F5F5F5" : "#1F1F1F",
     borderRadius: "20px",
   };
+  const nestedCard = {
+    backgroundColor: themeMode === "light" ? "rgba(0, 0, 0, 0.04)" : "#2F2F2F",
+  };
 
   return (
     <>
       <div style={{ minWidth: "480px" }}>
         <div className="mt-5">
-          <div className="d-flex">
-            <div
-              onClick={() => onChangeSection("section1")}
-              style={mystyle}
-              className="d-flex justify-content-center align-items-center rounded-circle mx-3"
-            >
-              <img className="px-3 img-fluid" src={arrowLeft} alt="" />
+          <div className="d-flex align-items-center">
+            <div className="mx-3">
+              <button
+                type="button"
+                onClick={() => onChangeSection("section1")}
+                className="btn btn-light rounded-circle"
+              >
+                <img className="img-fluid" src={arrowLeft} alt="" />
+              </button>
             </div>
             <div>
               <span className="fs-2 fw-bold">Choose a car</span>
@@ -37,7 +42,7 @@ export const CarList: React.FC<Types> = ({
             return (
               <div className="m-4" onClick={() => onChangeSection("section3")}>
                 <div
-                  className="card border-0 p-4 position-relative"
+                  className="card border-0 p-2 position-relative"
                   style={mystyle}
                 >
                   <div className="m-3">
@@ -60,10 +65,10 @@ export const CarList: React.FC<Types> = ({
                     <div className="d-flex flex-wrap justify-content-between">
                       {item.features.map((feature: any, i: number) => {
                         return (
-                          <div className={i < 2 ? "w-50" : ""}>
+                          <div className={i < 2 ? "col-6" : "col-4"}>
                             <div
                               className="py-2 m-2 px-3 shadow-sm rounded d-flex"
-                              style={{ background: "rgba(0, 0, 0, 0.04)" }}
+                              style={nestedCard}
                             >
                               <div className="me-3">
                                 <img src={feature.icon} alt="" />

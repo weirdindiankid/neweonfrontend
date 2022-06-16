@@ -34,7 +34,7 @@ export const Map: React.FC<Types> = ({
               <Dropdown className="m-1">
                 <Dropdown.Toggle
                   className="rounded-pill shadow border-0"
-                  variant="basic"
+                  variant={themeMode === "light" ? "basic" : "dark"}
                   id="dropdown-basic"
                 >
                   $<span className="me-2 ms-2">Price</span>
@@ -54,7 +54,7 @@ export const Map: React.FC<Types> = ({
               <Dropdown className="m-1">
                 <Dropdown.Toggle
                   className="rounded-pill shadow border-0"
-                  variant="basic"
+                  variant={themeMode === "light" ? "basic" : "dark"}
                   id="dropdown-basic"
                 >
                   <img src={cartoonIcon} alt="" />
@@ -75,7 +75,7 @@ export const Map: React.FC<Types> = ({
               <Dropdown className="m-1">
                 <Dropdown.Toggle
                   className="rounded-pill shadow border-0"
-                  variant="basic"
+                  variant={themeMode === "light" ? "basic" : "dark"}
                   id="dropdown-basic"
                 >
                   <img src={spaeedIcon} alt="" />
@@ -96,7 +96,7 @@ export const Map: React.FC<Types> = ({
               <Dropdown className="m-1">
                 <Dropdown.Toggle
                   className="rounded-pill shadow border-0"
-                  variant="basic"
+                  variant={themeMode === "light" ? "basic" : "dark"}
                   id="dropdown-basic"
                 >
                   <img src={modelIcon} alt="" />
@@ -117,7 +117,7 @@ export const Map: React.FC<Types> = ({
               <Dropdown className="m-1">
                 <Dropdown.Toggle
                   className="rounded-pill shadow border-0"
-                  variant="basic"
+                  variant={themeMode === "light" ? "basic" : "dark"}
                   id="dropdown-basic"
                 >
                   <img src={mileIcon} alt="" />

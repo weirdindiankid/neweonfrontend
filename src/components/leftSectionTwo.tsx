@@ -15,6 +15,9 @@ export const LeftSectionTwo: React.FC<Types> = ({
 }: Types) => {
   const [displayDeliverySection, setDisplayDeliverySection] =
     useState<Boolean>(false);
+  const mystyle = {
+    backgroundColor: themeMode === "light" ? "#F5F5F5" : "#1F1F1F",
+  };
   return (
     <>
       <div
@@ -25,9 +28,9 @@ export const LeftSectionTwo: React.FC<Types> = ({
           overflowX: "hidden",
         }}
       >
-        <div className="p-3 border-end d-flex justify-content-between">
+        <div className="p-3 d-flex justify-content-between">
           <div
-            className="btn-group border rounded-pill"
+            className="btn-group border border-secondary rounded-pill col-6 m-1"
             role="group"
             aria-label="Basic radio toggle button group"
           >
@@ -41,7 +44,11 @@ export const LeftSectionTwo: React.FC<Types> = ({
               checked
             />
             <label
-              className="btn btn-outline-dark border-0 m-1 rounded-pill"
+              className={
+                themeMode === "light"
+                  ? "btn btn-outline-dark border-0 m-1 pt-2 rounded-pill"
+                  : "btn btn-outline-light border-0 m-1 pt-2 rounded-pill"
+              }
               htmlFor="btnradio1"
             >
               Pick up
@@ -56,17 +63,25 @@ export const LeftSectionTwo: React.FC<Types> = ({
               autoComplete="off"
             />
             <label
-              className="btn btn-outline-dark border-0 m-1 rounded-pill"
+              className={
+                themeMode === "light"
+                  ? "btn btn-outline-dark border-0 m-1 pt-2 rounded-pill"
+                  : "btn btn-outline-light border-0 m-1 pt-2 rounded-pill"
+              }
               htmlFor="btnradio2"
             >
               Delivery
             </label>
           </div>
 
-          <div className="position-relative">
+          <div className="position-relative col-6 m-1">
             <label
               htmlFor="dates"
-              className="form-label position-absolute small"
+              className={
+                themeMode === "light"
+                  ? "form-label position-absolute small text-dark"
+                  : "form-label position-absolute small text-light"
+              }
               style={{ top: "5px", left: "25px" }}
             >
               Dates
@@ -77,7 +92,11 @@ export const LeftSectionTwo: React.FC<Types> = ({
               type="text"
               name="dates"
               placeholder="May 23 - May 25"
-              className="pt-4 ps-4 rounded-pill form-control"
+              className={
+                themeMode === "light"
+                  ? "pt-4 ps-4 border-secondary rounded-pill form-control bg-light"
+                  : "pt-4 ps-4 border-secondary rounded-pill form-control bg-dark"
+              }
               id="dates"
             />
           </div>

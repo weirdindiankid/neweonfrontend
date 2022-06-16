@@ -18,7 +18,7 @@ export const SuggestedLocation: React.FC<Types> = ({
 
   return (
     <>
-      <div className="p-3 border-end" style={{ width: "480px" }}>
+      <div className="p-3" style={{ width: "480px" }}>
         <div>
           <span className="fs-2 fw-bold">Location</span>
         </div>

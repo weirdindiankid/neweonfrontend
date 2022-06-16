@@ -13,3 +13,11 @@
 ::-webkit-scrollbar-thumb {
   background-color: #a9adb1;
 }
+
+.bg-light {
+  background-color: white !important;
+}
+
+.bg-dark {
+  background-color: black !important;
+}

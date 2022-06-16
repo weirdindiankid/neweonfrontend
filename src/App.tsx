@@ -25,14 +25,16 @@ function App() {
   return (
     <ThemeProvider theme={themeMode === "light" ? lightTheme : darkTheme}>
       <GlobalStyles />
-      {/* <button className="btn btn-primary m-2" onClick={themeToggler}>Switch Theme</button> */}
+      <button className="btn btn-primary m-2" onClick={themeToggler}>
+        Switch Theme
+      </button>
       <div>
         {/* <CheckoutStepOne
           themeMode={themeMode}
         /> */}
         {/* <CheckoutStepTwo themeMode={themeMode} /> */}
-        <BookingComplete themeMode={themeMode} />
-        {/* <LocationMainPage /> */}
+        {/* <BookingComplete themeMode={themeMode} /> */}
+        <LocationMainPage />
       </div>
     </ThemeProvider>
   );

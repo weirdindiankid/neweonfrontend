@@ -24,6 +24,10 @@ export const DetailView: React.FC<Types> = ({
     borderRadius: "20px",
   };
 
+  const nestedCards = {
+    backgroundColor: themeMode === "light" ? "rgba(0, 0, 0, 0.04)" : "#2F2F2F",
+  };
+
   return (
     <>
       <div
@@ -35,14 +39,16 @@ export const DetailView: React.FC<Types> = ({
         }}
       >
         <div>
-          <div className="d-flex justify-content-between m-2">
-            <div className="d-flex">
-              <div
-                onClick={() => onChangeSection()}
-                style={mystyle}
-                className="d-flex justify-content-center align-items-center rounded-circle mx-3"
-              >
-                <img className="px-3 img-fluid" src={arrowLeft} alt="" />
+          <div className="d-flex justify-content-between mx-2">
+            <div className="d-flex align-items-center">
+              <div className="me-3">
+                <button
+                  type="button"
+                  onClick={() => onChangeSection()}
+                  className="btn btn-light rounded-circle"
+                >
+                  <img className="img-fluid" src={arrowLeft} alt="" />
+                </button>
               </div>
               <div>
                 <span className="fs-2 fw-bold">Model X</span>
@@ -78,7 +84,7 @@ export const DetailView: React.FC<Types> = ({
                 <div className="w-100">
                   <div
                     className="py-2 m-1 px-3 shadow-sm rounded d-flex"
-                    style={{ background: "rgba(0, 0, 0, 0.04)" }}
+                    style={nestedCards}
                   >
                     <div className="me-3">
                       <img src={cartoonIcon} alt="" />
@@ -94,7 +100,7 @@ export const DetailView: React.FC<Types> = ({
                 <div className="w-100">
                   <div
                     className="py-2 m-1 px-3 shadow-sm rounded d-flex"
-                    style={{ background: "rgba(0, 0, 0, 0.04)" }}
+                    style={nestedCards}
                   >
                     <div className="me-3">
                       <img src={speedIcon} alt="" />
@@ -110,7 +116,7 @@ export const DetailView: React.FC<Types> = ({
                 <div className="w-100">
                   <div
                     className="py-2 px-3 m-1 shadow-sm rounded d-flex"
-                    style={{ background: "rgba(0, 0, 0, 0.04)" }}
+                    style={nestedCards}
                   >
                     <div className="me-2">
                       <img src={mileIcon} alt="" />
@@ -124,7 +130,7 @@ export const DetailView: React.FC<Types> = ({
                 <div className="w-100">
                   <div
                     className="py-2 px-3 m-1 shadow-sm rounded d-flex"
-                    style={{ background: "rgba(0, 0, 0, 0.04)" }}
+                    style={nestedCards}
                   >
                     <div className="me-2">
                       <img src={seatIcon} alt="" />
@@ -138,7 +144,7 @@ export const DetailView: React.FC<Types> = ({
                 <div className="w-100">
                   <div
                     className="py-2 px-3 m-1 shadow-sm rounded d-flex"
-                    style={{ background: "rgba(0, 0, 0, 0.04)" }}
+                    style={nestedCards}
                   >
                     <div className="me-2">
                       <img src={intrImg} alt="" />
@@ -156,11 +162,11 @@ export const DetailView: React.FC<Types> = ({
                 <span className="fs-4 fw-bold">Included</span>
               </div>
               <div className="mt-3">
-                <div className="border rounded p-3 my-3 d-flex justify-content-between">
+                <div className="border border-secondary rounded p-3 my-3 d-flex justify-content-between">
                   <span className="fs-6 fw-bold">2 days rent</span>
                   <span className="fs-6 fw-bold">219 / day</span>
                 </div>
-                <div className="border rounded p-3 d-flex justify-content-between">
+                <div className="border border-secondary rounded p-3 d-flex justify-content-between">
                   <div className="d-flex flex-column lh-sm">
                     <span className="fs-6 fw-bold">Delivery fee</span>
                     <small style={{ fontSize: "12px" }}>
@@ -172,12 +178,12 @@ export const DetailView: React.FC<Types> = ({
               </div>
             </div>
 
-            <div className="mt-5 pt-4">
+            <div className="mt-5">
               <div>
                 <span className="fs-4 fw-bold">Choose insurance</span>
               </div>
               <div className="mt-3">
-                <div className="border rounded p-3 d-flex justify-content-between">
+                <div className="border border-secondary rounded p-3 d-flex justify-content-between">
                   <div className="d-flex flex-column lh-sm">
                     <Form>
                       <Form.Check
@@ -199,7 +205,7 @@ export const DetailView: React.FC<Types> = ({
               <div className="w-100">
                 <div
                   className="py-2 px-3 my-3 shadow-sm rounded d-flex justify-content-between"
-                  style={{ background: "rgba(0, 0, 0, 0.04)" }}
+                  style={nestedCards}
                 >
                   <div className="me-2">
                     <Form>
@@ -224,15 +230,15 @@ export const DetailView: React.FC<Types> = ({
               </div>
             </div>
 
-            <div className="mt-5 pt-5">
+            <div className="mt-5">
               <div>
-                <span className="fs-4 fw-bold">Choose insurance</span>
+                <span className="fs-4 fw-bold">Anything else?</span>
               </div>
 
               <div className="w-100">
                 <div
                   className="py-2 px-3 my-3 shadow-sm rounded d-flex justify-content-between"
-                  style={{ background: "rgba(0, 0, 0, 0.04)" }}
+                  style={nestedCards}
                 >
                   <div className="me-2">
                     <Form>
@@ -257,7 +263,7 @@ export const DetailView: React.FC<Types> = ({
               <div className="w-100">
                 <div
                   className="py-2 px-3 my-3 shadow-sm rounded d-flex justify-content-between"
-                  style={{ background: "rgba(0, 0, 0, 0.04)" }}
+                  style={nestedCards}
                 >
                   <div className="me-2">
                     <Form>
@@ -282,7 +288,7 @@ export const DetailView: React.FC<Types> = ({
               <div className="w-100">
                 <div
                   className="py-2 px-3 my-3 shadow-sm rounded"
-                  style={{ background: "rgba(0, 0, 0, 0.04)" }}
+                  style={nestedCards}
                 >
                   <div className="me-2">
                     <Form>
