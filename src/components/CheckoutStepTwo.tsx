@@ -9,6 +9,10 @@ import savingIcon from "../assets/savings.svg";
 import milePinIcon from "../assets/mode_of_travel.svg";
 import calanderIcon from "../assets/event_busy.svg";
 import assingIcon from "../assets/assignment.svg";
+import Card from "react-bootstrap/Card";
+import Form from "react-bootstrap/Form";
+import InputGroup from "react-bootstrap/InputGroup";
+import Button from "react-bootstrap/Button";
 
 interface Types {
   themeMode: String;
@@ -17,7 +21,6 @@ interface Types {
 export const CheckoutStepTwo: React.FC<Types> = ({ themeMode }: Types) => {
   const mystyle = {
     backgroundColor: themeMode === "light" ? "#F5F5F5" : "#1F1F1F",
-    borderRadius: "20px",
   };
 
   return (
@@ -134,18 +137,90 @@ export const CheckoutStepTwo: React.FC<Types> = ({ themeMode }: Types) => {
             </div>
           </div>
 
-          {/* <div className="container mt-5 px-4">
-            <div className="d-flex flex-column">
-              <span className="fs-4 fw-bold">Enter phone number</span>
-              <p>Your phone will function as your car keys.</p>
+          <div className="mt-5 mb-3">
+            <div>
+              <span className="fs-4 fw-bold">Sign to agree</span>
             </div>
-            <FloatingLabel controlId="floatingInputGrid" label="Phone number">
-              <Form.Control type="tel" placeholder="+1 (805) 34" />
-            </FloatingLabel>
-            <div className="my-3">
-              <button className="btn btn-primary">Proceed checkout</button>
+            <div className="mt-3 d-flex">
+              <Card className="w-100">
+                <Card.Body
+                  className="py-5"
+                  style={{ backgroundColor: "#E8F0F9" }}
+                >
+                  <Card.Text className="my-5 py-3"></Card.Text>
+                  {/* <Button variant="primary">Go somewhere</Button> */}
+                </Card.Body>
+                <Card.Footer className="d-flex">
+                  <span>Sign above to agree with the terms & conditions.</span>
+                  <Button variant="link" className="text-decoration-none">
+                    Clear
+                  </Button>
+                </Card.Footer>
+              </Card>
             </div>
-          </div> */}
+          </div>
+
+          <div className="mt-5 mb-3">
+            <div>
+              <span className="fs-4 fw-bold">Payment</span>
+            </div>
+            <div className="mt-3 mb-3 d-flex flex-wrap">
+              <div className="w-100">
+                <Form.Floating className="m-2">
+                  <Form.Control
+                    style={mystyle}
+                    id="floatingCardNumber"
+                    type="number"
+                    placeholder="Card number"
+                    className="border-0"
+                  />
+                  <label htmlFor="floatingCardNumber">Card number</label>
+                </Form.Floating>
+              </div>
+              <div className="w-100">
+                <Form.Floating className="m-2">
+                  <Form.Control
+                    style={mystyle}
+                    id="floatingNameOnCard"
+                    type="text"
+                    placeholder="Name on card"
+                    className="border-0"
+                  />
+                  <label htmlFor="floatingNameOnCard">Name on card</label>
+                </Form.Floating>
+              </div>
+
+              <div className="w-50">
+                <Form.Floating className="m-2">
+                  <Form.Control
+                    style={mystyle}
+                    id="floatingExpiryDate"
+                    type="date"
+                    placeholder="Expiry date"
+                    className="border-0"
+                    maxLength={7}
+                  />
+                  <label htmlFor="floatingExpiryDate">Expiry date</label>
+                </Form.Floating>
+              </div>
+              <div className="w-50">
+                <Form.Floating className="m-2">
+                  <Form.Control
+                    style={mystyle}
+                    id="floatingCVV"
+                    type="password"
+                    placeholder="CVV"
+                    className="border-0"
+                    maxLength={7}
+                  />
+                  <label htmlFor="floatingCVV">CVV</label>
+                </Form.Floating>
+              </div>
+            </div>
+            <div>
+              <button className="btn btn-primary ms-2">Pay and book</button>
+            </div>
+          </div>
         </div>
       </div>
     </>
