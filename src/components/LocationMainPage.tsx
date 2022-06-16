@@ -202,7 +202,6 @@ const LocationMainPage = () => {
 
         <Map
           themeMode={themeMode}
-          data={data1}
           activeSection={activeSection}
         />
       </div>
