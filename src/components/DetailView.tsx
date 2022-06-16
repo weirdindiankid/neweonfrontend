@@ -10,13 +10,11 @@ import Form from "react-bootstrap/Form";
 
 interface Types {
   themeMode: String;
-  data: any;
   onChangeSection: any;
 }
 
 export const DetailView: React.FC<Types> = ({
   themeMode,
-  data,
   onChangeSection,
 }: Types) => {
   const mystyle = {
@@ -44,7 +42,7 @@ export const DetailView: React.FC<Types> = ({
               <div className="me-3">
                 <button
                   type="button"
-                  onClick={() => onChangeSection()}
+                  onClick={() => onChangeSection("section2")}
                   className="btn btn-light rounded-circle"
                 >
                   <img className="img-fluid" src={arrowLeft} alt="" />
@@ -306,7 +304,7 @@ export const DetailView: React.FC<Types> = ({
           </div>
 
           <div className="m-4">
-            <button className="btn btn-primary">Checkout</button>
+            <button className="btn btn-primary" onClick={() => onChangeSection("section4")}>Checkout</button>
           </div>
         </div>
       </div>

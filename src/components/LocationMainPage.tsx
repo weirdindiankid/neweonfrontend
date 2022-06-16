@@ -12,6 +12,8 @@ import intrImg from "../assets/white.png";
 import { Map } from "./Map";
 import { LeftSectionTwo } from "./leftSectionTwo";
 import DetailView from "./DetailView";
+import { CheckoutStepOne } from "./CheckoutStepOne";
+import { CheckoutStepTwo } from "./CheckoutStepTwo";
 
 const data1 = [{}];
 const data2 = [
@@ -185,7 +187,7 @@ const LocationMainPage = () => {
             data={data2}
             onChangeSection={(e: String) => setActiveSection(e)}
           />
-        ) : (
+        ) : activeSection === "section3" ? (
           <>
             <LeftSectionTwo
               themeMode={themeMode}
@@ -194,16 +196,22 @@ const LocationMainPage = () => {
             />
             <DetailView
               themeMode={themeMode}
-              data={data2}
-              onChangeSection={() => setActiveSection("section2")}
+              onChangeSection={(e: String) => setActiveSection(e)}
             />
           </>
+        ) : activeSection === "section4" ? (
+          <CheckoutStepOne
+            themeMode={themeMode}
+            onChangeSection={(e: String) => setActiveSection(e)}
+          />
+        ) : (
+          <CheckoutStepTwo
+            themeMode={themeMode}
+            onChangeSection={(e: String) => setActiveSection(e)}
+          />
         )}
 
-        <Map
-          themeMode={themeMode}
-          activeSection={activeSection}
-        />
+        <Map themeMode={themeMode} activeSection={activeSection} />
       </div>
     </>
   );

@@ -8,9 +8,13 @@ import Form from "react-bootstrap/Form";
 
 interface Types {
   themeMode: String;
+  onChangeSection: any;
 }
 
-export const CheckoutStepOne: React.FC<Types> = ({ themeMode }: Types) => {
+export const CheckoutStepOne: React.FC<Types> = ({
+  themeMode,
+  onChangeSection,
+}: Types) => {
   const mystyle = {
     backgroundColor: themeMode === "light" ? "#F5F5F5" : "#1F1F1F",
     borderRadius: "20px",
@@ -23,6 +27,7 @@ export const CheckoutStepOne: React.FC<Types> = ({ themeMode }: Types) => {
           <div className="d-flex justify-content-between mx-4">
             <div className="d-flex">
               <div
+                onClick={() => onChangeSection("section3")}
                 style={mystyle}
                 className="d-flex justify-content-center align-items-center rounded-circle me-3"
               >
@@ -64,7 +69,12 @@ export const CheckoutStepOne: React.FC<Types> = ({ themeMode }: Types) => {
               <Form.Control type="tel" placeholder="+1 (805) 34" />
             </FloatingLabel>
             <div className="my-3">
-              <button className="btn btn-primary">Proceed checkout</button>
+              <button
+                className="btn btn-primary"
+                onClick={() => onChangeSection("section5")}
+              >
+                Proceed checkout
+              </button>
             </div>
           </div>
         </div>

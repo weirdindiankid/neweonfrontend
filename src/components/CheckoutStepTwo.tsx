@@ -16,9 +16,10 @@ import Button from "react-bootstrap/Button";
 
 interface Types {
   themeMode: String;
+  onChangeSection: any;
 }
 
-export const CheckoutStepTwo: React.FC<Types> = ({ themeMode }: Types) => {
+export const CheckoutStepTwo: React.FC<Types> = ({ themeMode, onChangeSection }: Types) => {
   const mystyle = {
     backgroundColor: themeMode === "light" ? "#F5F5F5" : "#1F1F1F",
   };
@@ -30,6 +31,7 @@ export const CheckoutStepTwo: React.FC<Types> = ({ themeMode }: Types) => {
           <div className="d-flex justify-content-between">
             <div className="d-flex">
               <div
+                onClick={() => onChangeSection("section4")}
                 style={mystyle}
                 className="d-flex justify-content-center align-items-center rounded-circle me-3"
               >
