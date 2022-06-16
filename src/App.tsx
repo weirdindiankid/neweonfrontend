@@ -3,7 +3,8 @@ import LocationMainPage from "./components/LocationMainPage";
 import { ThemeProvider } from "styled-components";
 import { GlobalStyles } from "./GlobalStyles";
 import { lightTheme, darkTheme } from "./Themes";
-// import Checkout from "./components/Checkout";
+// import CheckoutStepOne from "./components/CheckoutStepOne";
+import CheckoutStepTwo from "./components/CheckoutStepTwo";
 import "./App.css";
 
 function App() {
@@ -25,10 +26,11 @@ function App() {
       <GlobalStyles />
       {/* <button className="btn btn-primary m-2" onClick={themeToggler}>Switch Theme</button> */}
       <div>
-        {/* <Checkout
+        {/* <CheckoutStepOne
           themeMode={themeMode}
         /> */}
-        <LocationMainPage />
+        <CheckoutStepTwo themeMode={themeMode} />
+        {/* <LocationMainPage /> */}
       </div>
     </ThemeProvider>
   );
