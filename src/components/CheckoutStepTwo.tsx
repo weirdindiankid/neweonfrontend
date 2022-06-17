@@ -19,7 +19,10 @@ interface Types {
   onChangeSection: any;
 }
 
-export const CheckoutStepTwo: React.FC<Types> = ({ themeMode, onChangeSection }: Types) => {
+export const CheckoutStepTwo: React.FC<Types> = ({
+  themeMode,
+  onChangeSection,
+}: Types) => {
   const mystyle = {
     backgroundColor: themeMode === "light" ? "#F5F5F5" : "#1F1F1F",
   };
@@ -29,13 +32,15 @@ export const CheckoutStepTwo: React.FC<Types> = ({ themeMode, onChangeSection }:
       <div style={{ minWidth: "480px", width: "480px" }}>
         <div className="mt-5 mx-4">
           <div className="d-flex justify-content-between">
-            <div className="d-flex">
-              <div
-                onClick={() => onChangeSection("section4")}
-                style={mystyle}
-                className="d-flex justify-content-center align-items-center rounded-circle me-3"
-              >
-                <img className="px-3 img-fluid" src={arrowLeft} alt="" />
+            <div className="d-flex align-items-center">
+              <div className="me-3">
+                <button
+                  type="button"
+                  onClick={() => onChangeSection("section4")}
+                  className="btn btn-light rounded-circle"
+                >
+                  <img className="img-fluid" src={arrowLeft} alt="" />
+                </button>
               </div>
               <div>
                 <span className="fs-2 fw-bold">Checkout</span>
@@ -51,7 +56,7 @@ export const CheckoutStepTwo: React.FC<Types> = ({ themeMode, onChangeSection }:
           <div>
             <div
               className="py-2 px-3 my-3 shadow-sm rounded d-flex justify-content-between"
-              style={{ background: "rgba(0, 0, 0, 0.04)" }}
+              style={mystyle}
             >
               <div className="me-2 d-flex align-items-center">
                 <img className="me-3" src={carIcon} alt="" />
@@ -67,7 +72,7 @@ export const CheckoutStepTwo: React.FC<Types> = ({ themeMode, onChangeSection }:
           <div>
             <div
               className="py-2 px-3 my-3 shadow-sm rounded d-flex justify-content-between"
-              style={{ background: "rgba(0, 0, 0, 0.04)" }}
+              style={mystyle}
             >
               <div className="me-2 d-flex align-items-center">
                 <img className="me-3" src={userIcon} alt="" />
@@ -127,7 +132,7 @@ export const CheckoutStepTwo: React.FC<Types> = ({ themeMode, onChangeSection }:
           <div>
             <div
               className="py-2 px-3 my-3 shadow-sm rounded d-flex justify-content-between"
-              style={{ background: "rgba(0, 0, 0, 0.04)" }}
+              style={mystyle}
             >
               <div className="me-2 d-flex align-items-center">
                 <img className="me-3" src={assingIcon} alt="" />
@@ -220,7 +225,12 @@ export const CheckoutStepTwo: React.FC<Types> = ({ themeMode, onChangeSection }:
               </div>
             </div>
             <div>
-              <button className="btn btn-primary ms-2" onClick={() => onChangeSection("section6")}>Pay and book</button>
+              <button
+                className="btn btn-primary ms-2"
+                onClick={() => onChangeSection("section6")}
+              >
+                Pay and book
+              </button>
             </div>
           </div>
         </div>

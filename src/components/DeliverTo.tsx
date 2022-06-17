@@ -1,5 +1,5 @@
 import React from "react";
-import arrowIcon from "../assets/arrow_back_ios.svg";
+import arrowLeft from "../assets/arrow_back_ios.svg";
 import FloatingLabel from "react-bootstrap/FloatingLabel";
 import Form from "react-bootstrap/Form";
 
@@ -9,7 +9,11 @@ interface Types {
   onChangeSection: any;
 }
 
-export const DeliverTo: React.FC<Types> = ({ themeMode, data, onChangeSection }: Types) => {
+export const DeliverTo: React.FC<Types> = ({
+  themeMode,
+  data,
+  onChangeSection,
+}: Types) => {
   const mystyle = {
     backgroundColor: themeMode === "light" ? "#F5F5F5" : "#1F1F1F",
     borderRadius: "20px",
@@ -19,13 +23,15 @@ export const DeliverTo: React.FC<Types> = ({ themeMode, data, onChangeSection }:
     <>
       <div style={{ minWidth: "480px" }}>
         <div className="mt-5">
-          <div className="d-flex">
-            <div
-              onClick={() => onChangeSection("section1")}
-              style={mystyle}
-              className="d-flex justify-content-center align-items-center rounded-circle mx-3"
-            >
-              <img className="px-3 img-fluid" src={arrowIcon} alt="" />
+          <div className="d-flex align-items-center">
+            <div className="me-3">
+              <button
+                type="button"
+                onClick={() => onChangeSection("section1")}
+                className="btn btn-light rounded-circle"
+              >
+                <img className="img-fluid" src={arrowLeft} alt="" />
+              </button>
             </div>
             <div>
               <span className="fs-2 fw-bold">Deliver to...</span>

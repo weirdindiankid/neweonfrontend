@@ -42,12 +42,8 @@ export const BookingComplete: React.FC<Types> = ({ themeMode }: Types) => {
                 <p style={{ fontSize: "12px" }}>Pick up</p>
               </div>
             </div>
-            <div className="card border-0">
-              <img
-                src={grayCarDettail}
-                className="card-img img-fluid"
-                alt="..."
-              />
+            <div>
+              <img src={grayCarDettail} className="img-fluid" alt="..." />
               <p>
                 You’ve payed and booked the Tesla Model X P100D. An e-mail
                 confirmation will be sent.

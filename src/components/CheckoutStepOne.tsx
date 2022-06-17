@@ -25,13 +25,15 @@ export const CheckoutStepOne: React.FC<Types> = ({
       <div style={{ minWidth: "480px", width: "480px" }}>
         <div className="mt-5">
           <div className="d-flex justify-content-between mx-4">
-            <div className="d-flex">
-              <div
-                onClick={() => onChangeSection("section3")}
-                style={mystyle}
-                className="d-flex justify-content-center align-items-center rounded-circle me-3"
-              >
-                <img className="px-3 img-fluid" src={arrowLeft} alt="" />
+            <div className="d-flex align-items-center">
+              <div className="me-3">
+                <button
+                  type="button"
+                  onClick={() => onChangeSection("section3")}
+                  className="btn btn-light rounded-circle"
+                >
+                  <img className="img-fluid" src={arrowLeft} alt="" />
+                </button>
               </div>
               <div>
                 <span className="fs-2 fw-bold">Model X</span>
@@ -47,7 +49,7 @@ export const CheckoutStepOne: React.FC<Types> = ({
           <div className="mx-4">
             <div
               className="py-2 px-3 my-3 shadow-sm rounded d-flex justify-content-between"
-              style={{ background: "rgba(0, 0, 0, 0.04)" }}
+              style={mystyle}
             >
               <div className="me-2 d-flex align-items-center">
                 <img className="me-3" src={carIcon} alt="" />
