@@ -4,11 +4,16 @@ import carImg from "../assets/car_img.png";
 import blackCar from "../assets/black-car.png";
 import grayCar from "../assets/gray_car.png";
 import whiteCar from "../assets/white_car.png";
-import cartoonIcon from "../assets/smart_toy.svg";
-import spaeedIcon from "../assets/speed.svg";
-import mileIcon from "../assets/battery_4_bar.svg";
-import seatIcon from "../assets/airline_seat_recline_extra.svg";
-import intrImg from "../assets/white.png";
+import smartTotLight from "../assets/smart_toy_light.svg";
+import smartTotDark from "../assets/smart_toy_dark.svg";
+import speedLight from "../assets/speed_light.svg";
+import speedDark from "../assets/speed_dark.svg";
+import mileLight from "../assets/battery_4_bar_light.svg";
+import mileDark from "../assets/battery_4_bar_dark.svg";
+import seatLight from "../assets/airline_seat_recline_extra_light.svg";
+import seatDark from "../assets/airline_seat_recline_extra_dark.svg";
+import interiorLight from "../assets/interior_light.svg";
+import interiorDark from "../assets/interior_dark.svg";
 import { Map } from "./Map";
 import { LeftSectionTwo } from "./leftSectionTwo";
 import DetailView from "./DetailView";
@@ -26,23 +31,28 @@ const data2 = [
     numHours: "338 / total",
     features: [
       {
-        icon: cartoonIcon,
+        iconLight: smartTotLight,
+        iconDark: smartTotDark,
         title: "Enhanced autopilot",
       },
       {
-        icon: spaeedIcon,
+        iconLight: speedLight,
+        iconDark: speedDark,
         title: "0-60 in 4.4s",
       },
       {
-        icon: mileIcon,
+        iconLight: mileLight,
+        iconDark: mileDark,
         title: "310 miles",
       },
       {
-        icon: seatIcon,
+        iconLight: seatLight,
+        iconDark: seatDark,
         title: "5 seats",
       },
       {
-        icon: intrImg,
+        iconLight: interiorLight,
+        iconDark: interiorDark,
         title: "Interior",
       },
     ],
@@ -55,23 +65,28 @@ const data2 = [
     numHours: "398 / total",
     features: [
       {
-        icon: cartoonIcon,
+        iconLight: smartTotLight,
+        iconDark: smartTotDark,
         title: "Full self driving",
       },
       {
-        icon: spaeedIcon,
+        iconLight: speedLight,
+        iconDark: speedDark,
         title: "0-60 in 4.4s",
       },
       {
-        icon: mileIcon,
+        iconLight: mileLight,
+        iconDark: mileDark,
         title: "326 miles",
       },
       {
-        icon: seatIcon,
+        iconLight: seatLight,
+        iconDark: seatDark,
         title: "5 seats",
       },
       {
-        icon: intrImg,
+        iconLight: interiorLight,
+        iconDark: interiorDark,
         title: "Interior",
       },
     ],
@@ -84,23 +99,28 @@ const data2 = [
     numHours: "438 / total",
     features: [
       {
-        icon: cartoonIcon,
+        iconLight: smartTotLight,
+        iconDark: smartTotDark,
         title: "Enhanced autopilot",
       },
       {
-        icon: spaeedIcon,
+        iconLight: speedLight,
+        iconDark: speedDark,
         title: "0-60 in 4.9s",
       },
       {
-        icon: mileIcon,
+        iconLight: mileLight,
+        iconDark: mileDark,
         title: "295 miles",
       },
       {
-        icon: seatIcon,
+        iconLight: seatLight,
+        iconDark: seatDark,
         title: "5 seats",
       },
       {
-        icon: intrImg,
+        iconLight: interiorLight,
+        iconDark: interiorDark,
         title: "Interior",
       },
     ],
@@ -113,23 +133,28 @@ const data2 = [
     numHours: "598 / total",
     features: [
       {
-        icon: cartoonIcon,
+        iconLight: smartTotLight,
+        iconDark: smartTotDark,
         title: "Standard autopilot",
       },
       {
-        icon: spaeedIcon,
+        iconLight: speedLight,
+        iconDark: speedDark,
         title: "0-60 in 3.1s",
       },
       {
-        icon: mileIcon,
+        iconLight: mileLight,
+        iconDark: mileDark,
         title: "405 miles",
       },
       {
-        icon: seatIcon,
+        iconLight: seatLight,
+        iconDark: seatDark,
         title: "5 seats",
       },
       {
-        icon: intrImg,
+        iconLight: interiorLight,
+        iconDark: interiorDark,
         title: "Interior",
       },
     ],
@@ -142,23 +167,28 @@ const data2 = [
     numHours: "338 / total",
     features: [
       {
-        icon: cartoonIcon,
+        iconLight: smartTotLight,
+        iconDark: smartTotDark,
         title: "Enhanced autopilot",
       },
       {
-        icon: spaeedIcon,
+        iconLight: speedLight,
+        iconDark: speedDark,
         title: "0-60 in 4.4s",
       },
       {
-        icon: mileIcon,
+        iconLight: mileLight,
+        iconDark: mileDark,
         title: "326 miles",
       },
       {
-        icon: seatIcon,
+        iconLight: seatLight,
+        iconDark: seatDark,
         title: "5 seats",
       },
       {
-        icon: intrImg,
+        iconLight: interiorLight,
+        iconDark: interiorDark,
         title: "Interior",
       },
     ],

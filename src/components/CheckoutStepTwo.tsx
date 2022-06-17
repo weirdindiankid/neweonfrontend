@@ -1,17 +1,25 @@
 import React from "react";
-import arrowLeft from "../assets/arrow_back_ios.svg";
-import arrowRight from "../assets/arrow_back_ios_new.png";
+import arrowLeftLight from "../assets/arrow_back_light.svg";
+import arrowLeftDark from "../assets/arrow_back_dark.svg";
+import arrowRightLight from "../assets/arrow_right_light.svg";
+import arrowRightDark from "../assets/arrow_right_dark.svg";
 import lockIcon from "../assets/lock.svg";
-import carIcon from "../assets/directions_car.svg";
-import arrowDown from "../assets/arrow_back_ios_new.svg";
-import userIcon from "../assets/person_filled.svg";
-import savingIcon from "../assets/savings.svg";
-import milePinIcon from "../assets/mode_of_travel.svg";
-import calanderIcon from "../assets/event_busy.svg";
-import assingIcon from "../assets/assignment.svg";
+import modelLight from "../assets/directions_car_light.svg";
+import modelDark from "../assets/directions_car_dark.svg";
+import arrowDownLight from "../assets/arrow_down_light.svg";
+import arrowDownDark from "../assets/arrow_down_dark.svg";
+import personLight from "../assets/person_filled_light.svg";
+import personDark from "../assets/person_filled_dark.svg";
+import savingLight from "../assets/savings_light.svg";
+import savingDark from "../assets/savings_dark.svg";
+import milePinLight from "../assets/mode_of_travel_light.svg";
+import milePinDark from "../assets/mode_of_travel_dark.svg";
+import calanderLight from "../assets/event_busy_light.svg";
+import calanderDark from "../assets/event_busy_dark.svg";
+import assingLight from "../assets/assignment_light.svg";
+import assingDark from "../assets/assignment_dark.svg";
 import Card from "react-bootstrap/Card";
 import Form from "react-bootstrap/Form";
-import InputGroup from "react-bootstrap/InputGroup";
 import Button from "react-bootstrap/Button";
 
 interface Types {
@@ -37,9 +45,17 @@ export const CheckoutStepTwo: React.FC<Types> = ({
                 <button
                   type="button"
                   onClick={() => onChangeSection("section4")}
-                  className="btn btn-light rounded-circle"
+                  className={
+                    themeMode === "light"
+                      ? "btn btn-light rounded-circle"
+                      : "btn btn-dark rounded-circle"
+                  }
                 >
-                  <img className="img-fluid" src={arrowLeft} alt="" />
+                  {themeMode === "light" ? (
+                    <img className="img-fluid" src={arrowLeftLight} alt="" />
+                  ) : (
+                    <img className="img-fluid" src={arrowLeftDark} alt="" />
+                  )}
                 </button>
               </div>
               <div>
@@ -59,12 +75,20 @@ export const CheckoutStepTwo: React.FC<Types> = ({
               style={mystyle}
             >
               <div className="me-2 d-flex align-items-center">
-                <img className="me-3" src={carIcon} alt="" />
-                <span>Model X</span>
+                {themeMode === "light" ? (
+                  <img className="img-fluid" src={modelLight} alt="" />
+                ) : (
+                  <img className="img-fluid" src={modelDark} alt="" />
+                )}
+                <span className="ms-3">Model X</span>
               </div>
               <div>
                 <span className="fs-6 fw-bold me-3">430 -</span>
-                <img src={arrowDown} alt="" />
+                {themeMode === "light" ? (
+                  <img className="img-fluid" src={arrowDownLight} alt="" />
+                ) : (
+                  <img className="img-fluid" src={arrowDownDark} alt="" />
+                )}
               </div>
             </div>
           </div>
@@ -75,11 +99,19 @@ export const CheckoutStepTwo: React.FC<Types> = ({
               style={mystyle}
             >
               <div className="me-2 d-flex align-items-center">
-                <img className="me-3" src={userIcon} alt="" />
-                <span>Jhon Doe</span>
+                {themeMode === "light" ? (
+                  <img className="img-fluid" src={personLight} alt="" />
+                ) : (
+                  <img className="img-fluid" src={personDark} alt="" />
+                )}
+                <span className="ms-3">Jhon Doe</span>
               </div>
               <div>
-                <img src={arrowDown} alt="" />
+                {themeMode === "light" ? (
+                  <img className="img-fluid" src={arrowDownLight} alt="" />
+                ) : (
+                  <img className="img-fluid" src={arrowDownDark} alt="" />
+                )}
               </div>
             </div>
           </div>
@@ -90,7 +122,11 @@ export const CheckoutStepTwo: React.FC<Types> = ({
             </div>
             <div className="mt-3 d-flex">
               <div className="me-4">
-                <img src={savingIcon} alt="" />
+                {themeMode === "light" ? (
+                  <img src={savingLight} alt="" />
+                ) : (
+                  <img src={savingDark} alt="" />
+                )}
               </div>
               <div>
                 <span className="fs-6 fw-bold">Security desposit</span>
@@ -103,7 +139,11 @@ export const CheckoutStepTwo: React.FC<Types> = ({
 
             <div className="mt-3 d-flex">
               <div className="me-4">
-                <img src={milePinIcon} alt="" />
+                {themeMode === "light" ? (
+                  <img src={milePinLight} alt="" />
+                ) : (
+                  <img src={milePinDark} alt="" />
+                )}
               </div>
               <div>
                 <span className="fs-6 fw-bold">Mileage</span>
@@ -116,7 +156,11 @@ export const CheckoutStepTwo: React.FC<Types> = ({
 
             <div className="mt-3 d-flex">
               <div className="me-4">
-                <img src={calanderIcon} alt="" />
+                {themeMode === "light" ? (
+                  <img src={calanderLight} alt="" />
+                ) : (
+                  <img src={calanderDark} alt="" />
+                )}
               </div>
               <div>
                 <span className="fs-6 fw-bold">Cancelation</span>
@@ -135,11 +179,19 @@ export const CheckoutStepTwo: React.FC<Types> = ({
               style={mystyle}
             >
               <div className="me-2 d-flex align-items-center">
-                <img className="me-3" src={assingIcon} alt="" />
-                <span>All terms & conditions</span>
+                {themeMode === "light" ? (
+                  <img src={assingLight} alt="" />
+                ) : (
+                  <img src={assingDark} alt="" />
+                )}
+                <span className="ms-3">All terms & conditions</span>
               </div>
               <div>
-                <img src={arrowRight} alt="" />
+                {themeMode === "light" ? (
+                  <img src={arrowRightLight} alt="" />
+                ) : (
+                  <img src={arrowRightDark} alt="" />
+                )}
               </div>
             </div>
           </div>

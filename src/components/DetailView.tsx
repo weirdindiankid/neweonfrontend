@@ -1,11 +1,17 @@
 import React from "react";
-import arrowLeft from "../assets/arrow_back_ios.svg";
+import arrowLeftLight from "../assets/arrow_back_light.svg";
+import arrowLeftDark from "../assets/arrow_back_dark.svg";
 import grayCarDettail from "../assets/gray_car_detail.png";
-import cartoonIcon from "../assets/smart_toy.svg";
-import speedIcon from "../assets/speed.svg";
-import mileIcon from "../assets/battery_4_bar.svg";
-import seatIcon from "../assets/airline_seat_recline_extra.svg";
-import intrImg from "../assets/white.png";
+import smartTotLight from "../assets/smart_toy_light.svg";
+import smartTotDark from "../assets/smart_toy_dark.svg";
+import speedLight from "../assets/speed_light.svg";
+import speedDark from "../assets/speed_dark.svg";
+import mileLight from "../assets/battery_4_bar_light.svg";
+import mileDark from "../assets/battery_4_bar_dark.svg";
+import seatLight from "../assets/airline_seat_recline_extra_light.svg";
+import seatDark from "../assets/airline_seat_recline_extra_dark.svg";
+import interiorLight from "../assets/interior_light.svg";
+import interiorDark from "../assets/interior_dark.svg";
 import Form from "react-bootstrap/Form";
 
 interface Types {
@@ -43,9 +49,17 @@ export const DetailView: React.FC<Types> = ({
                 <button
                   type="button"
                   onClick={() => onChangeSection("section2")}
-                  className="btn btn-light rounded-circle"
+                  className={
+                    themeMode === "light"
+                      ? "btn btn-light rounded-circle"
+                      : "btn btn-dark rounded-circle"
+                  }
                 >
-                  <img className="img-fluid" src={arrowLeft} alt="" />
+                  {themeMode === "light" ? (
+                    <img className="img-fluid" src={arrowLeftLight} alt="" />
+                  ) : (
+                    <img className="img-fluid" src={arrowLeftDark} alt="" />
+                  )}
                 </button>
               </div>
               <div>
@@ -85,7 +99,11 @@ export const DetailView: React.FC<Types> = ({
                     style={nestedCards}
                   >
                     <div className="me-3">
-                      <img src={cartoonIcon} alt="" />
+                      {themeMode === "light" ? (
+                        <img className="img-fluid" src={smartTotLight} alt="" />
+                      ) : (
+                        <img className="img-fluid" src={smartTotDark} alt="" />
+                      )}
                     </div>
                     <div>
                       <small style={{ fontSize: "12px" }}>
@@ -101,7 +119,11 @@ export const DetailView: React.FC<Types> = ({
                     style={nestedCards}
                   >
                     <div className="me-3">
-                      <img src={speedIcon} alt="" />
+                      {themeMode === "light" ? (
+                        <img className="img-fluid" src={speedLight} alt="" />
+                      ) : (
+                        <img className="img-fluid" src={speedDark} alt="" />
+                      )}
                     </div>
                     <div>
                       <small style={{ fontSize: "12px" }}>0-60 in 4.9s</small>
@@ -117,7 +139,11 @@ export const DetailView: React.FC<Types> = ({
                     style={nestedCards}
                   >
                     <div className="me-2">
-                      <img src={mileIcon} alt="" />
+                      {themeMode === "light" ? (
+                        <img className="img-fluid" src={mileLight} alt="" />
+                      ) : (
+                        <img className="img-fluid" src={mileDark} alt="" />
+                      )}
                     </div>
                     <div>
                       <small style={{ fontSize: "12px" }}>295 miles</small>
@@ -131,7 +157,11 @@ export const DetailView: React.FC<Types> = ({
                     style={nestedCards}
                   >
                     <div className="me-2">
-                      <img src={seatIcon} alt="" />
+                      {themeMode === "light" ? (
+                        <img className="img-fluid" src={seatLight} alt="" />
+                      ) : (
+                        <img className="img-fluid" src={seatDark} alt="" />
+                      )}
                     </div>
                     <div>
                       <small style={{ fontSize: "12px" }}>5 seats</small>
@@ -145,7 +175,11 @@ export const DetailView: React.FC<Types> = ({
                     style={nestedCards}
                   >
                     <div className="me-2">
-                      <img src={intrImg} alt="" />
+                      {themeMode === "light" ? (
+                        <img className="img-fluid" src={interiorLight} alt="" />
+                      ) : (
+                        <img className="img-fluid" src={interiorDark} alt="" />
+                      )}
                     </div>
                     <div>
                       <small style={{ fontSize: "12px" }}>Interior</small>
@@ -304,7 +338,12 @@ export const DetailView: React.FC<Types> = ({
           </div>
 
           <div className="m-4">
-            <button className="btn btn-primary" onClick={() => onChangeSection("section4")}>Checkout</button>
+            <button
+              className="btn btn-primary"
+              onClick={() => onChangeSection("section4")}
+            >
+              Checkout
+            </button>
           </div>
         </div>
       </div>

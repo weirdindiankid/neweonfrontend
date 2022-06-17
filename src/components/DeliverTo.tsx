@@ -1,5 +1,6 @@
 import React from "react";
-import arrowLeft from "../assets/arrow_back_ios.svg";
+import arrowLeftLight from "../assets/arrow_back_light.svg";
+import arrowLeftDark from "../assets/arrow_back_dark.svg";
 import FloatingLabel from "react-bootstrap/FloatingLabel";
 import Form from "react-bootstrap/Form";
 
@@ -28,9 +29,17 @@ export const DeliverTo: React.FC<Types> = ({
               <button
                 type="button"
                 onClick={() => onChangeSection("section1")}
-                className="btn btn-light rounded-circle"
+                className={
+                  themeMode === "light"
+                    ? "btn btn-light rounded-circle"
+                    : "btn btn-dark rounded-circle"
+                }
               >
-                <img className="img-fluid" src={arrowLeft} alt="" />
+                {themeMode === "light" ? (
+                  <img className="img-fluid" src={arrowLeftLight} alt="" />
+                ) : (
+                  <img className="img-fluid" src={arrowLeftDark} alt="" />
+                )}
               </button>
             </div>
             <div>

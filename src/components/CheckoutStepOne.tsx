@@ -1,8 +1,11 @@
 import React from "react";
-import arrowLeft from "../assets/arrow_back_ios.svg";
+import arrowLeftLight from "../assets/arrow_back_light.svg";
+import arrowLeftDark from "../assets/arrow_back_dark.svg";
 import lockIcon from "../assets/lock.svg";
-import carIcon from "../assets/directions_car.svg";
-import arrowDown from "../assets/arrow_back_ios_new.svg";
+import modelLight from "../assets/directions_car_light.svg";
+import modelDark from "../assets/directions_car_dark.svg";
+import arrowDownLight from "../assets/arrow_down_light.svg";
+import arrowDownDark from "../assets/arrow_down_dark.svg";
 import FloatingLabel from "react-bootstrap/FloatingLabel";
 import Form from "react-bootstrap/Form";
 
@@ -30,9 +33,17 @@ export const CheckoutStepOne: React.FC<Types> = ({
                 <button
                   type="button"
                   onClick={() => onChangeSection("section3")}
-                  className="btn btn-light rounded-circle"
+                  className={
+                    themeMode === "light"
+                      ? "btn btn-light rounded-circle"
+                      : "btn btn-dark rounded-circle"
+                  }
                 >
-                  <img className="img-fluid" src={arrowLeft} alt="" />
+                  {themeMode === "light" ? (
+                    <img className="img-fluid" src={arrowLeftLight} alt="" />
+                  ) : (
+                    <img className="img-fluid" src={arrowLeftDark} alt="" />
+                  )}
                 </button>
               </div>
               <div>
@@ -52,12 +63,20 @@ export const CheckoutStepOne: React.FC<Types> = ({
               style={mystyle}
             >
               <div className="me-2 d-flex align-items-center">
-                <img className="me-3" src={carIcon} alt="" />
-                <span>Model X</span>
+                {themeMode === "light" ? (
+                  <img className="img-fluid" src={modelLight} alt="" />
+                ) : (
+                  <img className="img-fluid" src={modelDark} alt="" />
+                )}
+                <span className="ms-3">Model X</span>
               </div>
               <div>
                 <span className="fs-6 fw-bold me-3">430 -</span>
-                <img src={arrowDown} alt="" />
+                {themeMode === "light" ? (
+                  <img className="img-fluid" src={arrowDownLight} alt="" />
+                ) : (
+                  <img className="img-fluid" src={arrowDownDark} alt="" />
+                )}
               </div>
             </div>
           </div>

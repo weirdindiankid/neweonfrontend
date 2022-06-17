@@ -1,5 +1,6 @@
 import React from "react";
-import arrowRight from "../assets/arrow_back_ios_new.png";
+import arrowRightLight from "../assets/arrow_right_light.svg";
+import arrowRightDark from "../assets/arrow_right_dark.svg";
 
 interface Types {
   themeMode: String;
@@ -33,7 +34,11 @@ export const SuggestedLocation: React.FC<Types> = ({
               <span style={{ fontSize: "10px" }}>Massachusetts</span>
             </div>
             <div onClick={() => onChangeSection()}>
-              <img src={arrowRight} alt="" />
+              {themeMode === "light" ? (
+                <img src={arrowRightLight} alt="" />
+              ) : (
+                <img src={arrowRightDark} alt="" />
+              )}
             </div>
           </div>
         </div>
@@ -49,7 +54,11 @@ export const SuggestedLocation: React.FC<Types> = ({
               <span style={{ fontSize: "10px" }}>Illinois</span>
             </div>
             <div onClick={() => onChangeSection()}>
-              <img src={arrowRight} alt="" />
+              {themeMode === "light" ? (
+                <img src={arrowRightLight} alt="" />
+              ) : (
+                <img src={arrowRightDark} alt="" />
+              )}
             </div>
           </div>
 
@@ -62,7 +71,11 @@ export const SuggestedLocation: React.FC<Types> = ({
               <span style={{ fontSize: "10px" }}>Colorado</span>
             </div>
             <div onClick={() => onChangeSection()}>
-              <img src={arrowRight} alt="" />
+              {themeMode === "light" ? (
+                <img src={arrowRightLight} alt="" />
+              ) : (
+                <img src={arrowRightDark} alt="" />
+              )}
             </div>
           </div>
 
@@ -75,7 +88,11 @@ export const SuggestedLocation: React.FC<Types> = ({
               <span style={{ fontSize: "10px" }}>Nevada</span>
             </div>
             <div onClick={() => onChangeSection()}>
-              <img src={arrowRight} alt="" />
+              {themeMode === "light" ? (
+                <img src={arrowRightLight} alt="" />
+              ) : (
+                <img src={arrowRightDark} alt="" />
+              )}
             </div>
           </div>
 
@@ -88,7 +105,11 @@ export const SuggestedLocation: React.FC<Types> = ({
               <span style={{ fontSize: "10px" }}>California</span>
             </div>
             <div onClick={() => onChangeSection()}>
-              <img src={arrowRight} alt="" />
+              {themeMode === "light" ? (
+                <img src={arrowRightLight} alt="" />
+              ) : (
+                <img src={arrowRightDark} alt="" />
+              )}
             </div>
           </div>
 
@@ -101,7 +122,11 @@ export const SuggestedLocation: React.FC<Types> = ({
               <span style={{ fontSize: "10px" }}>Florida</span>
             </div>
             <div onClick={() => onChangeSection()}>
-              <img src={arrowRight} alt="" />
+              {themeMode === "light" ? (
+                <img src={arrowRightLight} alt="" />
+              ) : (
+                <img src={arrowRightDark} alt="" />
+              )}
             </div>
           </div>
 
@@ -116,7 +141,11 @@ export const SuggestedLocation: React.FC<Types> = ({
               <span style={{ fontSize: "10px" }}>New York</span>
             </div>
             <div onClick={() => onChangeSection()}>
-              <img src={arrowRight} alt="" />
+              {themeMode === "light" ? (
+                <img src={arrowRightLight} alt="" />
+              ) : (
+                <img src={arrowRightDark} alt="" />
+              )}
             </div>
           </div>
 
@@ -129,7 +158,11 @@ export const SuggestedLocation: React.FC<Types> = ({
               <span style={{ fontSize: "10px" }}>Oklahoma</span>
             </div>
             <div onClick={() => onChangeSection()}>
-              <img src={arrowRight} alt="" />
+              {themeMode === "light" ? (
+                <img src={arrowRightLight} alt="" />
+              ) : (
+                <img src={arrowRightDark} alt="" />
+              )}
             </div>
           </div>
 
@@ -142,7 +175,11 @@ export const SuggestedLocation: React.FC<Types> = ({
               <span style={{ fontSize: "10px" }}>New Hampshire</span>
             </div>
             <div onClick={() => onChangeSection()}>
-              <img src={arrowRight} alt="" />
+              {themeMode === "light" ? (
+                <img src={arrowRightLight} alt="" />
+              ) : (
+                <img src={arrowRightDark} alt="" />
+              )}
             </div>
           </div>
         </div>

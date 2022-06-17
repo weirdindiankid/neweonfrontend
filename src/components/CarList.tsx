@@ -1,5 +1,6 @@
 import React from "react";
-import arrowLeft from "../assets/arrow_back_ios.svg";
+import arrowLeftLight from "../assets/arrow_back_light.svg";
+import arrowLeftDark from "../assets/arrow_back_dark.svg";
 
 interface Types {
   themeMode: String;
@@ -29,9 +30,17 @@ export const CarList: React.FC<Types> = ({
               <button
                 type="button"
                 onClick={() => onChangeSection("section1")}
-                className="btn btn-light rounded-circle"
+                className={
+                  themeMode === "light"
+                    ? "btn btn-light rounded-circle"
+                    : "btn btn-dark rounded-circle"
+                }
               >
-                <img className="img-fluid" src={arrowLeft} alt="" />
+                {themeMode === "light" ? (
+                  <img className="img-fluid" src={arrowLeftLight} alt="" />
+                ) : (
+                  <img className="img-fluid" src={arrowLeftDark} alt="" />
+                )}
               </button>
             </div>
             <div>
@@ -71,7 +80,14 @@ export const CarList: React.FC<Types> = ({
                               style={nestedCard}
                             >
                               <div className="me-3">
-                                <img src={feature.icon} alt="" />
+                                <img
+                                  src={
+                                    themeMode === "light"
+                                      ? feature.iconLight
+                                      : feature.iconDark
+                                  }
+                                  alt=""
+                                />
                               </div>
                               <div>
                                 <small style={{ fontSize: "12px" }}>
