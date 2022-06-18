@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { SuggestedLocation } from "./SuggestedLocation";
 import carImg from "../assets/car_img.png";
 import blackCar from "../assets/black-car.png";
@@ -21,6 +21,8 @@ import { CheckoutStepOne } from "./CheckoutStepOne";
 import { CheckoutStepTwo } from "./CheckoutStepTwo";
 import { BookingComplete } from "./BookingComplete";
 import { Wrapper, Status } from "@googlemaps/react-wrapper";
+import { useSelector } from "react-redux";
+import { RootState } from "../store/reducers/rootReducer";
 
 const data1 = [{}];
 const data2 = [
@@ -200,56 +202,53 @@ const render = (status: Status) => {
 };
 
 const LocationMainPage = () => {
-  const [themeMode, setThemeMode] = useState<String>("");
+  const { darkMode } = useSelector((state: RootState) => state.themeReducer);
   const [activeSection, setActiveSection] = useState<String>("section1");
   const [zoom, setZoom] = React.useState(10); // initial zoom
   const [center, setCenter] = React.useState<google.maps.LatLngLiteral>({
     lat: 42.407211,
     lng: -71.382439,
   });
-  useEffect(() => {
-    setThemeMode(localStorage.getItem("themeMode") || "light");
-  }, []);
 
   return (
     <>
       <div className="d-flex justify-content-between">
         {activeSection === "section1" ? (
           <SuggestedLocation
-            themeMode={themeMode}
+            darkMode={darkMode}
             data={data1}
             onChangeSection={() => setActiveSection("section2")}
           />
         ) : activeSection === "section2" ? (
           <LeftSectionTwo
-            themeMode={themeMode}
+            darkMode={darkMode}
             data={data2}
             onChangeSection={(e: String) => setActiveSection(e)}
           />
         ) : activeSection === "section3" ? (
           <>
             <LeftSectionTwo
-              themeMode={themeMode}
+              darkMode={darkMode}
               data={data2}
               onChangeSection={(e: String) => setActiveSection(e)}
             />
             <DetailView
-              themeMode={themeMode}
+              darkMode={darkMode}
               onChangeSection={(e: String) => setActiveSection(e)}
             />
           </>
         ) : activeSection === "section4" ? (
           <CheckoutStepOne
-            themeMode={themeMode}
+            darkMode={darkMode}
             onChangeSection={(e: String) => setActiveSection(e)}
           />
         ) : activeSection === "section5" ? (
           <CheckoutStepTwo
-            themeMode={themeMode}
+            darkMode={darkMode}
             onChangeSection={(e: String) => setActiveSection(e)}
           />
         ) : (
-          <BookingComplete themeMode={themeMode} />
+          <BookingComplete darkMode={darkMode} />
         )}
 
         <Wrapper
@@ -257,7 +256,7 @@ const LocationMainPage = () => {
           render={render}
         >
           <Map
-            themeMode={themeMode}
+            darkMode={darkMode}
             activeSection={activeSection}
             center={center}
             zoom={zoom}

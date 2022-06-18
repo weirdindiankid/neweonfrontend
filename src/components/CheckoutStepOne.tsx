@@ -10,16 +10,16 @@ import FloatingLabel from "react-bootstrap/FloatingLabel";
 import Form from "react-bootstrap/Form";
 
 interface Types {
-  themeMode: String;
+  darkMode: boolean;
   onChangeSection: any;
 }
 
 export const CheckoutStepOne: React.FC<Types> = ({
-  themeMode,
+  darkMode,
   onChangeSection,
 }: Types) => {
   const mystyle = {
-    backgroundColor: themeMode === "light" ? "#F5F5F5" : "#1F1F1F",
+    backgroundColor: !darkMode ? "#F5F5F5" : "#1F1F1F",
     borderRadius: "20px",
   };
 
@@ -34,12 +34,12 @@ export const CheckoutStepOne: React.FC<Types> = ({
                   type="button"
                   onClick={() => onChangeSection("section3")}
                   className={
-                    themeMode === "light"
+                    !darkMode
                       ? "btn btn-light rounded-circle"
                       : "btn btn-dark rounded-circle"
                   }
                 >
-                  {themeMode === "light" ? (
+                  {!darkMode ? (
                     <img className="img-fluid" src={arrowLeftLight} alt="" />
                   ) : (
                     <img className="img-fluid" src={arrowLeftDark} alt="" />
@@ -63,7 +63,7 @@ export const CheckoutStepOne: React.FC<Types> = ({
               style={mystyle}
             >
               <div className="me-2 d-flex align-items-center">
-                {themeMode === "light" ? (
+                {!darkMode ? (
                   <img className="img-fluid" src={modelLight} alt="" />
                 ) : (
                   <img className="img-fluid" src={modelDark} alt="" />
@@ -72,7 +72,7 @@ export const CheckoutStepOne: React.FC<Types> = ({
               </div>
               <div>
                 <span className="fs-6 fw-bold me-3">430 -</span>
-                {themeMode === "light" ? (
+                {!darkMode ? (
                   <img className="img-fluid" src={arrowDownLight} alt="" />
                 ) : (
                   <img className="img-fluid" src={arrowDownDark} alt="" />

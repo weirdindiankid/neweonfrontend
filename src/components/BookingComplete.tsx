@@ -2,10 +2,10 @@ import React from "react";
 import grayCarDettail from "../assets/gray_car_detail.png";
 
 interface Types {
-  themeMode: String;
+  darkMode: boolean;
 }
 
-export const BookingComplete: React.FC<Types> = ({ themeMode }: Types) => {
+export const BookingComplete: React.FC<Types> = ({ darkMode }: Types) => {
   return (
     <>
       <div

@@ -5,13 +5,13 @@ import FloatingLabel from "react-bootstrap/FloatingLabel";
 import Form from "react-bootstrap/Form";
 
 interface Types {
-  themeMode: String;
+  darkMode: boolean;
   data: any;
   onChangeSection: any;
 }
 
 export const DeliverTo: React.FC<Types> = ({
-  themeMode,
+  darkMode,
   data,
   onChangeSection,
 }: Types) => {
@@ -25,12 +25,12 @@ export const DeliverTo: React.FC<Types> = ({
                 type="button"
                 onClick={() => onChangeSection("section1")}
                 className={
-                  themeMode === "light"
+                  !darkMode
                     ? "btn btn-light rounded-circle"
                     : "btn btn-dark rounded-circle"
                 }
               >
-                {themeMode === "light" ? (
+                {!darkMode ? (
                   <img className="img-fluid" src={arrowLeftLight} alt="" />
                 ) : (
                   <img className="img-fluid" src={arrowLeftDark} alt="" />

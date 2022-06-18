@@ -1,27 +1,30 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import LocationMainPage from "./components/LocationMainPage";
 import { ThemeProvider } from "styled-components";
 import { GlobalStyles } from "./GlobalStyles";
 import { lightTheme, darkTheme } from "./Themes";
-import "./App.css";
-import { useSelector,useDispatch } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { RootState } from "./store/reducers/rootReducer";
-import { CHANGE_THEME_MODE } from './store/constants/themeContsant';
+import { CHANGE_THEME_MODE } from "./store/constants/themeContsant";
+import "./App.css";
 
 function App() {
   const { darkMode } = useSelector((state: RootState) => state.themeReducer);
-  const [themeMode, setThemeMode] = useState<String>("");
-  const dispatch=useDispatch();
+  const dispatch = useDispatch();
 
   useEffect(() => {
-    setThemeMode(localStorage.getItem("themeMode") || "light");
-  }, []);
+    const themeModeDark = localStorage.getItem("themeModeDark");
+    if (themeModeDark && JSON.parse(themeModeDark) === true) {
+      dispatch({ type: CHANGE_THEME_MODE });
+    }
+  }, [dispatch]);
+
+  useEffect(() => {
+    localStorage.setItem("themeModeDark", JSON.stringify(darkMode));
+  }, [darkMode]);
 
   const themeToggler = () => {
-    const updatedThemeMode = themeMode === "light" ? "dark" : "light";
-    setThemeMode(updatedThemeMode);
-    localStorage.setItem("themeMode", updatedThemeMode);
-    dispatch({ type: CHANGE_THEME_MODE })
+    dispatch({ type: CHANGE_THEME_MODE });
   };
 
   return (

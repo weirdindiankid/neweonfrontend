@@ -23,16 +23,16 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 
 interface Types {
-  themeMode: String;
+  darkMode: boolean;
   onChangeSection: any;
 }
 
 export const CheckoutStepTwo: React.FC<Types> = ({
-  themeMode,
+  darkMode,
   onChangeSection,
 }: Types) => {
   const mystyle = {
-    backgroundColor: themeMode === "light" ? "#F5F5F5" : "#1F1F1F",
+    backgroundColor: !darkMode ? "#F5F5F5" : "#1F1F1F",
   };
 
   return (
@@ -53,12 +53,12 @@ export const CheckoutStepTwo: React.FC<Types> = ({
                   type="button"
                   onClick={() => onChangeSection("section4")}
                   className={
-                    themeMode === "light"
+                    !darkMode
                       ? "btn btn-light rounded-circle"
                       : "btn btn-dark rounded-circle"
                   }
                 >
-                  {themeMode === "light" ? (
+                  {!darkMode ? (
                     <img className="img-fluid" src={arrowLeftLight} alt="" />
                   ) : (
                     <img className="img-fluid" src={arrowLeftDark} alt="" />
@@ -82,7 +82,7 @@ export const CheckoutStepTwo: React.FC<Types> = ({
               style={mystyle}
             >
               <div className="me-2 d-flex align-items-center">
-                {themeMode === "light" ? (
+                {!darkMode ? (
                   <img className="img-fluid" src={modelLight} alt="" />
                 ) : (
                   <img className="img-fluid" src={modelDark} alt="" />
@@ -91,7 +91,7 @@ export const CheckoutStepTwo: React.FC<Types> = ({
               </div>
               <div>
                 <span className="fs-6 fw-bold me-3">430 -</span>
-                {themeMode === "light" ? (
+                {!darkMode ? (
                   <img className="img-fluid" src={arrowDownLight} alt="" />
                 ) : (
                   <img className="img-fluid" src={arrowDownDark} alt="" />
@@ -106,7 +106,7 @@ export const CheckoutStepTwo: React.FC<Types> = ({
               style={mystyle}
             >
               <div className="me-2 d-flex align-items-center">
-                {themeMode === "light" ? (
+                {!darkMode ? (
                   <img className="img-fluid" src={personLight} alt="" />
                 ) : (
                   <img className="img-fluid" src={personDark} alt="" />
@@ -114,7 +114,7 @@ export const CheckoutStepTwo: React.FC<Types> = ({
                 <span className="ms-3">Jhon Doe</span>
               </div>
               <div>
-                {themeMode === "light" ? (
+                {!darkMode ? (
                   <img className="img-fluid" src={arrowDownLight} alt="" />
                 ) : (
                   <img className="img-fluid" src={arrowDownDark} alt="" />
@@ -129,7 +129,7 @@ export const CheckoutStepTwo: React.FC<Types> = ({
             </div>
             <div className="mt-3 d-flex">
               <div className="me-4">
-                {themeMode === "light" ? (
+                {!darkMode ? (
                   <img src={savingLight} alt="" />
                 ) : (
                   <img src={savingDark} alt="" />
@@ -146,7 +146,7 @@ export const CheckoutStepTwo: React.FC<Types> = ({
 
             <div className="mt-3 d-flex">
               <div className="me-4">
-                {themeMode === "light" ? (
+                {!darkMode ? (
                   <img src={milePinLight} alt="" />
                 ) : (
                   <img src={milePinDark} alt="" />
@@ -163,7 +163,7 @@ export const CheckoutStepTwo: React.FC<Types> = ({
 
             <div className="mt-3 d-flex">
               <div className="me-4">
-                {themeMode === "light" ? (
+                {!darkMode ? (
                   <img src={calanderLight} alt="" />
                 ) : (
                   <img src={calanderDark} alt="" />
@@ -186,7 +186,7 @@ export const CheckoutStepTwo: React.FC<Types> = ({
               style={mystyle}
             >
               <div className="me-2 d-flex align-items-center">
-                {themeMode === "light" ? (
+                {!darkMode ? (
                   <img src={assingLight} alt="" />
                 ) : (
                   <img src={assingDark} alt="" />
@@ -194,7 +194,7 @@ export const CheckoutStepTwo: React.FC<Types> = ({
                 <span className="ms-3">All terms & conditions</span>
               </div>
               <div>
-                {themeMode === "light" ? (
+                {!darkMode ? (
                   <img src={arrowRightLight} alt="" />
                 ) : (
                   <img src={arrowRightDark} alt="" />

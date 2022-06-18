@@ -2,14 +2,14 @@ import React, { useEffect } from "react";
 import { MapActionButtons } from "./MapActionButtons";
 
 interface Types {
-  themeMode?: String;
+  darkMode: boolean;
   activeSection?: String;
   center: any;
   zoom: number;
 }
 
 export const Map: React.FC<Types> = ({
-  themeMode,
+  darkMode,
   activeSection,
   center,
   zoom,
@@ -29,7 +29,7 @@ export const Map: React.FC<Types> = ({
     <>
       <div ref={ref} style={{ width: "100%", height: "100vh" }}>
         {activeSection !== "section1" ? (
-          <MapActionButtons themeMode={themeMode || "light"} />
+          <MapActionButtons darkMode={darkMode} />
         ) : null}
       </div>
     </>

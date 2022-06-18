@@ -3,18 +3,18 @@ import arrowRightLight from "../assets/arrow_right_light.svg";
 import arrowRightDark from "../assets/arrow_right_dark.svg";
 
 interface Types {
-  themeMode: String;
+  darkMode: boolean;
   data: any;
   onChangeSection: any;
 }
 
 export const SuggestedLocation: React.FC<Types> = ({
-  themeMode,
+  darkMode,
   data,
   onChangeSection,
 }: Types) => {
   const mystyle = {
-    backgroundColor: themeMode === "light" ? "#F5F5F5" : "#1F1F1F",
+    backgroundColor: !darkMode ? "#F5F5F5" : "#1F1F1F",
   };
 
   return (
@@ -35,7 +35,7 @@ export const SuggestedLocation: React.FC<Types> = ({
               <span style={{ fontSize: "10px" }}>Massachusetts</span>
             </div>
             <div>
-              {themeMode === "light" ? (
+              {!darkMode ? (
                 <img src={arrowRightLight} alt="" />
               ) : (
                 <img src={arrowRightDark} alt="" />
@@ -56,7 +56,7 @@ export const SuggestedLocation: React.FC<Types> = ({
               <span style={{ fontSize: "10px" }}>Illinois</span>
             </div>
             <div>
-              {themeMode === "light" ? (
+              {!darkMode ? (
                 <img src={arrowRightLight} alt="" />
               ) : (
                 <img src={arrowRightDark} alt="" />
@@ -74,7 +74,7 @@ export const SuggestedLocation: React.FC<Types> = ({
               <span style={{ fontSize: "10px" }}>Colorado</span>
             </div>
             <div>
-              {themeMode === "light" ? (
+              {!darkMode ? (
                 <img src={arrowRightLight} alt="" />
               ) : (
                 <img src={arrowRightDark} alt="" />
@@ -92,7 +92,7 @@ export const SuggestedLocation: React.FC<Types> = ({
               <span style={{ fontSize: "10px" }}>Nevada</span>
             </div>
             <div>
-              {themeMode === "light" ? (
+              {!darkMode ? (
                 <img src={arrowRightLight} alt="" />
               ) : (
                 <img src={arrowRightDark} alt="" />
@@ -110,7 +110,7 @@ export const SuggestedLocation: React.FC<Types> = ({
               <span style={{ fontSize: "10px" }}>California</span>
             </div>
             <div>
-              {themeMode === "light" ? (
+              {!darkMode ? (
                 <img src={arrowRightLight} alt="" />
               ) : (
                 <img src={arrowRightDark} alt="" />
@@ -128,7 +128,7 @@ export const SuggestedLocation: React.FC<Types> = ({
               <span style={{ fontSize: "10px" }}>Florida</span>
             </div>
             <div>
-              {themeMode === "light" ? (
+              {!darkMode ? (
                 <img src={arrowRightLight} alt="" />
               ) : (
                 <img src={arrowRightDark} alt="" />
@@ -148,7 +148,7 @@ export const SuggestedLocation: React.FC<Types> = ({
               <span style={{ fontSize: "10px" }}>New York</span>
             </div>
             <div>
-              {themeMode === "light" ? (
+              {!darkMode ? (
                 <img src={arrowRightLight} alt="" />
               ) : (
                 <img src={arrowRightDark} alt="" />
@@ -166,7 +166,7 @@ export const SuggestedLocation: React.FC<Types> = ({
               <span style={{ fontSize: "10px" }}>Oklahoma</span>
             </div>
             <div>
-              {themeMode === "light" ? (
+              {!darkMode ? (
                 <img src={arrowRightLight} alt="" />
               ) : (
                 <img src={arrowRightDark} alt="" />
@@ -184,7 +184,7 @@ export const SuggestedLocation: React.FC<Types> = ({
               <span style={{ fontSize: "10px" }}>New Hampshire</span>
             </div>
             <div>
-              {themeMode === "light" ? (
+              {!darkMode ? (
                 <img src={arrowRightLight} alt="" />
               ) : (
                 <img src={arrowRightDark} alt="" />

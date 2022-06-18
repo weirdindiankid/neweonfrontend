@@ -15,21 +15,21 @@ import interiorDark from "../assets/interior_dark.svg";
 import Form from "react-bootstrap/Form";
 
 interface Types {
-  themeMode: String;
+  darkMode: boolean;
   onChangeSection: any;
 }
 
 export const DetailView: React.FC<Types> = ({
-  themeMode,
+  darkMode,
   onChangeSection,
 }: Types) => {
   const mystyle = {
-    backgroundColor: themeMode === "light" ? "#F5F5F5" : "#1F1F1F",
+    backgroundColor: !darkMode ? "#F5F5F5" : "#1F1F1F",
     borderRadius: "20px",
   };
 
   const nestedCards = {
-    backgroundColor: themeMode === "light" ? "rgba(0, 0, 0, 0.04)" : "#2F2F2F",
+    backgroundColor: !darkMode ? "rgba(0, 0, 0, 0.04)" : "#2F2F2F",
   };
 
   return (
@@ -50,12 +50,12 @@ export const DetailView: React.FC<Types> = ({
                   type="button"
                   onClick={() => onChangeSection("section2")}
                   className={
-                    themeMode === "light"
+                    !darkMode
                       ? "btn btn-light rounded-circle"
                       : "btn btn-dark rounded-circle"
                   }
                 >
-                  {themeMode === "light" ? (
+                  {!darkMode ? (
                     <img className="img-fluid" src={arrowLeftLight} alt="" />
                   ) : (
                     <img className="img-fluid" src={arrowLeftDark} alt="" />
@@ -99,7 +99,7 @@ export const DetailView: React.FC<Types> = ({
                     style={nestedCards}
                   >
                     <div className="me-3">
-                      {themeMode === "light" ? (
+                      {!darkMode ? (
                         <img className="img-fluid" src={smartTotLight} alt="" />
                       ) : (
                         <img className="img-fluid" src={smartTotDark} alt="" />
@@ -119,7 +119,7 @@ export const DetailView: React.FC<Types> = ({
                     style={nestedCards}
                   >
                     <div className="me-3">
-                      {themeMode === "light" ? (
+                      {!darkMode ? (
                         <img className="img-fluid" src={speedLight} alt="" />
                       ) : (
                         <img className="img-fluid" src={speedDark} alt="" />
@@ -139,7 +139,7 @@ export const DetailView: React.FC<Types> = ({
                     style={nestedCards}
                   >
                     <div className="me-2">
-                      {themeMode === "light" ? (
+                      {!darkMode ? (
                         <img className="img-fluid" src={mileLight} alt="" />
                       ) : (
                         <img className="img-fluid" src={mileDark} alt="" />
@@ -157,7 +157,7 @@ export const DetailView: React.FC<Types> = ({
                     style={nestedCards}
                   >
                     <div className="me-2">
-                      {themeMode === "light" ? (
+                      {!darkMode ? (
                         <img className="img-fluid" src={seatLight} alt="" />
                       ) : (
                         <img className="img-fluid" src={seatDark} alt="" />
@@ -175,7 +175,7 @@ export const DetailView: React.FC<Types> = ({
                     style={nestedCards}
                   >
                     <div className="me-2">
-                      {themeMode === "light" ? (
+                      {!darkMode ? (
                         <img className="img-fluid" src={interiorLight} alt="" />
                       ) : (
                         <img className="img-fluid" src={interiorDark} alt="" />

@@ -3,22 +3,22 @@ import arrowLeftLight from "../assets/arrow_back_light.svg";
 import arrowLeftDark from "../assets/arrow_back_dark.svg";
 
 interface Types {
-  themeMode: String;
+  darkMode: boolean;
   data: any;
   onChangeSection: any;
 }
 
 export const CarList: React.FC<Types> = ({
-  themeMode,
+  darkMode,
   data,
   onChangeSection,
 }: Types) => {
   const mystyle = {
-    backgroundColor: themeMode === "light" ? "#F5F5F5" : "#1F1F1F",
+    backgroundColor: !darkMode ? "#F5F5F5" : "#1F1F1F",
     borderRadius: "20px",
   };
   const nestedCard = {
-    backgroundColor: themeMode === "light" ? "rgba(0, 0, 0, 0.04)" : "#2F2F2F",
+    backgroundColor: !darkMode ? "rgba(0, 0, 0, 0.04)" : "#2F2F2F",
   };
 
   return (
@@ -31,12 +31,12 @@ export const CarList: React.FC<Types> = ({
                 type="button"
                 onClick={() => onChangeSection("section1")}
                 className={
-                  themeMode === "light"
+                  !darkMode
                     ? "btn btn-light rounded-circle"
                     : "btn btn-dark rounded-circle"
                 }
               >
-                {themeMode === "light" ? (
+                {!darkMode ? (
                   <img className="img-fluid" src={arrowLeftLight} alt="" />
                 ) : (
                   <img className="img-fluid" src={arrowLeftDark} alt="" />
@@ -82,7 +82,7 @@ export const CarList: React.FC<Types> = ({
                               <div className="me-3">
                                 <img
                                   src={
-                                    themeMode === "light"
+                                    !darkMode
                                       ? feature.iconLight
                                       : feature.iconDark
                                   }

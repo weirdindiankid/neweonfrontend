@@ -12,19 +12,19 @@ import modelDark from "../assets/directions_car_dark.svg";
 import Dropdown from "react-bootstrap/Dropdown";
 
 interface Types {
-  themeMode: String;
+  darkMode: boolean;
 }
 
-export const MapActionButtons: React.FC<Types> = ({ themeMode }: Types) => {
+export const MapActionButtons: React.FC<Types> = ({ darkMode }: Types) => {
   return (
     <div className="d-flex flex-wrap justify-content-center">
       <Dropdown className="m-1">
         <Dropdown.Toggle
           className="rounded-pill shadow border-0"
-          variant={themeMode === "light" ? "basic" : "dark"}
+          variant={!darkMode ? "basic" : "dark"}
           id="dropdown-basic"
         >
-          {themeMode === "light" ? (
+          {!darkMode ? (
             <img className="img-fluid" src={attachMoneyLight} alt="" />
           ) : (
             <img className="img-fluid" src={attachMoneyDark} alt="" />
@@ -42,10 +42,10 @@ export const MapActionButtons: React.FC<Types> = ({ themeMode }: Types) => {
       <Dropdown className="m-1">
         <Dropdown.Toggle
           className="rounded-pill shadow border-0"
-          variant={themeMode === "light" ? "basic" : "dark"}
+          variant={!darkMode ? "basic" : "dark"}
           id="dropdown-basic"
         >
-          {themeMode === "light" ? (
+          {!darkMode ? (
             <img className="img-fluid" src={smartTotLight} alt="" />
           ) : (
             <img className="img-fluid" src={smartTotDark} alt="" />
@@ -63,10 +63,10 @@ export const MapActionButtons: React.FC<Types> = ({ themeMode }: Types) => {
       <Dropdown className="m-1">
         <Dropdown.Toggle
           className="rounded-pill shadow border-0"
-          variant={themeMode === "light" ? "basic" : "dark"}
+          variant={!darkMode ? "basic" : "dark"}
           id="dropdown-basic"
         >
-          {themeMode === "light" ? (
+          {!darkMode ? (
             <img className="img-fluid" src={speedLight} alt="" />
           ) : (
             <img className="img-fluid" src={speedDark} alt="" />
@@ -84,10 +84,10 @@ export const MapActionButtons: React.FC<Types> = ({ themeMode }: Types) => {
       <Dropdown className="m-1">
         <Dropdown.Toggle
           className="rounded-pill shadow border-0"
-          variant={themeMode === "light" ? "basic" : "dark"}
+          variant={!darkMode ? "basic" : "dark"}
           id="dropdown-basic"
         >
-          {themeMode === "light" ? (
+          {!darkMode ? (
             <img className="img-fluid" src={modelLight} alt="" />
           ) : (
             <img className="img-fluid" src={modelDark} alt="" />
@@ -105,10 +105,10 @@ export const MapActionButtons: React.FC<Types> = ({ themeMode }: Types) => {
       <Dropdown className="m-1">
         <Dropdown.Toggle
           className="rounded-pill shadow border-0"
-          variant={themeMode === "light" ? "basic" : "dark"}
+          variant={!darkMode ? "basic" : "dark"}
           id="dropdown-basic"
         >
-          {themeMode === "light" ? (
+          {!darkMode ? (
             <img className="img-fluid" src={mileLight} alt="" />
           ) : (
             <img className="img-fluid" src={mileDark} alt="" />

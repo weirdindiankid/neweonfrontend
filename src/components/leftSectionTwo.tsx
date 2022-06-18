@@ -3,13 +3,13 @@ import { CarList } from "./CarList";
 import { DeliverTo } from "./DeliverTo";
 
 interface Types {
-  themeMode: String;
+  darkMode: boolean;
   data: any;
   onChangeSection: any;
 }
 
 export const LeftSectionTwo: React.FC<Types> = ({
-  themeMode,
+  darkMode,
   data,
   onChangeSection,
 }: Types) => {
@@ -42,7 +42,7 @@ export const LeftSectionTwo: React.FC<Types> = ({
             />
             <label
               className={
-                themeMode === "light"
+                !darkMode
                   ? "btn btn-outline-dark border-0 m-1 pt-2 rounded-pill"
                   : "btn btn-outline-light border-0 m-1 pt-2 rounded-pill"
               }
@@ -61,7 +61,7 @@ export const LeftSectionTwo: React.FC<Types> = ({
             />
             <label
               className={
-                themeMode === "light"
+                !darkMode
                   ? "btn btn-outline-dark border-0 m-1 pt-2 rounded-pill"
                   : "btn btn-outline-light border-0 m-1 pt-2 rounded-pill"
               }
@@ -75,7 +75,7 @@ export const LeftSectionTwo: React.FC<Types> = ({
             <label
               htmlFor="dates"
               className={
-                themeMode === "light"
+                !darkMode
                   ? "form-label position-absolute small text-dark"
                   : "form-label position-absolute small text-light"
               }
@@ -90,7 +90,7 @@ export const LeftSectionTwo: React.FC<Types> = ({
               name="dates"
               placeholder="May 23 - May 25"
               className={
-                themeMode === "light"
+                !darkMode
                   ? "pt-4 ps-4 border-secondary rounded-pill form-control bg-light"
                   : "pt-4 ps-4 border-secondary rounded-pill form-control bg-dark"
               }
@@ -100,13 +100,13 @@ export const LeftSectionTwo: React.FC<Types> = ({
         </div>
         {displayDeliverySection ? (
           <DeliverTo
-            themeMode={themeMode}
+            darkMode={darkMode}
             data={data}
             onChangeSection={onChangeSection}
           />
         ) : (
           <CarList
-            themeMode={themeMode}
+            darkMode={darkMode}
             data={data}
             onChangeSection={(e: String) => onChangeSection(e)}
           />
