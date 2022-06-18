@@ -1,5 +1,5 @@
-import { THEME_APPLY } from "../constants/themeContsant";
+import { CHANGE_THEME_MODE } from "../constants/themeContsant";
 
 export const toggleDarkTheme = () => ({
-    type: THEME_APPLY,
+    type: CHANGE_THEME_MODE,
   });

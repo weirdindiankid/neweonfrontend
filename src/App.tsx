@@ -6,7 +6,7 @@ import { lightTheme, darkTheme } from "./Themes";
 import "./App.css";
 import { useSelector,useDispatch } from "react-redux";
 import { RootState } from "./store/reducers/rootReducer";
-import { THEME_APPLY } from './store/constants/themeContsant';
+import { CHANGE_THEME_MODE } from './store/constants/themeContsant';
 
 function App() {
   const { darkMode } = useSelector((state: RootState) => state.themeReducer);
@@ -21,7 +21,7 @@ function App() {
     const updatedThemeMode = themeMode === "light" ? "dark" : "light";
     setThemeMode(updatedThemeMode);
     localStorage.setItem("themeMode", updatedThemeMode);
-    dispatch({ type: THEME_APPLY })
+    dispatch({ type: CHANGE_THEME_MODE })
   };
 
   return (

@@ -1,1 +1,1 @@
-export const THEME_APPLY="THEME_APPLY";
+export const CHANGE_THEME_MODE="CHANGE_THEME_MODE";

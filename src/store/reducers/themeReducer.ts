@@ -1,4 +1,4 @@
-import { THEME_APPLY } from './../constants/themeContsant';
+import { CHANGE_THEME_MODE } from './../constants/themeContsant';
 export interface IState{
     darkMode:boolean;
 }
@@ -9,7 +9,7 @@ const initalState:IState={
 
 export const themeReducer =(state=initalState,action:any)=>{
     switch (action.type) {
-        case THEME_APPLY:
+        case CHANGE_THEME_MODE:
           return { ...state, darkMode: !state.darkMode }
     
         default:
