@@ -28,9 +28,9 @@ export const Map: React.FC<Types> = ({
   return (
     <>
       <div ref={ref} style={{ width: "100%", height: "100vh" }}>
-        {activeSection !== "section1" ? (
+        {/* {activeSection !== "section1" ? (
           <MapActionButtons darkMode={darkMode} />
-        ) : null}
+        ) : null} */}
       </div>
     </>
   );
