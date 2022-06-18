@@ -1,23 +1,11 @@
 import React from "react";
-import arrowLeft from "../assets/arrow_back_ios.svg";
 import grayCarDettail from "../assets/gray_car_detail.png";
-import cartoonIcon from "../assets/smart_toy.svg";
-import speedIcon from "../assets/speed.svg";
-import mileIcon from "../assets/battery_4_bar.svg";
-import seatIcon from "../assets/airline_seat_recline_extra.svg";
-import intrImg from "../assets/white.png";
-import Form from "react-bootstrap/Form";
 
 interface Types {
   themeMode: String;
 }
 
 export const BookingComplete: React.FC<Types> = ({ themeMode }: Types) => {
-  const mystyle = {
-    backgroundColor: themeMode === "light" ? "#F5F5F5" : "#1F1F1F",
-    borderRadius: "20px",
-  };
-
   return (
     <>
       <div

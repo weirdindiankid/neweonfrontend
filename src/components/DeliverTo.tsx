@@ -15,11 +15,6 @@ export const DeliverTo: React.FC<Types> = ({
   data,
   onChangeSection,
 }: Types) => {
-  const mystyle = {
-    backgroundColor: themeMode === "light" ? "#F5F5F5" : "#1F1F1F",
-    borderRadius: "20px",
-  };
-
   return (
     <>
       <div style={{ minWidth: "480px" }}>

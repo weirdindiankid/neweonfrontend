@@ -3,9 +3,6 @@ import LocationMainPage from "./components/LocationMainPage";
 import { ThemeProvider } from "styled-components";
 import { GlobalStyles } from "./GlobalStyles";
 import { lightTheme, darkTheme } from "./Themes";
-// import CheckoutStepOne from "./components/CheckoutStepOne";
-import CheckoutStepTwo from "./components/CheckoutStepTwo";
-import BookingComplete from "./components/BookingComplete";
 import "./App.css";
 
 function App() {
@@ -29,11 +26,6 @@ function App() {
         Switch Theme
       </button>
       <div>
-        {/* <CheckoutStepOne
-          themeMode={themeMode}
-        /> */}
-        {/* <CheckoutStepTwo themeMode={themeMode} /> */}
-        {/* <BookingComplete themeMode={themeMode} /> */}
         <LocationMainPage />
       </div>
     </ThemeProvider>

@@ -15,9 +15,6 @@ export const LeftSectionTwo: React.FC<Types> = ({
 }: Types) => {
   const [displayDeliverySection, setDisplayDeliverySection] =
     useState<Boolean>(false);
-  const mystyle = {
-    backgroundColor: themeMode === "light" ? "#F5F5F5" : "#1F1F1F",
-  };
   return (
     <>
       <div
