@@ -20,6 +20,7 @@ import DetailView from "./DetailView";
 import { CheckoutStepOne } from "./CheckoutStepOne";
 import { CheckoutStepTwo } from "./CheckoutStepTwo";
 import { BookingComplete } from "./BookingComplete";
+import { Wrapper, Status } from "@googlemaps/react-wrapper";
 
 const data1 = [{}];
 const data2 = [
@@ -194,11 +195,18 @@ const data2 = [
     ],
   },
 ];
+const render = (status: Status) => {
+  return <h1>{status}</h1>;
+};
 
 const LocationMainPage = () => {
   const [themeMode, setThemeMode] = useState<String>("");
   const [activeSection, setActiveSection] = useState<String>("section1");
-
+  const [zoom, setZoom] = React.useState(10); // initial zoom
+  const [center, setCenter] = React.useState<google.maps.LatLngLiteral>({
+    lat: 42.407211,
+    lng: -71.382439,
+  });
   useEffect(() => {
     setThemeMode(localStorage.getItem("themeMode") || "light");
   }, []);
@@ -244,7 +252,17 @@ const LocationMainPage = () => {
           <BookingComplete themeMode={themeMode} />
         )}
 
-        <Map themeMode={themeMode} activeSection={activeSection} />
+        <Wrapper
+          apiKey={"AIzaSyBou5GWyBYx-tVcP7bBUCa1loRhc6LIscE"}
+          render={render}
+        >
+          <Map
+            themeMode={themeMode}
+            activeSection={activeSection}
+            center={center}
+            zoom={zoom}
+          />
+        </Wrapper>
       </div>
     </>
   );

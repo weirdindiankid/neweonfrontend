@@ -37,7 +37,14 @@ export const CheckoutStepTwo: React.FC<Types> = ({
 
   return (
     <>
-      <div style={{ minWidth: "480px", width: "480px" }}>
+      <div
+        style={{
+          maxWidth: "480px",
+          height: "100vh",
+          overflow: "scroll",
+          overflowX: "hidden",
+        }}
+      >
         <div className="mt-5 mx-4">
           <div className="d-flex justify-content-between">
             <div className="d-flex align-items-center">
