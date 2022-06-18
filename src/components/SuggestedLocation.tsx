@@ -26,14 +26,15 @@ export const SuggestedLocation: React.FC<Types> = ({
         <div className="mt-4">
           <span className="fs-6 fw-bold">Suggested</span>
           <div
-            className="py-2 px-3 mt-2 rounded d-flex justify-content-between"
+            onClick={() => onChangeSection()}
+            className="py-2 px-3 mt-2 rounded cursor d-flex justify-content-between"
             style={mystyle}
           >
             <div className="d-flex flex-column">
               <span style={{ fontSize: "13px" }}>Boston</span>
               <span style={{ fontSize: "10px" }}>Massachusetts</span>
             </div>
-            <div onClick={() => onChangeSection()}>
+            <div>
               {themeMode === "light" ? (
                 <img src={arrowRightLight} alt="" />
               ) : (
@@ -46,14 +47,15 @@ export const SuggestedLocation: React.FC<Types> = ({
         <div className="mt-4">
           <span className="fs-6 fw-bold">Other</span>
           <div
-            className="py-2 px-3 mt-2 rounded d-flex justify-content-between"
+            onClick={() => onChangeSection()}
+            className="py-2 px-3 mt-2 rounded cursor d-flex justify-content-between"
             style={mystyle}
           >
             <div className="d-flex flex-column">
               <span style={{ fontSize: "13px" }}>Chicago</span>
               <span style={{ fontSize: "10px" }}>Illinois</span>
             </div>
-            <div onClick={() => onChangeSection()}>
+            <div>
               {themeMode === "light" ? (
                 <img src={arrowRightLight} alt="" />
               ) : (
@@ -63,14 +65,15 @@ export const SuggestedLocation: React.FC<Types> = ({
           </div>
 
           <div
-            className="py-2 px-3 mt-2 rounded d-flex justify-content-between"
+            onClick={() => onChangeSection()}
+            className="py-2 px-3 mt-2 rounded cursor d-flex justify-content-between"
             style={mystyle}
           >
             <div className="d-flex flex-column">
               <span style={{ fontSize: "13px" }}>Denver / Boulder</span>
               <span style={{ fontSize: "10px" }}>Colorado</span>
             </div>
-            <div onClick={() => onChangeSection()}>
+            <div>
               {themeMode === "light" ? (
                 <img src={arrowRightLight} alt="" />
               ) : (
@@ -80,14 +83,15 @@ export const SuggestedLocation: React.FC<Types> = ({
           </div>
 
           <div
-            className="py-2 px-3 mt-2 rounded d-flex justify-content-between"
+            onClick={() => onChangeSection()}
+            className="py-2 px-3 mt-2 rounded cursor d-flex justify-content-between"
             style={mystyle}
           >
             <div className="d-flex flex-column">
               <span style={{ fontSize: "13px" }}>Las Vegas</span>
               <span style={{ fontSize: "10px" }}>Nevada</span>
             </div>
-            <div onClick={() => onChangeSection()}>
+            <div>
               {themeMode === "light" ? (
                 <img src={arrowRightLight} alt="" />
               ) : (
@@ -97,14 +101,15 @@ export const SuggestedLocation: React.FC<Types> = ({
           </div>
 
           <div
-            className="py-2 px-3 mt-2 rounded d-flex justify-content-between"
+            onClick={() => onChangeSection()}
+            className="py-2 px-3 mt-2 rounded cursor d-flex justify-content-between"
             style={mystyle}
           >
             <div className="d-flex flex-column">
               <span style={{ fontSize: "13px" }}>Los Angeles</span>
               <span style={{ fontSize: "10px" }}>California</span>
             </div>
-            <div onClick={() => onChangeSection()}>
+            <div>
               {themeMode === "light" ? (
                 <img src={arrowRightLight} alt="" />
               ) : (
@@ -114,14 +119,15 @@ export const SuggestedLocation: React.FC<Types> = ({
           </div>
 
           <div
-            className="py-2 px-3 mt-2 rounded d-flex justify-content-between"
+            onClick={() => onChangeSection()}
+            className="py-2 px-3 mt-2 rounded cursor d-flex justify-content-between"
             style={mystyle}
           >
             <div className="d-flex flex-column">
               <span style={{ fontSize: "13px" }}>Miami</span>
               <span style={{ fontSize: "10px" }}>Florida</span>
             </div>
-            <div onClick={() => onChangeSection()}>
+            <div>
               {themeMode === "light" ? (
                 <img src={arrowRightLight} alt="" />
               ) : (
@@ -131,7 +137,8 @@ export const SuggestedLocation: React.FC<Types> = ({
           </div>
 
           <div
-            className="py-2 px-3 mt-2 rounded d-flex justify-content-between"
+            onClick={() => onChangeSection()}
+            className="py-2 px-3 mt-2 rounded cursor d-flex justify-content-between"
             style={mystyle}
           >
             <div className="d-flex flex-column">
@@ -140,7 +147,7 @@ export const SuggestedLocation: React.FC<Types> = ({
               </span>
               <span style={{ fontSize: "10px" }}>New York</span>
             </div>
-            <div onClick={() => onChangeSection()}>
+            <div>
               {themeMode === "light" ? (
                 <img src={arrowRightLight} alt="" />
               ) : (
@@ -150,14 +157,15 @@ export const SuggestedLocation: React.FC<Types> = ({
           </div>
 
           <div
-            className="py-2 px-3 mt-2 rounded d-flex justify-content-between"
+            onClick={() => onChangeSection()}
+            className="py-2 px-3 mt-2 rounded cursor d-flex justify-content-between"
             style={mystyle}
           >
             <div className="d-flex flex-column">
               <span style={{ fontSize: "13px" }}>Oklahoma City</span>
               <span style={{ fontSize: "10px" }}>Oklahoma</span>
             </div>
-            <div onClick={() => onChangeSection()}>
+            <div>
               {themeMode === "light" ? (
                 <img src={arrowRightLight} alt="" />
               ) : (
@@ -167,14 +175,15 @@ export const SuggestedLocation: React.FC<Types> = ({
           </div>
 
           <div
-            className="py-2 px-3 mt-2 rounded d-flex justify-content-between"
+            onClick={() => onChangeSection()}
+            className="py-2 px-3 mt-2 rounded cursor d-flex justify-content-between"
             style={mystyle}
           >
             <div className="d-flex flex-column">
               <span style={{ fontSize: "13px" }}>Portsmouth</span>
               <span style={{ fontSize: "10px" }}>New Hampshire</span>
             </div>
-            <div onClick={() => onChangeSection()}>
+            <div>
               {themeMode === "light" ? (
                 <img src={arrowRightLight} alt="" />
               ) : (

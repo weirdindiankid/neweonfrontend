@@ -49,7 +49,7 @@ export const CarList: React.FC<Types> = ({
           </div>
           {data.map((item: any) => {
             return (
-              <div className="m-4" onClick={() => onChangeSection("section3")}>
+              <div className="m-4 cursor" onClick={() => onChangeSection("section3")}>
                 <div
                   className="card border-0 p-2 position-relative"
                   style={mystyle}
