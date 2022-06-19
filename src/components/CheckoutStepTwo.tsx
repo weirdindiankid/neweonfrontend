@@ -3,7 +3,8 @@ import arrowLeftLight from "../assets/arrow_back_light.svg";
 import arrowLeftDark from "../assets/arrow_back_dark.svg";
 import arrowRightLight from "../assets/arrow_right_light.svg";
 import arrowRightDark from "../assets/arrow_right_dark.svg";
-import lockIcon from "../assets/lock.svg";
+import lockLight from "../assets/lock_light.svg";
+import lockDark from "../assets/lock_dark.svg";
 import modelLight from "../assets/directions_car_light.svg";
 import modelDark from "../assets/directions_car_dark.svg";
 import arrowDownLight from "../assets/arrow_down_light.svg";
@@ -71,8 +72,11 @@ export const CheckoutStepTwo: React.FC<Types> = ({
             </div>
             <div className="d-flex justify-content-center align-items-center">
               <small>Secure</small>
-
-              <img className="img-fluid ms-3" src={lockIcon} alt="" />
+              {!darkMode ? (
+                <img className="img-fluid ms-3" src={lockLight} alt="" />
+              ) : (
+                <img className="img-fluid ms-3" src={lockDark} alt="" />
+              )}
             </div>
           </div>
 
@@ -217,7 +221,9 @@ export const CheckoutStepTwo: React.FC<Types> = ({
                   {/* <Button variant="primary">Go somewhere</Button> */}
                 </Card.Body>
                 <Card.Footer className="d-flex">
-                  <span>Sign above to agree with the terms & conditions.</span>
+                  <p className="text-dark">
+                    Sign above to agree with the terms & conditions.
+                  </p>
                   <Button variant="link" className="text-decoration-none">
                     Clear
                   </Button>
@@ -238,7 +244,9 @@ export const CheckoutStepTwo: React.FC<Types> = ({
                     id="floatingCardNumber"
                     type="number"
                     placeholder="Card number"
-                    className="border-0"
+                    className={
+                      !darkMode ? "border-0 text-dark" : "border-0 text-white"
+                    }
                   />
                   <label htmlFor="floatingCardNumber">Card number</label>
                 </Form.Floating>
@@ -250,7 +258,9 @@ export const CheckoutStepTwo: React.FC<Types> = ({
                     id="floatingNameOnCard"
                     type="text"
                     placeholder="Name on card"
-                    className="border-0"
+                    className={
+                      !darkMode ? "border-0 text-dark" : "border-0 text-white"
+                    }
                   />
                   <label htmlFor="floatingNameOnCard">Name on card</label>
                 </Form.Floating>
@@ -263,7 +273,9 @@ export const CheckoutStepTwo: React.FC<Types> = ({
                     id="floatingExpiryDate"
                     type="date"
                     placeholder="Expiry date"
-                    className="border-0"
+                    className={
+                      !darkMode ? "border-0 text-dark" : "border-0 text-white"
+                    }
                     maxLength={7}
                   />
                   <label htmlFor="floatingExpiryDate">Expiry date</label>
@@ -276,7 +288,9 @@ export const CheckoutStepTwo: React.FC<Types> = ({
                     id="floatingCVV"
                     type="password"
                     placeholder="CVV"
-                    className="border-0"
+                    className={
+                      !darkMode ? "border-0 text-dark" : "border-0 text-white"
+                    }
                     maxLength={7}
                   />
                   <label htmlFor="floatingCVV">CVV</label>

@@ -1,7 +1,8 @@
 import React from "react";
 import arrowLeftLight from "../assets/arrow_back_light.svg";
 import arrowLeftDark from "../assets/arrow_back_dark.svg";
-import lockIcon from "../assets/lock.svg";
+import lockLight from "../assets/lock_light.svg";
+import lockDark from "../assets/lock_dark.svg";
 import modelLight from "../assets/directions_car_light.svg";
 import modelDark from "../assets/directions_car_dark.svg";
 import arrowDownLight from "../assets/arrow_down_light.svg";
@@ -52,8 +53,11 @@ export const CheckoutStepOne: React.FC<Types> = ({
             </div>
             <div className="d-flex justify-content-center align-items-center">
               <small>Secure</small>
-
-              <img className="img-fluid ms-3" src={lockIcon} alt="" />
+              {!darkMode ? (
+                <img className="img-fluid ms-3" src={lockLight} alt="" />
+              ) : (
+                <img className="img-fluid ms-3" src={lockDark} alt="" />
+              )}
             </div>
           </div>
 
@@ -87,7 +91,14 @@ export const CheckoutStepOne: React.FC<Types> = ({
               <p>Your phone will function as your car keys.</p>
             </div>
             <FloatingLabel controlId="floatingInputGrid" label="Phone number">
-              <Form.Control type="tel" placeholder="+1 (805) 34" />
+              <Form.Control
+                type="tel"
+                style={mystyle}
+                className={
+                  !darkMode ? "border-0 text-dark" : "border-0 text-white"
+                }
+                placeholder="+1 (805) 34"
+              />
             </FloatingLabel>
             <div className="my-3">
               <button
