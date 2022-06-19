@@ -252,7 +252,7 @@ const LocationMainPage = () => {
         )}
 
         <Wrapper
-          apiKey={"AIzaSyBou5GWyBYx-tVcP7bBUCa1loRhc6LIscE"}
+          apiKey={process.env.REACT_APP_GOOGLE_API_KEY || ''}
           render={render}
         >
           <Map
