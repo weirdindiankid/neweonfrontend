@@ -212,56 +212,59 @@ const LocationMainPage = () => {
 
   return (
     <>
-      <div className="d-flex justify-content-between">
-        {activeSection === "section1" ? (
-          <SuggestedLocation
-            darkMode={darkMode}
-            data={data1}
-            onChangeSection={() => setActiveSection("section2")}
-          />
-        ) : activeSection === "section2" ? (
-          <LeftSectionTwo
-            darkMode={darkMode}
-            data={data2}
-            onChangeSection={(e: String) => setActiveSection(e)}
-          />
-        ) : activeSection === "section3" ? (
-          <>
+      <div className="row flex-column-reverse flex-sm-row">
+        <div className="col-12 col-sm-4 col-md-6 col-lg-4">
+          {activeSection === "section1" ? (
+            <SuggestedLocation
+              darkMode={darkMode}
+              data={data1}
+              onChangeSection={() => setActiveSection("section2")}
+            />
+          ) : activeSection === "section2" ? (
             <LeftSectionTwo
               darkMode={darkMode}
               data={data2}
               onChangeSection={(e: String) => setActiveSection(e)}
             />
-            <DetailView
+          ) : activeSection === "section3" ? (
+            <>
+              <LeftSectionTwo
+                darkMode={darkMode}
+                data={data2}
+                onChangeSection={(e: String) => setActiveSection(e)}
+              />
+              <DetailView
+                darkMode={darkMode}
+                onChangeSection={(e: String) => setActiveSection(e)}
+              />
+            </>
+          ) : activeSection === "section4" ? (
+            <CheckoutStepOne
               darkMode={darkMode}
               onChangeSection={(e: String) => setActiveSection(e)}
             />
-          </>
-        ) : activeSection === "section4" ? (
-          <CheckoutStepOne
-            darkMode={darkMode}
-            onChangeSection={(e: String) => setActiveSection(e)}
-          />
-        ) : activeSection === "section5" ? (
-          <CheckoutStepTwo
-            darkMode={darkMode}
-            onChangeSection={(e: String) => setActiveSection(e)}
-          />
-        ) : (
-          <BookingComplete darkMode={darkMode} />
-        )}
-
-        <Wrapper
-          apiKey={process.env.REACT_APP_GOOGLE_API_KEY || ''}
-          render={render}
-        >
-          <Map
-            darkMode={darkMode}
-            activeSection={activeSection}
-            center={center}
-            zoom={zoom}
-          />
-        </Wrapper>
+          ) : activeSection === "section5" ? (
+            <CheckoutStepTwo
+              darkMode={darkMode}
+              onChangeSection={(e: String) => setActiveSection(e)}
+            />
+          ) : (
+            <BookingComplete darkMode={darkMode} />
+          )}
+        </div>
+        <div className="col-12 col-sm-8 col-md-6 col-lg-8">
+          <Wrapper
+            apiKey={process.env.REACT_APP_GOOGLE_API_KEY || ""}
+            render={render}
+          >
+            <Map
+              darkMode={darkMode}
+              activeSection={activeSection}
+              center={center}
+              zoom={zoom}
+            />
+          </Wrapper>
+        </div>
       </div>
     </>
   );

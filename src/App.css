@@ -29,3 +29,8 @@
 .in-active {
   opacity: 0.5;
 }
+
+.row {
+  --bs-gutter-x: 0;
+  --bs-gutter-y: 0;
+}
