@@ -1,6 +1,7 @@
 import React from "react";
 import arrowLeftLight from "../assets/arrow_back_light.svg";
 import arrowLeftDark from "../assets/arrow_back_dark.svg";
+import { MobileFilters } from "./filters/MobileFilters";
 
 interface Types {
   darkMode: boolean;
@@ -45,6 +46,7 @@ export const CarList: React.FC<Types> = ({
           <span className="fs-2 fw-bold">Choose a car</span>
         </div>
       </div>
+      <MobileFilters darkMode={darkMode} />
       <div className="in-active">
         {data.map((item: any) => {
           return (
