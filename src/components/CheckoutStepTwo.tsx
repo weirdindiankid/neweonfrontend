@@ -37,278 +37,264 @@ export const CheckoutStepTwo: React.FC<Types> = ({
   };
 
   return (
-    <>
-      <div
-        style={{
-          maxWidth: "480px",
-          height: "100vh",
-          overflow: "scroll",
-          overflowX: "hidden",
-        }}
-      >
-        <div className="mt-5 mx-4">
-          <div className="d-flex justify-content-between">
-            <div className="d-flex align-items-center">
-              <div className="me-3">
-                <button
-                  type="button"
-                  onClick={() => onChangeSection("section4")}
-                  className={
-                    !darkMode
-                      ? "btn btn-light rounded-circle"
-                      : "btn btn-dark rounded-circle"
-                  }
-                >
-                  {!darkMode ? (
-                    <img className="img-fluid" src={arrowLeftLight} alt="" />
-                  ) : (
-                    <img className="img-fluid" src={arrowLeftDark} alt="" />
-                  )}
-                </button>
-              </div>
-              <div>
-                <span className="fs-2 fw-bold">Checkout</span>
-              </div>
-            </div>
-            <div className="d-flex justify-content-center align-items-center">
-              <small>Secure</small>
+    <div className="mt-5 mx-4">
+      <div className="d-flex justify-content-between">
+        <div className="d-flex align-items-center">
+          <div className="me-3">
+            <button
+              type="button"
+              onClick={() => onChangeSection("section4")}
+              className={
+                !darkMode
+                  ? "btn btn-light rounded-circle"
+                  : "btn btn-dark rounded-circle"
+              }
+            >
               {!darkMode ? (
-                <img className="img-fluid ms-3" src={lockLight} alt="" />
+                <img className="img-fluid" src={arrowLeftLight} alt="" />
               ) : (
-                <img className="img-fluid ms-3" src={lockDark} alt="" />
+                <img className="img-fluid" src={arrowLeftDark} alt="" />
               )}
-            </div>
+            </button>
           </div>
-
           <div>
-            <div
-              className="py-2 px-3 my-3 shadow-sm rounded d-flex justify-content-between"
-              style={mystyle}
-            >
-              <div className="me-2 d-flex align-items-center">
-                {!darkMode ? (
-                  <img className="img-fluid" src={modelLight} alt="" />
-                ) : (
-                  <img className="img-fluid" src={modelDark} alt="" />
-                )}
-                <span className="ms-3">Model X</span>
-              </div>
-              <div>
-                <span className="fs-6 fw-bold me-3">430 -</span>
-                {!darkMode ? (
-                  <img className="img-fluid" src={arrowDownLight} alt="" />
-                ) : (
-                  <img className="img-fluid" src={arrowDownDark} alt="" />
-                )}
-              </div>
-            </div>
+            <span className="fs-2 fw-bold">Checkout</span>
           </div>
+        </div>
+        <div className="d-flex justify-content-center align-items-center">
+          <small>Secure</small>
+          {!darkMode ? (
+            <img className="img-fluid ms-3" src={lockLight} alt="" />
+          ) : (
+            <img className="img-fluid ms-3" src={lockDark} alt="" />
+          )}
+        </div>
+      </div>
 
+      <div>
+        <div
+          className="py-2 px-3 my-3 shadow-sm rounded d-flex justify-content-between"
+          style={mystyle}
+        >
+          <div className="me-2 d-flex align-items-center">
+            {!darkMode ? (
+              <img className="img-fluid" src={modelLight} alt="" />
+            ) : (
+              <img className="img-fluid" src={modelDark} alt="" />
+            )}
+            <span className="ms-3">Model X</span>
+          </div>
           <div>
-            <div
-              className="py-2 px-3 my-3 shadow-sm rounded d-flex justify-content-between"
-              style={mystyle}
-            >
-              <div className="me-2 d-flex align-items-center">
-                {!darkMode ? (
-                  <img className="img-fluid" src={personLight} alt="" />
-                ) : (
-                  <img className="img-fluid" src={personDark} alt="" />
-                )}
-                <span className="ms-3">Jhon Doe</span>
-              </div>
-              <div>
-                {!darkMode ? (
-                  <img className="img-fluid" src={arrowDownLight} alt="" />
-                ) : (
-                  <img className="img-fluid" src={arrowDownDark} alt="" />
-                )}
-              </div>
-            </div>
-          </div>
-
-          <div className="mt-5">
-            <div>
-              <span className="fs-4 fw-bold">Important information</span>
-            </div>
-            <div className="mt-3 d-flex">
-              <div className="me-4">
-                {!darkMode ? (
-                  <img src={savingLight} alt="" />
-                ) : (
-                  <img src={savingDark} alt="" />
-                )}
-              </div>
-              <div>
-                <span className="fs-6 fw-bold">Security desposit</span>
-                <p>
-                  An authorization of $500 will be placed 24 hours before pickup
-                  and released upon safe return of the vehicle.
-                </p>
-              </div>
-            </div>
-
-            <div className="mt-3 d-flex">
-              <div className="me-4">
-                {!darkMode ? (
-                  <img src={milePinLight} alt="" />
-                ) : (
-                  <img src={milePinDark} alt="" />
-                )}
-              </div>
-              <div>
-                <span className="fs-6 fw-bold">Mileage</span>
-                <p>
-                  Free 300 miles per day. Excess miles will be charged at a rate
-                  of $0.85 per additional mile.
-                </p>
-              </div>
-            </div>
-
-            <div className="mt-3 d-flex">
-              <div className="me-4">
-                {!darkMode ? (
-                  <img src={calanderLight} alt="" />
-                ) : (
-                  <img src={calanderDark} alt="" />
-                )}
-              </div>
-              <div>
-                <span className="fs-6 fw-bold">Cancelation</span>
-                <p>
-                  You may cancel the reservation for a full refund up to 48
-                  hours before the start of the trip. Within 48 hours of the
-                  trip will incur a 50% cancellation fee.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div>
-            <div
-              className="py-2 px-3 my-3 shadow-sm rounded d-flex justify-content-between"
-              style={mystyle}
-            >
-              <div className="me-2 d-flex align-items-center">
-                {!darkMode ? (
-                  <img src={assingLight} alt="" />
-                ) : (
-                  <img src={assingDark} alt="" />
-                )}
-                <span className="ms-3">All terms & conditions</span>
-              </div>
-              <div>
-                {!darkMode ? (
-                  <img src={arrowRightLight} alt="" />
-                ) : (
-                  <img src={arrowRightDark} alt="" />
-                )}
-              </div>
-            </div>
-          </div>
-
-          <div className="mt-5 mb-3">
-            <div>
-              <span className="fs-4 fw-bold">Sign to agree</span>
-            </div>
-            <div className="mt-3 d-flex">
-              <Card className="w-100">
-                <Card.Body
-                  className="py-5"
-                  style={{ backgroundColor: "#E8F0F9" }}
-                >
-                  <Card.Text className="my-5 py-3"></Card.Text>
-                  {/* <Button variant="primary">Go somewhere</Button> */}
-                </Card.Body>
-                <Card.Footer className="d-flex">
-                  <p className="text-dark">
-                    Sign above to agree with the terms & conditions.
-                  </p>
-                  <Button variant="link" className="text-decoration-none">
-                    Clear
-                  </Button>
-                </Card.Footer>
-              </Card>
-            </div>
-          </div>
-
-          <div className="mt-5 mb-3">
-            <div>
-              <span className="fs-4 fw-bold">Payment</span>
-            </div>
-            <div className="mt-3 mb-3 d-flex flex-wrap">
-              <div className="w-100">
-                <Form.Floating className="m-2">
-                  <Form.Control
-                    style={mystyle}
-                    id="floatingCardNumber"
-                    type="number"
-                    placeholder="Card number"
-                    className={
-                      !darkMode ? "border-0 text-dark" : "border-0 text-white"
-                    }
-                  />
-                  <label htmlFor="floatingCardNumber">Card number</label>
-                </Form.Floating>
-              </div>
-              <div className="w-100">
-                <Form.Floating className="m-2">
-                  <Form.Control
-                    style={mystyle}
-                    id="floatingNameOnCard"
-                    type="text"
-                    placeholder="Name on card"
-                    className={
-                      !darkMode ? "border-0 text-dark" : "border-0 text-white"
-                    }
-                  />
-                  <label htmlFor="floatingNameOnCard">Name on card</label>
-                </Form.Floating>
-              </div>
-
-              <div className="w-50">
-                <Form.Floating className="m-2">
-                  <Form.Control
-                    style={mystyle}
-                    id="floatingExpiryDate"
-                    type="date"
-                    placeholder="Expiry date"
-                    className={
-                      !darkMode ? "border-0 text-dark" : "border-0 text-white"
-                    }
-                    maxLength={7}
-                  />
-                  <label htmlFor="floatingExpiryDate">Expiry date</label>
-                </Form.Floating>
-              </div>
-              <div className="w-50">
-                <Form.Floating className="m-2">
-                  <Form.Control
-                    style={mystyle}
-                    id="floatingCVV"
-                    type="password"
-                    placeholder="CVV"
-                    className={
-                      !darkMode ? "border-0 text-dark" : "border-0 text-white"
-                    }
-                    maxLength={7}
-                  />
-                  <label htmlFor="floatingCVV">CVV</label>
-                </Form.Floating>
-              </div>
-            </div>
-            <div>
-              <button
-                className="btn btn-primary ms-2"
-                onClick={() => onChangeSection("section6")}
-              >
-                Pay and book
-              </button>
-            </div>
+            <span className="fs-6 fw-bold me-3">430 -</span>
+            {!darkMode ? (
+              <img className="img-fluid" src={arrowDownLight} alt="" />
+            ) : (
+              <img className="img-fluid" src={arrowDownDark} alt="" />
+            )}
           </div>
         </div>
       </div>
-    </>
+
+      <div>
+        <div
+          className="py-2 px-3 my-3 shadow-sm rounded d-flex justify-content-between"
+          style={mystyle}
+        >
+          <div className="me-2 d-flex align-items-center">
+            {!darkMode ? (
+              <img className="img-fluid" src={personLight} alt="" />
+            ) : (
+              <img className="img-fluid" src={personDark} alt="" />
+            )}
+            <span className="ms-3">Jhon Doe</span>
+          </div>
+          <div>
+            {!darkMode ? (
+              <img className="img-fluid" src={arrowDownLight} alt="" />
+            ) : (
+              <img className="img-fluid" src={arrowDownDark} alt="" />
+            )}
+          </div>
+        </div>
+      </div>
+
+      <div className="mt-5">
+        <div>
+          <span className="fs-4 fw-bold">Important information</span>
+        </div>
+        <div className="mt-3 d-flex">
+          <div className="me-4">
+            {!darkMode ? (
+              <img src={savingLight} alt="" />
+            ) : (
+              <img src={savingDark} alt="" />
+            )}
+          </div>
+          <div>
+            <span className="fs-6 fw-bold">Security desposit</span>
+            <p>
+              An authorization of $500 will be placed 24 hours before pickup and
+              released upon safe return of the vehicle.
+            </p>
+          </div>
+        </div>
+
+        <div className="mt-3 d-flex">
+          <div className="me-4">
+            {!darkMode ? (
+              <img src={milePinLight} alt="" />
+            ) : (
+              <img src={milePinDark} alt="" />
+            )}
+          </div>
+          <div>
+            <span className="fs-6 fw-bold">Mileage</span>
+            <p>
+              Free 300 miles per day. Excess miles will be charged at a rate of
+              $0.85 per additional mile.
+            </p>
+          </div>
+        </div>
+
+        <div className="mt-3 d-flex">
+          <div className="me-4">
+            {!darkMode ? (
+              <img src={calanderLight} alt="" />
+            ) : (
+              <img src={calanderDark} alt="" />
+            )}
+          </div>
+          <div>
+            <span className="fs-6 fw-bold">Cancelation</span>
+            <p>
+              You may cancel the reservation for a full refund up to 48 hours
+              before the start of the trip. Within 48 hours of the trip will
+              incur a 50% cancellation fee.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div
+          className="py-2 px-3 my-3 shadow-sm rounded d-flex justify-content-between"
+          style={mystyle}
+        >
+          <div className="me-2 d-flex align-items-center">
+            {!darkMode ? (
+              <img src={assingLight} alt="" />
+            ) : (
+              <img src={assingDark} alt="" />
+            )}
+            <span className="ms-3">All terms & conditions</span>
+          </div>
+          <div>
+            {!darkMode ? (
+              <img src={arrowRightLight} alt="" />
+            ) : (
+              <img src={arrowRightDark} alt="" />
+            )}
+          </div>
+        </div>
+      </div>
+
+      <div className="mt-5 mb-3">
+        <div>
+          <span className="fs-4 fw-bold">Sign to agree</span>
+        </div>
+        <div className="mt-3 d-flex">
+          <Card className="w-100">
+            <Card.Body className="py-5" style={{ backgroundColor: "#E8F0F9" }}>
+              <Card.Text className="my-5 py-3"></Card.Text>
+              {/* <Button variant="primary">Go somewhere</Button> */}
+            </Card.Body>
+            <Card.Footer className="d-flex">
+              <p className="text-dark">
+                Sign above to agree with the terms & conditions.
+              </p>
+              <Button variant="link" className="text-decoration-none">
+                Clear
+              </Button>
+            </Card.Footer>
+          </Card>
+        </div>
+      </div>
+
+      <div className="mt-5 mb-3">
+        <div>
+          <span className="fs-4 fw-bold">Payment</span>
+        </div>
+        <div className="mt-3 mb-3 d-flex flex-wrap">
+          <div className="w-100">
+            <Form.Floating className="m-2">
+              <Form.Control
+                style={mystyle}
+                id="floatingCardNumber"
+                type="number"
+                placeholder="Card number"
+                className={
+                  !darkMode ? "border-0 text-dark" : "border-0 text-white"
+                }
+              />
+              <label htmlFor="floatingCardNumber">Card number</label>
+            </Form.Floating>
+          </div>
+          <div className="w-100">
+            <Form.Floating className="m-2">
+              <Form.Control
+                style={mystyle}
+                id="floatingNameOnCard"
+                type="text"
+                placeholder="Name on card"
+                className={
+                  !darkMode ? "border-0 text-dark" : "border-0 text-white"
+                }
+              />
+              <label htmlFor="floatingNameOnCard">Name on card</label>
+            </Form.Floating>
+          </div>
+
+          <div className="w-50">
+            <Form.Floating className="m-2">
+              <Form.Control
+                style={mystyle}
+                id="floatingExpiryDate"
+                type="date"
+                placeholder="Expiry date"
+                className={
+                  !darkMode ? "border-0 text-dark" : "border-0 text-white"
+                }
+                maxLength={7}
+              />
+              <label htmlFor="floatingExpiryDate">Expiry date</label>
+            </Form.Floating>
+          </div>
+          <div className="w-50">
+            <Form.Floating className="m-2">
+              <Form.Control
+                style={mystyle}
+                id="floatingCVV"
+                type="password"
+                placeholder="CVV"
+                className={
+                  !darkMode ? "border-0 text-dark" : "border-0 text-white"
+                }
+                maxLength={7}
+              />
+              <label htmlFor="floatingCVV">CVV</label>
+            </Form.Floating>
+          </div>
+        </div>
+        <div>
+          <button
+            className="btn btn-primary ms-2"
+            onClick={() => onChangeSection("section6")}
+          >
+            Pay and book
+          </button>
+        </div>
+      </div>
+    </div>
   );
 };
 

@@ -213,7 +213,15 @@ const LocationMainPage = () => {
   return (
     <>
       <div className="row flex-column-reverse flex-sm-row">
-        <div className="col-12 col-sm-4 col-md-6 col-lg-4">
+        <div
+          style={{
+            maxWidth: "480px",
+            height: "100vh",
+            overflow: "scroll",
+            overflowX: "hidden",
+          }}
+          className="col-12 col-sm-4 col-md-6 col-lg-4"
+        >
           {activeSection === "section1" ? (
             <SuggestedLocation
               darkMode={darkMode}
