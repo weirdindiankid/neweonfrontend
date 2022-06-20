@@ -10,8 +10,7 @@ export const BookingComplete: React.FC<Types> = ({ darkMode }: Types) => {
     <>
       <div
         style={{
-          minWidth: "480px",
-          width: "480px",
+          maxWidth: "480px"
         }}
       >
         <div className="mx-3">

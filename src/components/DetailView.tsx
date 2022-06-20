@@ -36,7 +36,7 @@ export const DetailView: React.FC<Types> = ({
     <>
       <div
         style={{
-          minWidth: "480px",
+          maxWidth: "480px",
           height: "100vh",
           overflow: "scroll",
           overflowX: "hidden",

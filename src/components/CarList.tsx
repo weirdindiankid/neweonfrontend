@@ -23,7 +23,7 @@ export const CarList: React.FC<Types> = ({
 
   return (
     <>
-      <div style={{ minWidth: "480px" }}>
+      <div style={{ maxWidth: "480px" }}>
         <div className="mt-5">
           <div className="d-flex align-items-center">
             <div className="mx-3">

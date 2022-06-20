@@ -21,12 +21,11 @@ export const CheckoutStepOne: React.FC<Types> = ({
 }: Types) => {
   const mystyle = {
     backgroundColor: !darkMode ? "#F5F5F5" : "#1F1F1F",
-    borderRadius: "20px",
   };
 
   return (
     <>
-      <div style={{ minWidth: "480px", width: "480px" }}>
+      <div style={{ maxWidth: "480px" }}>
         <div className="mt-5">
           <div className="d-flex justify-content-between mx-4">
             <div className="d-flex align-items-center">

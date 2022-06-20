@@ -19,15 +19,15 @@ export const LeftSectionTwo: React.FC<Types> = ({
     <>
       <div
         style={{
-          minWidth: "480px",
+          maxWidth: "480px",
           height: "100vh",
           overflow: "scroll",
           overflowX: "hidden",
         }}
       >
-        <div className="p-3 d-flex justify-content-between">
+        <div className="py-3 mx-1 d-flex justify-content-between">
           <div
-            className="btn-group border border-secondary rounded-pill col-6 m-1"
+            className="btn-group border border-secondary rounded-pill w-50 m-1"
             role="group"
             aria-label="Basic radio toggle button group"
           >
@@ -71,7 +71,7 @@ export const LeftSectionTwo: React.FC<Types> = ({
             </label>
           </div>
 
-          <div className="position-relative col-6 m-1">
+          <div className="position-relative w-50 m-1">
             <label
               htmlFor="dates"
               className={
