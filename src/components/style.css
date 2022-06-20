@@ -3,8 +3,22 @@
   height: 100vh;
 }
 
+.mob-btn-group {
+  border: 1px solid gray;
+}
+
 @media (max-width: 575px) {
   .map-responsive {
     height: 350px;
+  }
+
+  .mobile-view {
+    position: absolute;
+    top: 0;
+    z-index: 9999;
+  }
+
+  .mob-btn-group {
+    border: none;
   }
 }

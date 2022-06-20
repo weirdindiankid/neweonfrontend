@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { CarList } from "./CarList";
 import { DeliverTo } from "./DeliverTo";
+import "./style.css";
 
 interface Types {
   darkMode: boolean;
@@ -17,9 +18,13 @@ export const LeftSectionTwo: React.FC<Types> = ({
     useState<Boolean>(false);
   return (
     <div>
-      <div className="py-3 mx-1 d-flex justify-content-between">
+      <div className="py-3 mx-1 d-flex justify-content-between mobile-view">
         <div
-          className="btn-group border border-secondary rounded-pill w-50 m-1"
+          className={
+            !darkMode
+              ? "btn-group mob-btn-group shadow rounded-pill bg-light w-50 m-1"
+              : "btn-group mob-btn-group shadow rounded-pill bg-dark w-50 m-1"
+          }
           role="group"
           aria-label="Basic radio toggle button group"
         >
@@ -83,8 +88,8 @@ export const LeftSectionTwo: React.FC<Types> = ({
             placeholder="May 23 - May 25"
             className={
               !darkMode
-                ? "pt-4 ps-4 border-secondary rounded-pill form-control bg-light"
-                : "pt-4 ps-4 border-secondary rounded-pill form-control bg-dark"
+                ? "pt-4 ps-4 mob-btn-group shadow rounded-pill form-control bg-light"
+                : "pt-4 ps-4 mob-btn-group shadow rounded-pill form-control bg-dark"
             }
             id="dates"
           />
