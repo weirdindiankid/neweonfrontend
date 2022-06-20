@@ -46,7 +46,9 @@ export const CarList: React.FC<Types> = ({
           <span className="fs-2 fw-bold">Choose a car</span>
         </div>
       </div>
-      <MobileFilters darkMode={darkMode} />
+      <div>
+        <MobileFilters darkMode={darkMode} />
+      </div>
       <div className="in-active">
         {data.map((item: any) => {
           return (

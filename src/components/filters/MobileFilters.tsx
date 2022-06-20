@@ -1,16 +1,17 @@
 import React from "react";
-import attachMoneyLight from "../assets/attach_money_light.svg";
-import attachMoneyDark from "../assets/attach_money_dark.svg";
-import smartTotLight from "../assets/smart_toy_light.svg";
-import smartTotDark from "../assets/smart_toy_dark.svg";
-import speedLight from "../assets/speed_light.svg";
-import speedDark from "../assets/speed_dark.svg";
-import mileLight from "../assets/battery_4_bar_light.svg";
-import mileDark from "../assets/battery_4_bar_dark.svg";
-import modelLight from "../assets/directions_car_light.svg";
-import modelDark from "../assets/directions_car_dark.svg";
-import Dropdown from "react-bootstrap/Dropdown";
-import Sheet, { SheetRef } from "react-modal-sheet";
+import attachMoneyLight from "../../assets/attach_money_light.svg";
+import attachMoneyDark from "../../assets/attach_money_dark.svg";
+import smartTotLight from "../../assets/smart_toy_light.svg";
+import smartTotDark from "../../assets/smart_toy_dark.svg";
+import speedLight from "../../assets/speed_light.svg";
+import speedDark from "../../assets/speed_dark.svg";
+import mileLight from "../../assets/battery_4_bar_light.svg";
+import mileDark from "../../assets/battery_4_bar_dark.svg";
+import modelLight from "../../assets/directions_car_light.svg";
+import modelDark from "../../assets/directions_car_dark.svg";
+import arrowDownLight from "../../assets/arrow_down_light.svg";
+import arrowDownDark from "../../assets/arrow_down_dark.svg";
+import Sheet from "react-modal-sheet";
 import "./style.css";
 
 interface Types {
@@ -21,8 +22,98 @@ export const MobileFilters: React.FC<Types> = ({ darkMode }: Types) => {
   const [isOpen, setOpen] = React.useState(false);
 
   return (
-    <div className="d-flex flex-wrap justify-content-center">
-      <button onClick={() => setOpen(true)}>Open sheet 1</button>
+    <div>
+      <div className="d-flex scroll-inner" style={{ overflowX: "auto" }}>
+        <button
+          type="button"
+          className="btn btn-light border rounded-pill shadow d-flex align-items-center m-2"
+          onClick={() => setOpen(true)}
+        >
+          {!darkMode ? (
+            <img src={attachMoneyLight} alt="" />
+          ) : (
+            <img src={attachMoneyDark} alt="" />
+          )}
+          <span className="px-3">Price</span>
+          {!darkMode ? (
+            <img src={arrowDownLight} alt="" />
+          ) : (
+            <img src={arrowDownDark} alt="" />
+          )}
+        </button>
+
+        <button
+          type="button"
+          className="btn btn-light border rounded-pill shadow d-flex align-items-center m-2"
+          onClick={() => setOpen(true)}
+        >
+          {!darkMode ? (
+            <img src={smartTotLight} alt="" />
+          ) : (
+            <img src={smartTotDark} alt="" />
+          )}
+          <span className="mx-3">Autopilot</span>
+          {!darkMode ? (
+            <img src={arrowDownLight} alt="" />
+          ) : (
+            <img src={arrowDownDark} alt="" />
+          )}
+        </button>
+
+        <button
+          type="button"
+          className="btn btn-light border rounded-pill shadow d-flex align-items-center m-2"
+          onClick={() => setOpen(true)}
+        >
+          {!darkMode ? (
+            <img src={speedLight} alt="" />
+          ) : (
+            <img src={speedDark} alt="" />
+          )}
+          <span className="mx-3">Speed</span>
+          {!darkMode ? (
+            <img src={arrowDownLight} alt="" />
+          ) : (
+            <img src={arrowDownDark} alt="" />
+          )}
+        </button>
+
+        <button
+          type="button"
+          className="btn btn-light border rounded-pill shadow d-flex align-items-center m-2"
+          onClick={() => setOpen(true)}
+        >
+          {!darkMode ? (
+            <img src={modelLight} alt="" />
+          ) : (
+            <img src={modelDark} alt="" />
+          )}
+          <span className="mx-3">Model</span>
+          {!darkMode ? (
+            <img src={arrowDownLight} alt="" />
+          ) : (
+            <img src={arrowDownDark} alt="" />
+          )}
+        </button>
+
+        <button
+          type="button"
+          className="btn btn-light border rounded-pill shadow d-flex align-items-center m-2"
+          onClick={() => setOpen(true)}
+        >
+          {!darkMode ? (
+            <img src={mileLight} alt="" />
+          ) : (
+            <img src={mileDark} alt="" />
+          )}
+          <span className="mx-3">Range</span>
+          {!darkMode ? (
+            <img src={arrowDownLight} alt="" />
+          ) : (
+            <img src={arrowDownDark} alt="" />
+          )}
+        </button>
+      </div>
 
       <Sheet isOpen={isOpen} onClose={() => setOpen(false)}>
         <Sheet.Container>
@@ -32,111 +123,6 @@ export const MobileFilters: React.FC<Types> = ({ darkMode }: Types) => {
 
         <Sheet.Backdrop />
       </Sheet>
-
-      {/* <Dropdown className="m-1">
-        <Dropdown.Toggle
-          className="rounded-pill shadow border-0"
-          variant={!darkMode ? "basic" : "dark"}
-          id="dropdown-basic"
-        >
-          {!darkMode ? (
-            <img className="img-fluid" src={attachMoneyLight} alt="" />
-          ) : (
-            <img className="img-fluid" src={attachMoneyDark} alt="" />
-          )}
-          <span className="me-2 ms-2">Price</span>
-        </Dropdown.Toggle>
-
-        <Dropdown.Menu>
-          <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
-          <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
-          <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
-        </Dropdown.Menu>
-      </Dropdown>
-
-      <Dropdown className="m-1">
-        <Dropdown.Toggle
-          className="rounded-pill shadow border-0"
-          variant={!darkMode ? "basic" : "dark"}
-          id="dropdown-basic"
-        >
-          {!darkMode ? (
-            <img className="img-fluid" src={smartTotLight} alt="" />
-          ) : (
-            <img className="img-fluid" src={smartTotDark} alt="" />
-          )}
-          <span className="me-2 ms-2">Autopilot</span>
-        </Dropdown.Toggle>
-
-        <Dropdown.Menu>
-          <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
-          <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
-          <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
-        </Dropdown.Menu>
-      </Dropdown>
-
-      <Dropdown className="m-1">
-        <Dropdown.Toggle
-          className="rounded-pill shadow border-0"
-          variant={!darkMode ? "basic" : "dark"}
-          id="dropdown-basic"
-        >
-          {!darkMode ? (
-            <img className="img-fluid" src={speedLight} alt="" />
-          ) : (
-            <img className="img-fluid" src={speedDark} alt="" />
-          )}
-          <span className="me-2 ms-2">Speed</span>
-        </Dropdown.Toggle>
-
-        <Dropdown.Menu>
-          <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
-          <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
-          <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
-        </Dropdown.Menu>
-      </Dropdown>
-
-      <Dropdown className="m-1">
-        <Dropdown.Toggle
-          className="rounded-pill shadow border-0"
-          variant={!darkMode ? "basic" : "dark"}
-          id="dropdown-basic"
-        >
-          {!darkMode ? (
-            <img className="img-fluid" src={modelLight} alt="" />
-          ) : (
-            <img className="img-fluid" src={modelDark} alt="" />
-          )}
-          <span className="me-2 ms-2">Model</span>
-        </Dropdown.Toggle>
-
-        <Dropdown.Menu>
-          <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
-          <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
-          <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
-        </Dropdown.Menu>
-      </Dropdown>
-
-      <Dropdown className="m-1">
-        <Dropdown.Toggle
-          className="rounded-pill shadow border-0"
-          variant={!darkMode ? "basic" : "dark"}
-          id="dropdown-basic"
-        >
-          {!darkMode ? (
-            <img className="img-fluid" src={mileLight} alt="" />
-          ) : (
-            <img className="img-fluid" src={mileDark} alt="" />
-          )}
-          <span className="me-2 ms-2">Range</span>
-        </Dropdown.Toggle>
-
-        <Dropdown.Menu>
-          <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
-          <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
-          <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
-        </Dropdown.Menu>
-      </Dropdown> */}
     </div>
   );
 };
