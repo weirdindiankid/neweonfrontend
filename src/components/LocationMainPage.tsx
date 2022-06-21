@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { SuggestedLocation } from "./SuggestedLocation";
-import carImg from "../assets/car_img.png";
+import blueCar from "../assets/blue_car.png";
 import blackCar from "../assets/black-car.png";
 import grayCar from "../assets/gray_car.png";
 import whiteCar from "../assets/white_car.png";
@@ -14,9 +14,9 @@ import seatLight from "../assets/airline_seat_recline_extra_light.svg";
 import seatDark from "../assets/airline_seat_recline_extra_dark.svg";
 import interiorLight from "../assets/interior_light.svg";
 import interiorDark from "../assets/interior_dark.svg";
+import DetailView from "./DetailView";
 import { Map } from "./Map";
 import { LeftSectionTwo } from "./leftSectionTwo";
-import DetailView from "./DetailView";
 import { CheckoutStepOne } from "./CheckoutStepOne";
 import { CheckoutStepTwo } from "./CheckoutStepTwo";
 import { BookingComplete } from "./BookingComplete";
@@ -27,7 +27,7 @@ import { RootState } from "../store/reducers/rootReducer";
 const data1 = [{}];
 const data2 = [
   {
-    img: carImg,
+    img: blueCar,
     model: "Model 3",
     disc: "Performance",
     numDays: "169 / day",
@@ -163,7 +163,7 @@ const data2 = [
     ],
   },
   {
-    img: carImg,
+    img: blueCar,
     model: "Model 3",
     disc: "Performance",
     numDays: "169 / day",

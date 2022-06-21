@@ -11,7 +11,7 @@ import modelLight from "../../assets/directions_car_light.svg";
 import modelDark from "../../assets/directions_car_dark.svg";
 import arrowDownLight from "../../assets/arrow_down_light.svg";
 import arrowDownDark from "../../assets/arrow_down_dark.svg";
-import Sheet from "react-modal-sheet";
+import Sheet, { SheetRef } from "react-modal-sheet";
 import { PricingFilter } from "./PricingFilter";
 import { AutopilotFilter } from "./AutopilotFilter";
 import { SpeedFilter } from "./SpeedFilter";
@@ -25,15 +25,10 @@ interface Types {
 
 export const MobileFilters: React.FC<Types> = ({ darkMode }: Types) => {
   const [activeSection, setActiveSection] = useState<String>("section1");
-  const mystyle = {
-    backgroundColor: !darkMode ? "#F5F5F5" : "#1F1F1F",
-    borderRadius: "20px",
-  };
-  const nestedCard = {
-    backgroundColor: !darkMode ? "rgba(0, 0, 0, 0.04)" : "#2F2F2F",
-  };
 
   const [isOpen, setOpen] = React.useState(false);
+  const ref = React.useRef<SheetRef>();
+  const snapTo = (i: number) => ref.current?.snapTo(i);
 
   return (
     <div>
@@ -144,10 +139,23 @@ export const MobileFilters: React.FC<Types> = ({ darkMode }: Types) => {
         </button>
       </div>
 
-      <Sheet isOpen={isOpen} onClose={() => setOpen(false)}>
-        <Sheet.Container style={{ height: "320px" }}>
+      <Sheet
+        ref={ref}
+        isOpen={isOpen}
+        onClose={() => setOpen(false)}
+        snapPoints={[550, 550, 100, 0]}
+        initialSnap={1}
+        onSnap={(snapIndex) =>
+          console.log("> Current snap point index:", snapIndex)
+        }
+      >
+        <Sheet.Container>
           <Sheet.Header />
           <Sheet.Content>
+          {/* <button onClick={() => snapTo(0)}>Snap to index 0</button>
+            <button onClick={() => snapTo(1)}>Snap to index 1</button>
+            <button onClick={() => snapTo(2)}>Snap to index 2</button>
+            <button onClick={() => snapTo(3)}>Snap to index 3</button> */}
             {activeSection === "pricing" ? (
               <PricingFilter darkMode={false} />
             ) : activeSection === "autopilot" ? (
