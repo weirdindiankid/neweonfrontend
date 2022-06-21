@@ -7,9 +7,7 @@ interface Types {
   darkMode: boolean;
 }
 
-export const SpeedFilter: React.FC<Types> = ({
-  darkMode,
-}: Types) => {
+export const SpeedFilter: React.FC<Types> = ({ darkMode }: Types) => {
   const mystyle = {
     backgroundColor: !darkMode ? "#F5F5F5" : "#1F1F1F",
     borderRadius: "20px",
@@ -47,10 +45,13 @@ export const SpeedFilter: React.FC<Types> = ({
             </a>
           </div>
         </div>
+        <div className="ms-3 mt-3">
+          <span>From 0 to 60 miles per hour in.</span>
+        </div>
         <div className="my-3 container">
           <div className="row row-cols-2">
             <div>
-              <div className="p-3 rounded cursor m-1 col" style={mystyle}>
+              <div className="p-2 rounded cursor m-1 col" style={mystyle}>
                 <div className="form-check">
                   <input
                     className="form-check-input"
@@ -62,13 +63,13 @@ export const SpeedFilter: React.FC<Types> = ({
                     className="form-check-label"
                     htmlFor="flexCheckDefault"
                   >
-                    150 - 200
+                    1-2 s
                   </label>
                 </div>
               </div>
             </div>
             <div>
-              <div className="p-3 rounded cursor m-1 col" style={mystyle}>
+              <div className="p-2 rounded cursor m-1 col" style={mystyle}>
                 <div className="form-check">
                   <input
                     className="form-check-input"
@@ -80,13 +81,13 @@ export const SpeedFilter: React.FC<Types> = ({
                     className="form-check-label"
                     htmlFor="flexCheckDefault"
                   >
-                    200 - 250
+                    2-3 s
                   </label>
                 </div>
               </div>
             </div>
             <div>
-              <div className="p-3 rounded cursor m-1 col" style={mystyle}>
+              <div className="p-2 rounded cursor m-1 col" style={mystyle}>
                 <div className="form-check">
                   <input
                     className="form-check-input"
@@ -98,13 +99,13 @@ export const SpeedFilter: React.FC<Types> = ({
                     className="form-check-label"
                     htmlFor="flexCheckDefault"
                   >
-                    250 - 300
+                    3 -4 s
                   </label>
                 </div>
               </div>
             </div>
             <div>
-              <div className="p-3 rounded cursor m-1 col" style={mystyle}>
+              <div className="p-2 rounded cursor m-1 col" style={mystyle}>
                 <div className="form-check">
                   <input
                     className="form-check-input"
@@ -116,7 +117,7 @@ export const SpeedFilter: React.FC<Types> = ({
                     className="form-check-label"
                     htmlFor="flexCheckDefault"
                   >
-                    300 - 350
+                    4 - 5 s
                   </label>
                 </div>
               </div>
@@ -126,7 +127,7 @@ export const SpeedFilter: React.FC<Types> = ({
       </div>
       <div className="d-grid pt-2 text-center">
         <div
-          className="py-3 fs-5"
+          className="py-3 fs-5 w-100 position-absolute bottom-0"
           style={{ backgroundColor: "#0C72C0", color: "white" }}
         >
           Show 8 results
