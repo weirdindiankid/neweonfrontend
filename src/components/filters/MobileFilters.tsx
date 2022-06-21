@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import attachMoneyLight from "../../assets/attach_money_light.svg";
 import attachMoneyDark from "../../assets/attach_money_dark.svg";
 import smartTotLight from "../../assets/smart_toy_light.svg";
@@ -12,6 +12,11 @@ import modelDark from "../../assets/directions_car_dark.svg";
 import arrowDownLight from "../../assets/arrow_down_light.svg";
 import arrowDownDark from "../../assets/arrow_down_dark.svg";
 import Sheet from "react-modal-sheet";
+import { PricingFilter } from "./PricingFilter";
+import { AutopilotFilter } from "./AutopilotFilter";
+import { SpeedFilter } from "./SpeedFilter";
+import { ModelFilter } from "./ModelFilter";
+import { RangeFilter } from "./RangeFilter";
 import "./style.css";
 
 interface Types {
@@ -19,6 +24,15 @@ interface Types {
 }
 
 export const MobileFilters: React.FC<Types> = ({ darkMode }: Types) => {
+  const [activeSection, setActiveSection] = useState<String>("section1");
+  const mystyle = {
+    backgroundColor: !darkMode ? "#F5F5F5" : "#1F1F1F",
+    borderRadius: "20px",
+  };
+  const nestedCard = {
+    backgroundColor: !darkMode ? "rgba(0, 0, 0, 0.04)" : "#2F2F2F",
+  };
+
   const [isOpen, setOpen] = React.useState(false);
 
   return (
@@ -27,7 +41,10 @@ export const MobileFilters: React.FC<Types> = ({ darkMode }: Types) => {
         <button
           type="button"
           className="btn btn-light border rounded-pill shadow d-flex align-items-center m-2"
-          onClick={() => setOpen(true)}
+          onClick={() => {
+            setActiveSection("pricing");
+            setOpen(true);
+          }}
         >
           {!darkMode ? (
             <img src={attachMoneyLight} alt="" />
@@ -45,7 +62,10 @@ export const MobileFilters: React.FC<Types> = ({ darkMode }: Types) => {
         <button
           type="button"
           className="btn btn-light border rounded-pill shadow d-flex align-items-center m-2"
-          onClick={() => setOpen(true)}
+          onClick={() => {
+            setActiveSection("autopilot");
+            setOpen(true);
+          }}
         >
           {!darkMode ? (
             <img src={smartTotLight} alt="" />
@@ -63,7 +83,10 @@ export const MobileFilters: React.FC<Types> = ({ darkMode }: Types) => {
         <button
           type="button"
           className="btn btn-light border rounded-pill shadow d-flex align-items-center m-2"
-          onClick={() => setOpen(true)}
+          onClick={() => {
+            setActiveSection("speed");
+            setOpen(true);
+          }}
         >
           {!darkMode ? (
             <img src={speedLight} alt="" />
@@ -81,7 +104,10 @@ export const MobileFilters: React.FC<Types> = ({ darkMode }: Types) => {
         <button
           type="button"
           className="btn btn-light border rounded-pill shadow d-flex align-items-center m-2"
-          onClick={() => setOpen(true)}
+          onClick={() => {
+            setActiveSection("model");
+            setOpen(true);
+          }}
         >
           {!darkMode ? (
             <img src={modelLight} alt="" />
@@ -99,7 +125,10 @@ export const MobileFilters: React.FC<Types> = ({ darkMode }: Types) => {
         <button
           type="button"
           className="btn btn-light border rounded-pill shadow d-flex align-items-center m-2"
-          onClick={() => setOpen(true)}
+          onClick={() => {
+            setActiveSection("range");
+            setOpen(true);
+          }}
         >
           {!darkMode ? (
             <img src={mileLight} alt="" />
@@ -116,9 +145,21 @@ export const MobileFilters: React.FC<Types> = ({ darkMode }: Types) => {
       </div>
 
       <Sheet isOpen={isOpen} onClose={() => setOpen(false)}>
-        <Sheet.Container>
+        <Sheet.Container style={{ height: "320px" }}>
           <Sheet.Header />
-          <Sheet.Content>ABC</Sheet.Content>
+          <Sheet.Content>
+            {activeSection === "pricing" ? (
+              <PricingFilter darkMode={false} />
+            ) : activeSection === "autopilot" ? (
+              <AutopilotFilter darkMode={false} />
+            ) : activeSection === "speed" ? (
+              <SpeedFilter darkMode={false} />
+            ) : activeSection === "model" ? (
+              <ModelFilter darkMode={false} />
+            ) : activeSection === "range" ? (
+              <RangeFilter darkMode={false} />
+            ) : null}
+          </Sheet.Content>
         </Sheet.Container>
 
         <Sheet.Backdrop />
