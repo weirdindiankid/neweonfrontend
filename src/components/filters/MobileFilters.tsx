@@ -143,7 +143,7 @@ export const MobileFilters: React.FC<Types> = ({ darkMode }: Types) => {
         ref={ref}
         isOpen={isOpen}
         onClose={() => setOpen(false)}
-        snapPoints={[550, 550, 100, 0]}
+        snapPoints={[700, 550, 100, 0]}
         initialSnap={1}
         onSnap={(snapIndex) =>
           console.log("> Current snap point index:", snapIndex)
@@ -152,10 +152,12 @@ export const MobileFilters: React.FC<Types> = ({ darkMode }: Types) => {
         <Sheet.Container>
           <Sheet.Header />
           <Sheet.Content>
-          {/* <button onClick={() => snapTo(0)}>Snap to index 0</button>
+            {/* <button onClick={() => snapTo(0)}>Snap to index 0</button>
             <button onClick={() => snapTo(1)}>Snap to index 1</button>
-            <button onClick={() => snapTo(2)}>Snap to index 2</button>
-            <button onClick={() => snapTo(3)}>Snap to index 3</button> */}
+            <button onClick={() => snapTo(2)}>Snap to index 2</button> */}
+            <div className="d-flex justify-content-end me-3">
+              <button className="btn btn-dark" onClick={() => snapTo(3)}>X</button>
+            </div>
             {activeSection === "pricing" ? (
               <PricingFilter darkMode={false} />
             ) : activeSection === "autopilot" ? (
