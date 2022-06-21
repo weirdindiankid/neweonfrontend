@@ -46,76 +46,70 @@ export const AutopilotFilter: React.FC<Types> = ({ darkMode }: Types) => {
           </div>
         </div>
         <div className="my-3 container">
-          <div className="row row-cols-2">
+          <div className="row">
             <div>
               <div className="p-3 rounded cursor m-1 col" style={mystyle}>
-                <div className="form-check">
-                  <input
-                    className="form-check-input"
-                    type="checkbox"
-                    value=""
-                    id="flexCheckDefault"
-                  />
-                  <label
-                    className="form-check-label"
-                    htmlFor="flexCheckDefault"
-                  >
-                    150 - 200
-                  </label>
+                <div className="d-flex flex-column lh-sm">
+                  <div className="form-check">
+                    <input
+                      className="form-check-input"
+                      type="checkbox"
+                      value=""
+                      id="flexCheckDefault"
+                    />
+                    <label
+                      className="form-check-label fw-bold"
+                      htmlFor="flexCheckDefault"
+                    >
+                      Standard autopilot
+                    </label>
+                  </div>
+                  <span className="px-4">Automatic emergency braking.</span>
                 </div>
               </div>
             </div>
             <div>
               <div className="p-3 rounded cursor m-1 col" style={mystyle}>
-                <div className="form-check">
-                  <input
-                    className="form-check-input"
-                    type="checkbox"
-                    value=""
-                    id="flexCheckDefault"
-                  />
-                  <label
-                    className="form-check-label"
-                    htmlFor="flexCheckDefault"
-                  >
-                    200 - 250
-                  </label>
+                <div className="d-flex flex-column lh-sm">
+                  <div className="form-check">
+                    <input
+                      className="form-check-input"
+                      type="checkbox"
+                      value=""
+                      id="flexCheckDefault"
+                    />
+                    <label
+                      className="form-check-label fw-bold"
+                      htmlFor="flexCheckDefault"
+                    >
+                      Enhanced autopilot
+                    </label>
+                  </div>
+                  <span className="px-4">
+                    + Autosteer, auto lane change, traffic aware cruise control,
+                    autopark, summon.
+                  </span>
                 </div>
               </div>
             </div>
             <div>
               <div className="p-3 rounded cursor m-1 col" style={mystyle}>
-                <div className="form-check">
-                  <input
-                    className="form-check-input"
-                    type="checkbox"
-                    value=""
-                    id="flexCheckDefault"
-                  />
-                  <label
-                    className="form-check-label"
-                    htmlFor="flexCheckDefault"
-                  >
-                    250 - 300
-                  </label>
-                </div>
-              </div>
-            </div>
-            <div>
-              <div className="p-3 rounded cursor m-1 col" style={mystyle}>
-                <div className="form-check">
-                  <input
-                    className="form-check-input"
-                    type="checkbox"
-                    value=""
-                    id="flexCheckDefault"
-                  />
-                  <label
-                    className="form-check-label"
-                    htmlFor="flexCheckDefault"
-                  >
-                    300 - 350
-                  </label>
+                <div className="d-flex flex-column lh-sm">
+                  <div className="form-check">
+                    <input
+                      className="form-check-input"
+                      type="checkbox"
+                      value=""
+                      id="flexCheckDefault"
+                    />
+                    <label
+                      className="form-check-label fw-bold"
+                      htmlFor="flexCheckDefault"
+                    >
+                      Full self driving autopilot
+                    </label>
+                  </div>
+                  <span className="px-4">+ Navigate on autopilot.</span>
                 </div>
               </div>
             </div>
@@ -124,7 +118,7 @@ export const AutopilotFilter: React.FC<Types> = ({ darkMode }: Types) => {
       </div>
       <div className="d-grid pt-2 text-center">
         <div
-          className="py-3 fs-5"
+          className="py-3 fs-5 w-100 position-absolute bottom-0"
           style={{ backgroundColor: "#0C72C0", color: "white" }}
         >
           Show 8 results
