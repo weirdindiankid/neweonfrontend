@@ -22,6 +22,7 @@ import assingDark from "../assets/assignment_dark.svg";
 import Card from "react-bootstrap/Card";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
+import Accordion from "react-bootstrap/Accordion";
 
 interface Types {
   darkMode: boolean;
@@ -71,51 +72,181 @@ export const CheckoutStepTwo: React.FC<Types> = ({
         </div>
       </div>
 
-      <div>
-        <div
-          className="py-2 px-3 my-3 shadow-sm rounded d-flex justify-content-between"
-          style={mystyle}
-        >
-          <div className="me-2 d-flex align-items-center">
-            {!darkMode ? (
-              <img className="img-fluid" src={modelLight} alt="" />
-            ) : (
-              <img className="img-fluid" src={modelDark} alt="" />
-            )}
-            <span className="ms-3">Model X</span>
-          </div>
-          <div>
-            <span className="fs-6 fw-bold me-3">430 -</span>
-            {!darkMode ? (
-              <img className="img-fluid" src={arrowDownLight} alt="" />
-            ) : (
-              <img className="img-fluid" src={arrowDownDark} alt="" />
-            )}
-          </div>
-        </div>
+      <div className="my-3">
+        <Accordion defaultActiveKey="0" style={mystyle}>
+          <Accordion.Item eventKey="0">
+            <Accordion.Header>
+              <div className="d-flex justify-content-between w-100">
+                <div className="me-2 d-flex align-items-center">
+                  {!darkMode ? (
+                    <img className="img-fluid" src={modelLight} alt="" />
+                  ) : (
+                    <img className="img-fluid" src={modelDark} alt="" />
+                  )}
+                  <span className="ms-3">Model X</span>
+                </div>
+                <div>
+                  <span className="fs-6 fw-bold me-3">430 -</span>
+                </div>
+              </div>
+            </Accordion.Header>
+            <Accordion.Body>
+              <div>
+                <div className="my-4">
+                  <div className="d-flex justify-content-between">
+                    <span>Where</span>
+                    <span>Boston, MA</span>
+                  </div>
+                  <div className="d-flex justify-content-between">
+                    <span>When</span>
+                    <span>23 May - 25 May</span>
+                  </div>
+                </div>
+                <div className="my-4">
+                  <div className="d-flex justify-content-between">
+                    <span>Price</span>
+                    <span>199 / day</span>
+                  </div>
+                  <div className="d-flex justify-content-between">
+                    <span>Premium CDW insurance</span>
+                    <span>76.65 / day</span>
+                  </div>
+                  <div className="d-flex justify-content-between">
+                    <span>Unlimited toll usage</span>
+                    <span>9 / day</span>
+                  </div>
+                  <div className="d-flex justify-content-between">
+                    <span>Roadside protection</span>
+                    <span>13 / day</span>
+                  </div>
+                </div>
+                <div className="my-4">
+                  <div className="d-flex justify-content-between">
+                    <span>Delivery fee</span>
+                    <span>150</span>
+                  </div>
+                  <div className="d-flex justify-content-between">
+                    <span>Discount code</span>
+                    <span>-25</span>
+                  </div>
+                  <div className="d-flex justify-content-between">
+                    <span className="fw-bold">Total for 2 days</span>
+                    <span className="fw-bold">720.30</span>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <span>
+                  Changed your mind?{" "}
+                  <a href="!#" className="text-decoration-none">
+                    Alter options.
+                  </a>
+                </span>
+              </div>
+            </Accordion.Body>
+          </Accordion.Item>
+        </Accordion>
       </div>
 
       <div>
-        <div
-          className="py-2 px-3 my-3 shadow-sm rounded d-flex justify-content-between"
-          style={mystyle}
-        >
-          <div className="me-2 d-flex align-items-center">
-            {!darkMode ? (
-              <img className="img-fluid" src={personLight} alt="" />
-            ) : (
-              <img className="img-fluid" src={personDark} alt="" />
-            )}
-            <span className="ms-3">Jhon Doe</span>
-          </div>
-          <div>
-            {!darkMode ? (
-              <img className="img-fluid" src={arrowDownLight} alt="" />
-            ) : (
-              <img className="img-fluid" src={arrowDownDark} alt="" />
-            )}
-          </div>
-        </div>
+        <Accordion defaultActiveKey="0" style={mystyle}>
+          <Accordion.Item eventKey="0">
+            <Accordion.Header>
+              <div className="me-2 d-flex align-items-center">
+                {!darkMode ? (
+                  <img className="img-fluid" src={personLight} alt="" />
+                ) : (
+                  <img className="img-fluid" src={personDark} alt="" />
+                )}
+                <span className="ms-3">Jhon Doe</span>
+              </div>
+            </Accordion.Header>
+            <Accordion.Body>
+              <div className="w-100 my-3">
+                <Form.Floating>
+                  <Form.Control
+                    style={mystyle}
+                    id="floatingNameOnCard"
+                    type="text"
+                    placeholder="Jhon"
+                    className={
+                      !darkMode ? "border-0 text-dark" : "border-0 text-white"
+                    }
+                  />
+                  <label htmlFor="floatingNameOnCard">Fisrt name</label>
+                </Form.Floating>
+              </div>
+
+              <div className="w-100 my-3">
+                <Form.Floating>
+                  <Form.Control
+                    style={mystyle}
+                    id="floatingNameOnCard"
+                    type="text"
+                    placeholder="Doe"
+                    className={
+                      !darkMode ? "border-0 text-dark" : "border-0 text-white"
+                    }
+                  />
+                  <label htmlFor="floatingNameOnCard">Last name</label>
+                </Form.Floating>
+              </div>
+
+              <div className="w-100 my-3">
+                <Form.Floating>
+                  <Form.Control
+                    style={mystyle}
+                    id="floatingNameOnCard"
+                    type="email"
+                    placeholder="john@doe.com"
+                    className={
+                      !darkMode ? "border-0 text-dark" : "border-0 text-white"
+                    }
+                  />
+                  <label htmlFor="floatingNameOnCard">E-mail address</label>
+                </Form.Floating>
+              </div>
+
+              <div className="w-100 my-3">
+                <Form.Floating>
+                  <Form.Control
+                    style={mystyle}
+                    id="floatingNameOnCard"
+                    type="text"
+                    placeholder="+1 (805) 346 123"
+                    className={
+                      !darkMode ? "border-0 text-dark" : "border-0 text-white"
+                    }
+                  />
+                  <label htmlFor="floatingNameOnCard">Phone number</label>
+                </Form.Floating>
+              </div>
+
+              <div className="w-100 my-3">
+                <Form.Floating>
+                  <Form.Control
+                    style={mystyle}
+                    id="floatingNameOnCard"
+                    type="text"
+                    placeholder="04 - 20 - 1990"
+                    className={
+                      !darkMode ? "border-0 text-dark" : "border-0 text-white"
+                    }
+                  />
+                  <label htmlFor="floatingNameOnCard">Date of birth</label>
+                </Form.Floating>
+              </div>
+              <div>
+                <span>
+                  Not you?{" "}
+                  <a href="!#" className="text-decoration-none">
+                    Continue as guest.
+                  </a>
+                </span>
+              </div>
+            </Accordion.Body>
+          </Accordion.Item>
+        </Accordion>
       </div>
 
       <div className="mt-5">

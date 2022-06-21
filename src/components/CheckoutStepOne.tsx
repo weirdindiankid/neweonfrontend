@@ -7,8 +7,9 @@ import modelLight from "../assets/directions_car_light.svg";
 import modelDark from "../assets/directions_car_dark.svg";
 import arrowDownLight from "../assets/arrow_down_light.svg";
 import arrowDownDark from "../assets/arrow_down_dark.svg";
-import FloatingLabel from "react-bootstrap/FloatingLabel";
 import Form from "react-bootstrap/Form";
+import FloatingLabel from "react-bootstrap/FloatingLabel";
+import Accordion from "react-bootstrap/Accordion";
 
 interface Types {
   darkMode: boolean;
@@ -58,28 +59,80 @@ export const CheckoutStepOne: React.FC<Types> = ({
         </div>
       </div>
 
-      <div className="mx-4">
-        <div
-          className="py-2 px-3 my-3 shadow-sm rounded d-flex justify-content-between"
-          style={mystyle}
-        >
-          <div className="me-2 d-flex align-items-center">
-            {!darkMode ? (
-              <img className="img-fluid" src={modelLight} alt="" />
-            ) : (
-              <img className="img-fluid" src={modelDark} alt="" />
-            )}
-            <span className="ms-3">Model X</span>
-          </div>
-          <div>
-            <span className="fs-6 fw-bold me-3">430 -</span>
-            {!darkMode ? (
-              <img className="img-fluid" src={arrowDownLight} alt="" />
-            ) : (
-              <img className="img-fluid" src={arrowDownDark} alt="" />
-            )}
-          </div>
-        </div>
+      <div className="mx-4 mt-4">
+        <Accordion defaultActiveKey="0" style={mystyle}>
+          <Accordion.Item eventKey="0">
+            <Accordion.Header>
+              <div className="d-flex justify-content-between w-100">
+                <div className="me-2 d-flex align-items-center">
+                  {!darkMode ? (
+                    <img className="img-fluid" src={modelLight} alt="" />
+                  ) : (
+                    <img className="img-fluid" src={modelDark} alt="" />
+                  )}
+                  <span className="ms-3">Model X</span>
+                </div>
+                <div>
+                  <span className="fs-6 fw-bold me-3">430 -</span>
+                </div>
+              </div>
+            </Accordion.Header>
+            <Accordion.Body>
+              <div>
+                <div className="my-4">
+                  <div className="d-flex justify-content-between">
+                    <span>Where</span>
+                    <span>Boston, MA</span>
+                  </div>
+                  <div className="d-flex justify-content-between">
+                    <span>When</span>
+                    <span>23 May - 25 May</span>
+                  </div>
+                </div>
+                <div className="my-4">
+                  <div className="d-flex justify-content-between">
+                    <span>Price</span>
+                    <span>199 / day</span>
+                  </div>
+                  <div className="d-flex justify-content-between">
+                    <span>Premium CDW insurance</span>
+                    <span>76.65 / day</span>
+                  </div>
+                  <div className="d-flex justify-content-between">
+                    <span>Unlimited toll usage</span>
+                    <span>9 / day</span>
+                  </div>
+                  <div className="d-flex justify-content-between">
+                    <span>Roadside protection</span>
+                    <span>13 / day</span>
+                  </div>
+                </div>
+                <div className="my-4">
+                  <div className="d-flex justify-content-between">
+                    <span>Delivery fee</span>
+                    <span>150</span>
+                  </div>
+                  <div className="d-flex justify-content-between">
+                    <span>Discount code</span>
+                    <span>-25</span>
+                  </div>
+                  <div className="d-flex justify-content-between">
+                    <span className="fw-bold">Total for 2 days</span>
+                    <span className="fw-bold">720.30</span>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <span>
+                  Changed your mind?{" "}
+                  <a href="!#" className="text-decoration-none">
+                    Alter options.
+                  </a>
+                </span>
+              </div>
+            </Accordion.Body>
+          </Accordion.Item>
+        </Accordion>
       </div>
 
       <div className="container mt-5 px-4">
