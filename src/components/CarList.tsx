@@ -46,7 +46,7 @@ export const CarList: React.FC<Types> = ({
           <span className="fs-2 fw-bold">Choose a car</span>
         </div>
       </div>
-      <div>
+      <div className="d-sm-none">
         <MobileFilters darkMode={darkMode} />
       </div>
       <div className="in-active">
