@@ -126,7 +126,7 @@ export const PricingFilter: React.FC<Types> = ({
       </div>
       <div className="d-grid pt-2 text-center">
         <div
-          className="py-3 fs-5"
+          className="py-3 fs-5 w-100 position-absolute bottom-0"
           style={{ backgroundColor: "#0C72C0", color: "white" }}
         >
           Show 8 results
