@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { CarList } from "./CarList";
 import { DeliverTo } from "./DeliverTo";
-import "./style.css";
+import "./style.scss";
 
 interface Types {
   darkMode: boolean;

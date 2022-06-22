@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { MapActionButtons } from "./MapActionButtons";
-import "./style.css"
+import "./style.scss";
 
 interface Types {
   darkMode: boolean;
@@ -28,10 +28,11 @@ export const Map: React.FC<Types> = ({
 
   return (
     <>
-      <div ref={ref} className="map-responsive">
-        {/* {activeSection !== "section1" ? (
+      <div className="position-relative">
+        <div ref={ref} className="map-responsive"></div>
+        {activeSection !== "section1" ? (
           <MapActionButtons darkMode={darkMode} />
-        ) : null} */}
+        ) : null}
       </div>
     </>
   );
