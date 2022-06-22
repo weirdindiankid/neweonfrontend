@@ -143,13 +143,13 @@ export const MobileFilters: React.FC<Types> = ({ darkMode }: Types) => {
         ref={ref}
         isOpen={isOpen}
         onClose={() => setOpen(false)}
-        snapPoints={[700, 550, 100, 0]}
+        snapPoints={[550, 550, 300, 0]}
         initialSnap={1}
         onSnap={(snapIndex) =>
           console.log("> Current snap point index:", snapIndex)
         }
       >
-        <Sheet.Container>
+        <Sheet.Container style={{}}>
           <Sheet.Header />
           <Sheet.Content>
             {/* <button onClick={() => snapTo(0)}>Snap to index 0</button>
