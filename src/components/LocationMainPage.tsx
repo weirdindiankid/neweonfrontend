@@ -214,13 +214,11 @@ const LocationMainPage = () => {
     <>
       <div className="row flex-column-reverse flex-sm-row">
         <div
-          style={{
-            maxWidth: "480px",
-            height: "100vh",
-            overflow: "scroll",
-            overflowX: "hidden",
-          }}
-          className="col-12 col-sm-4 col-md-6 col-lg-4"
+          className={
+            activeSection === "section3"
+              ? "col-12 col-sm-4 col-md-6 col-lg-8"
+              : "col-12 col-sm-4 col-md-6 col-lg-4"
+          }
         >
           {activeSection === "section1" ? (
             <SuggestedLocation
@@ -235,17 +233,21 @@ const LocationMainPage = () => {
               onChangeSection={(e: String) => setActiveSection(e)}
             />
           ) : activeSection === "section3" ? (
-            <>
-              <LeftSectionTwo
-                darkMode={darkMode}
-                data={data2}
-                onChangeSection={(e: String) => setActiveSection(e)}
-              />
-              <DetailView
-                darkMode={darkMode}
-                onChangeSection={(e: String) => setActiveSection(e)}
-              />
-            </>
+            <div className="row">
+              <div className="col-lg-6">
+                <LeftSectionTwo
+                  darkMode={darkMode}
+                  data={data2}
+                  onChangeSection={(e: String) => setActiveSection(e)}
+                />
+              </div>
+              <div className="col-lg-6">
+                <DetailView
+                  darkMode={darkMode}
+                  onChangeSection={(e: String) => setActiveSection(e)}
+                />
+              </div>
+            </div>
           ) : activeSection === "section4" ? (
             <CheckoutStepOne
               darkMode={darkMode}
@@ -260,7 +262,13 @@ const LocationMainPage = () => {
             <BookingComplete darkMode={darkMode} />
           )}
         </div>
-        <div className="col-12 col-sm-8 col-md-6 col-lg-8">
+        <div
+          className={
+            activeSection === "section3"
+              ? "col-12 col-sm-8 col-md-6 col-lg-4"
+              : "col-12 col-sm-8 col-md-6 col-lg-8"
+          }
+        >
           <Wrapper
             apiKey={process.env.REACT_APP_GOOGLE_API_KEY || ""}
             render={render}
