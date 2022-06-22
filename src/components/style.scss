@@ -24,13 +24,7 @@
 }
 
 hr {
-  color: #000 !important;
-  border-top: 1px solid #000 !important;
-  opacity: 1 !important;
-  top: 0;
-  position: absolute;
-  width: 183px;
-  right: -1px;
+  display: none;
 }
 
 .menu {
@@ -69,6 +63,17 @@ hr {
         margin-top: 0;
         border-top-color: #333;
       }
+
+      hr {
+        display: block;
+        color: #000 !important;
+        border-top: 1px solid #000 !important;
+        opacity: 1 !important;
+        top: 0;
+        position: absolute;
+        width: 183px;
+        right: -1px;
+      } 
 
       .children {
         border-left: 1px solid #000 !important;
