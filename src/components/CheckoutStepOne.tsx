@@ -25,136 +25,140 @@ export const CheckoutStepOne: React.FC<Types> = ({
   };
 
   return (
-    <div className="mt-5">
-      <div className="d-flex justify-content-between mx-4">
-        <div className="d-flex align-items-center">
-          <div className="me-3">
-            <button
-              type="button"
-              onClick={() => onChangeSection("section3")}
-              className={
-                !darkMode
-                  ? "btn btn-light rounded-circle"
-                  : "btn btn-dark rounded-circle"
-              }
-            >
-              {!darkMode ? (
-                <img className="img-fluid" src={arrowLeftLight} alt="" />
-              ) : (
-                <img className="img-fluid" src={arrowLeftDark} alt="" />
-              )}
-            </button>
+    <div>
+      <div className="mt-5">
+        <div className="d-flex justify-content-between mx-4">
+          <div className="d-flex align-items-center">
+            <div className="me-3">
+              <button
+                type="button"
+                onClick={() => onChangeSection("section3")}
+                className={
+                  !darkMode
+                    ? "btn btn-light rounded-circle"
+                    : "btn btn-dark rounded-circle"
+                }
+              >
+                {!darkMode ? (
+                  <img className="img-fluid" src={arrowLeftLight} alt="" />
+                ) : (
+                  <img className="img-fluid" src={arrowLeftDark} alt="" />
+                )}
+              </button>
+            </div>
+            <div>
+              <span className="fs-2 fw-bold">Model X</span>
+            </div>
           </div>
-          <div>
-            <span className="fs-2 fw-bold">Model X</span>
+          <div className="d-flex justify-content-center align-items-center">
+            <small>Secure</small>
+            {!darkMode ? (
+              <img className="img-fluid ms-3" src={lockLight} alt="" />
+            ) : (
+              <img className="img-fluid ms-3" src={lockDark} alt="" />
+            )}
           </div>
         </div>
-        <div className="d-flex justify-content-center align-items-center">
-          <small>Secure</small>
-          {!darkMode ? (
-            <img className="img-fluid ms-3" src={lockLight} alt="" />
-          ) : (
-            <img className="img-fluid ms-3" src={lockDark} alt="" />
-          )}
-        </div>
-      </div>
 
-      <div className="mx-4 mt-4">
-        <Accordion defaultActiveKey="0" style={mystyle}>
-          <Accordion.Item eventKey="0">
-            <Accordion.Header>
-              <div className="d-flex justify-content-between w-100">
-                <div className="me-2 d-flex align-items-center">
-                  {!darkMode ? (
-                    <img className="img-fluid" src={modelLight} alt="" />
-                  ) : (
-                    <img className="img-fluid" src={modelDark} alt="" />
-                  )}
-                  <span className="ms-3">Model X</span>
+        <div className="mx-4 mt-4">
+          <Accordion defaultActiveKey="0" style={mystyle}>
+            <Accordion.Item eventKey="0">
+              <Accordion.Header>
+                <div className="d-flex justify-content-between w-100">
+                  <div className="me-2 d-flex align-items-center">
+                    {!darkMode ? (
+                      <img className="img-fluid" src={modelLight} alt="" />
+                    ) : (
+                      <img className="img-fluid" src={modelDark} alt="" />
+                    )}
+                    <span className="ms-3">Model X</span>
+                  </div>
+                  <div>
+                    <span className="fs-6 fw-bold me-3">430 -</span>
+                  </div>
+                </div>
+              </Accordion.Header>
+              <Accordion.Body>
+                <div>
+                  <div className="my-4">
+                    <div className="d-flex justify-content-between">
+                      <span>Where</span>
+                      <span>Boston, MA</span>
+                    </div>
+                    <div className="d-flex justify-content-between">
+                      <span>When</span>
+                      <span>23 May - 25 May</span>
+                    </div>
+                  </div>
+                  <div className="my-4">
+                    <div className="d-flex justify-content-between">
+                      <span>Price</span>
+                      <span>199 / day</span>
+                    </div>
+                    <div className="d-flex justify-content-between">
+                      <span>Premium CDW insurance</span>
+                      <span>76.65 / day</span>
+                    </div>
+                    <div className="d-flex justify-content-between">
+                      <span>Unlimited toll usage</span>
+                      <span>9 / day</span>
+                    </div>
+                    <div className="d-flex justify-content-between">
+                      <span>Roadside protection</span>
+                      <span>13 / day</span>
+                    </div>
+                  </div>
+                  <div className="my-4">
+                    <div className="d-flex justify-content-between">
+                      <span>Delivery fee</span>
+                      <span>150</span>
+                    </div>
+                    <div className="d-flex justify-content-between">
+                      <span>Discount code</span>
+                      <span>-25</span>
+                    </div>
+                    <div className="d-flex justify-content-between">
+                      <span className="fw-bold">Total for 2 days</span>
+                      <span className="fw-bold">720.30</span>
+                    </div>
+                  </div>
                 </div>
                 <div>
-                  <span className="fs-6 fw-bold me-3">430 -</span>
+                  <span>
+                    Changed your mind?{" "}
+                    <a href="!#" className="text-decoration-none">
+                      Alter options.
+                    </a>
+                  </span>
                 </div>
-              </div>
-            </Accordion.Header>
-            <Accordion.Body>
-              <div>
-                <div className="my-4">
-                  <div className="d-flex justify-content-between">
-                    <span>Where</span>
-                    <span>Boston, MA</span>
-                  </div>
-                  <div className="d-flex justify-content-between">
-                    <span>When</span>
-                    <span>23 May - 25 May</span>
-                  </div>
-                </div>
-                <div className="my-4">
-                  <div className="d-flex justify-content-between">
-                    <span>Price</span>
-                    <span>199 / day</span>
-                  </div>
-                  <div className="d-flex justify-content-between">
-                    <span>Premium CDW insurance</span>
-                    <span>76.65 / day</span>
-                  </div>
-                  <div className="d-flex justify-content-between">
-                    <span>Unlimited toll usage</span>
-                    <span>9 / day</span>
-                  </div>
-                  <div className="d-flex justify-content-between">
-                    <span>Roadside protection</span>
-                    <span>13 / day</span>
-                  </div>
-                </div>
-                <div className="my-4">
-                  <div className="d-flex justify-content-between">
-                    <span>Delivery fee</span>
-                    <span>150</span>
-                  </div>
-                  <div className="d-flex justify-content-between">
-                    <span>Discount code</span>
-                    <span>-25</span>
-                  </div>
-                  <div className="d-flex justify-content-between">
-                    <span className="fw-bold">Total for 2 days</span>
-                    <span className="fw-bold">720.30</span>
-                  </div>
-                </div>
-              </div>
-              <div>
-                <span>
-                  Changed your mind?{" "}
-                  <a href="!#" className="text-decoration-none">
-                    Alter options.
-                  </a>
-                </span>
-              </div>
-            </Accordion.Body>
-          </Accordion.Item>
-        </Accordion>
-      </div>
-
-      <div className="container mt-5 px-4">
-        <div className="d-flex flex-column">
-          <span className="fs-4 fw-bold">Enter phone number</span>
-          <p>Your phone will function as your car keys.</p>
+              </Accordion.Body>
+            </Accordion.Item>
+          </Accordion>
         </div>
-        <FloatingLabel controlId="floatingInputGrid" label="Phone number">
-          <Form.Control
-            type="tel"
-            style={mystyle}
-            className={!darkMode ? "border-0 text-dark" : "border-0 text-white"}
-            placeholder="+1 (805) 34"
-          />
-        </FloatingLabel>
-        <div className="my-3">
-          <button
-            className="btn btn-primary"
-            onClick={() => onChangeSection("section5")}
-          >
-            Proceed checkout
-          </button>
+
+        <div className="container mt-5 px-4">
+          <div className="d-flex flex-column">
+            <span className="fs-4 fw-bold">Enter phone number</span>
+            <p>Your phone will function as your car keys.</p>
+          </div>
+          <FloatingLabel controlId="floatingInputGrid" label="Phone number">
+            <Form.Control
+              type="tel"
+              style={mystyle}
+              className={
+                !darkMode ? "border-0 text-dark" : "border-0 text-white"
+              }
+              placeholder="+1 (805) 34"
+            />
+          </FloatingLabel>
+          <div className="my-3">
+            <button
+              className="btn btn-primary"
+              onClick={() => onChangeSection("section5")}
+            >
+              Proceed checkout
+            </button>
+          </div>
         </div>
       </div>
     </div>

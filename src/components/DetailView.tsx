@@ -33,7 +33,14 @@ export const DetailView: React.FC<Types> = ({
   };
 
   return (
-    <div>
+    <div
+      style={{
+        maxWidth: "480px",
+        height: "100vh",
+        overflow: "scroll",
+        overflowX: "hidden",
+      }}
+    >
       <div className="d-flex justify-content-between mx-2">
         <div className="d-flex align-items-center">
           <div className="me-3">

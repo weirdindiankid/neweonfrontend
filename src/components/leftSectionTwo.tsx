@@ -17,7 +17,14 @@ export const LeftSectionTwo: React.FC<Types> = ({
   const [displayDeliverySection, setDisplayDeliverySection] =
     useState<Boolean>(false);
   return (
-    <div>
+    <div
+      style={{
+        maxWidth: "480px",
+        height: "100vh",
+        overflow: "scroll",
+        overflowX: "hidden",
+      }}
+    >
       <div className="py-3 mx-1 d-flex justify-content-between mobile-view">
         <div
           className={
