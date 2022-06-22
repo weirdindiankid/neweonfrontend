@@ -23,6 +23,7 @@ import { BookingComplete } from "./BookingComplete";
 import { Wrapper, Status } from "@googlemaps/react-wrapper";
 import { useSelector } from "react-redux";
 import { RootState } from "../store/reducers/rootReducer";
+import useWindowDimensions from './../hooks/windowDimension';
 
 const data1 = [{}];
 const data2 = [
@@ -203,6 +204,7 @@ const render = (status: Status) => {
 
 const LocationMainPage = () => {
   const { darkMode } = useSelector((state: RootState) => state.themeReducer);
+  const { height, width } = useWindowDimensions();
   const [activeSection, setActiveSection] = useState<String>("section1");
   const [zoom, setZoom] = React.useState(10); // initial zoom
   const [center, setCenter] = React.useState<google.maps.LatLngLiteral>({
@@ -212,6 +214,9 @@ const LocationMainPage = () => {
 
   return (
     <>
+    <div>
+      width: {width} ~ height: {height}
+    </div>
       <div className="row flex-column-reverse flex-sm-row">
         <div
           className={
