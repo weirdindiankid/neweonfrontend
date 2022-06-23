@@ -74,18 +74,14 @@ export const DetailView: React.FC<Types> = ({
       <div className="m-3">
         <div className="card border-0" style={mystyle}>
           <div className="m-3">
-            <img
-              src={data?.img}
-              className="card-img img-fluid"
-              alt="..."
-            />
+            <img src={data?.img} className="card-img img-fluid" alt="..." />
           </div>
         </div>
       </div>
 
       <div className="m-4">
         <p>{data?.description}</p>
-        {data?.features.map((feature: any, i: number) => {
+        {/* {data?.features.map((feature: any, i: number) => {
           return (
             <div className={i < 2 ? "col-6" : "col-4"}>
               <div
@@ -104,7 +100,35 @@ export const DetailView: React.FC<Types> = ({
               </div>
             </div>
           );
-        })}
+        })} */}
+
+        <div className="mt-4">
+          <div className="d-flex flex-wrap justify-content-between">
+            {data.features.map((feature: any, i: number) => {
+              return (
+                <div className={i < 2 ? "col-6" : "col-4"}>
+                  <div
+                    className="py-2 m-2 px-3 shadow-sm rounded d-flex"
+                    style={nestedCards}
+                  >
+                    <div className="me-3">
+                      <img
+                        src={!darkMode ? feature.iconLight : feature.iconDark}
+                        alt=""
+                      />
+                    </div>
+                    <div>
+                      <small style={{ fontSize: "12px" }}>
+                        {feature.title}
+                      </small>
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+
         {/* <div className="mt-4">
           <div className="d-flex justify-content-between">
             <div className="w-100">

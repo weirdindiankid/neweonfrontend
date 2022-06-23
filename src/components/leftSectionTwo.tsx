@@ -8,6 +8,7 @@ interface Types {
   data: any;
   onChangeSection: any;
   onChangeCarDetails: any;
+  carDetails: any;
 }
 
 export const LeftSectionTwo: React.FC<Types> = ({
@@ -15,6 +16,7 @@ export const LeftSectionTwo: React.FC<Types> = ({
   data,
   onChangeSection,
   onChangeCarDetails,
+  carDetails,
 }: Types) => {
   const [displayDeliverySection, setDisplayDeliverySection] =
     useState<Boolean>(false);
@@ -115,6 +117,7 @@ export const LeftSectionTwo: React.FC<Types> = ({
           data={data}
           onChangeSection={(e: string) => onChangeSection(e)}
           onChangeCarDetails={onChangeCarDetails}
+          carDetails={carDetails}
         />
       )}
     </div>

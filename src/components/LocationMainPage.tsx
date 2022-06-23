@@ -28,6 +28,7 @@ import useWindowDimensions from "./../hooks/windowDimension";
 const data1 = [{}];
 const data2 = [
   {
+    id: 1,
     img: blueCar,
     model: "Model 3",
     disc: "Performance",
@@ -65,6 +66,7 @@ const data2 = [
     ],
   },
   {
+    id: 2,
     img: blackCar,
     model: "Model Y",
     disc: "Long range",
@@ -102,6 +104,7 @@ const data2 = [
     ],
   },
   {
+    id: 3,
     img: grayCar,
     model: "Model X",
     disc: "P100D",
@@ -139,6 +142,7 @@ const data2 = [
     ],
   },
   {
+    id: 4,
     img: whiteCar,
     model: "Model S",
     disc: "Palladium",
@@ -176,6 +180,7 @@ const data2 = [
     ],
   },
   {
+    id: 5,
     img: blueCar,
     model: "Model 3",
     disc: "Performance",
@@ -250,6 +255,7 @@ const LocationMainPage = () => {
               data={data2}
               onChangeSection={(e: string) => setActiveSection(e)}
               onChangeCarDetails={setCarDetails}
+              carDetails={carDetails}
             />
           ) : activeSection === "section3" ? (
             width > 996 ? (
@@ -260,6 +266,7 @@ const LocationMainPage = () => {
                     data={data2}
                     onChangeSection={(e: string) => setActiveSection(e)}
                     onChangeCarDetails={setCarDetails}
+                    carDetails={carDetails}
                   />
                 </div>
                 <div className="col-lg-6">

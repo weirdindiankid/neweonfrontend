@@ -8,6 +8,7 @@ interface Types {
   data: any;
   onChangeSection: any;
   onChangeCarDetails: any;
+  carDetails: any;
 }
 
 export const CarList: React.FC<Types> = ({
@@ -15,12 +16,13 @@ export const CarList: React.FC<Types> = ({
   data,
   onChangeSection,
   onChangeCarDetails,
+  carDetails,
 }: Types) => {
   const mystyle = {
     backgroundColor: !darkMode ? "#F5F5F5" : "#1F1F1F",
     borderRadius: "20px",
   };
-  const nestedCard = {
+  const nestedCards = {
     backgroundColor: !darkMode ? "rgba(0, 0, 0, 0.04)" : "#2F2F2F",
   };
 
@@ -51,11 +53,11 @@ export const CarList: React.FC<Types> = ({
       <div className="d-sm-none mx-2">
         <MobileFilters darkMode={darkMode} />
       </div>
-      <div className="in-active">
+      <div>
         {data.map((item: any) => {
           return (
             <div
-              className="m-4 cursor"
+              className={carDetails?.id !== item.id ? "m-4 cursor in-active" : "m-4 cursor"}
               onClick={() => {
                 onChangeSection("section3");
                 onChangeCarDetails(item);
@@ -88,7 +90,7 @@ export const CarList: React.FC<Types> = ({
                         <div className={i < 2 ? "col-6" : "col-4"}>
                           <div
                             className="py-2 m-2 px-3 shadow-sm rounded d-flex"
-                            style={nestedCard}
+                            style={nestedCards}
                           >
                             <div className="me-3">
                               <img
