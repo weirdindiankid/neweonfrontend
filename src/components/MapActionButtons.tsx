@@ -29,7 +29,7 @@ export const MapActionButtons: React.FC<Types> = ({ darkMode }: Types) => {
 
   return (
     <div className="d-flex justify-content-center">
-      <div className="d-flex justify-content-center position-absolute top-0 pt-4">
+      <div className="d-flex position-absolute top-0 pt-4">
         <div>
           <ul className="pricing-menu">
             <li className="parent">

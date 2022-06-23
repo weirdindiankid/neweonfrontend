@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { MapActionButtons } from "./MapActionButtons";
+import useWindowDimensions from "./../hooks/windowDimension";
 import "./style.scss";
 
 interface Types {
@@ -16,6 +17,7 @@ export const Map: React.FC<Types> = ({
   zoom,
 }: Types) => {
   const ref = React.useRef<HTMLDivElement>(null);
+  const { height, width } = useWindowDimensions();
 
   useEffect(() => {
     if (ref?.current) {
@@ -31,7 +33,9 @@ export const Map: React.FC<Types> = ({
       <div className="position-relative">
         <div ref={ref} className="map-responsive"></div>
         {activeSection !== "section1" ? (
-          <MapActionButtons darkMode={darkMode} />
+          width > 575 ? (
+            <MapActionButtons darkMode={darkMode} />
+          ) : null
         ) : null}
       </div>
     </>
