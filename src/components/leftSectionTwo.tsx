@@ -7,12 +7,14 @@ interface Types {
   darkMode: boolean;
   data: any;
   onChangeSection: any;
+  onChangeCarDetails: any;
 }
 
 export const LeftSectionTwo: React.FC<Types> = ({
   darkMode,
   data,
   onChangeSection,
+  onChangeCarDetails,
 }: Types) => {
   const [displayDeliverySection, setDisplayDeliverySection] =
     useState<Boolean>(false);
@@ -112,6 +114,7 @@ export const LeftSectionTwo: React.FC<Types> = ({
           darkMode={darkMode}
           data={data}
           onChangeSection={(e: string) => onChangeSection(e)}
+          onChangeCarDetails={onChangeCarDetails}
         />
       )}
     </div>

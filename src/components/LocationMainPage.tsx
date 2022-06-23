@@ -33,6 +33,9 @@ const data2 = [
     disc: "Performance",
     numDays: "169 / day",
     numHours: "338 / total",
+    description: `The Tesla Model X P100D is a battery electric mid-size luxury
+          crossover. The vehicle is notable in that it uses falcon-wing doors
+          for passenger access.`,
     features: [
       {
         iconLight: smartTotLight,
@@ -67,6 +70,9 @@ const data2 = [
     disc: "Long range",
     numDays: "199 / day",
     numHours: "398 / total",
+    description: `The Tesla Model X P100D is a battery electric mid-size luxury
+          crossover. The vehicle is notable in that it uses falcon-wing doors
+          for passenger access.`,
     features: [
       {
         iconLight: smartTotLight,
@@ -101,6 +107,9 @@ const data2 = [
     disc: "P100D",
     numDays: "219 / day",
     numHours: "438 / total",
+    description: `The Tesla Model X P100D is a battery electric mid-size luxury
+          crossover. The vehicle is notable in that it uses falcon-wing doors
+          for passenger access.`,
     features: [
       {
         iconLight: smartTotLight,
@@ -135,6 +144,9 @@ const data2 = [
     disc: "Palladium",
     numDays: "299 / day",
     numHours: "598 / total",
+    description: `The Tesla Model X P100D is a battery electric mid-size luxury
+          crossover. The vehicle is notable in that it uses falcon-wing doors
+          for passenger access.`,
     features: [
       {
         iconLight: smartTotLight,
@@ -169,6 +181,9 @@ const data2 = [
     disc: "Performance",
     numDays: "169 / day",
     numHours: "338 / total",
+    description: `The Tesla Model X P100D is a battery electric mid-size luxury
+          crossover. The vehicle is notable in that it uses falcon-wing doors
+          for passenger access.`,
     features: [
       {
         iconLight: smartTotLight,
@@ -206,6 +221,7 @@ const LocationMainPage = () => {
   const { darkMode } = useSelector((state: RootState) => state.themeReducer);
   const { height, width } = useWindowDimensions();
   const [activeSection, setActiveSection] = useState<string>("section1");
+  const [carDetails, setCarDetails] = useState<any>({});
   const [zoom, setZoom] = React.useState(10); // initial zoom
   const [center, setCenter] = React.useState<google.maps.LatLngLiteral>({
     lat: 42.407211,
@@ -233,6 +249,7 @@ const LocationMainPage = () => {
               darkMode={darkMode}
               data={data2}
               onChangeSection={(e: string) => setActiveSection(e)}
+              onChangeCarDetails={setCarDetails}
             />
           ) : activeSection === "section3" ? (
             width > 996 ? (
@@ -242,12 +259,14 @@ const LocationMainPage = () => {
                     darkMode={darkMode}
                     data={data2}
                     onChangeSection={(e: string) => setActiveSection(e)}
+                    onChangeCarDetails={setCarDetails}
                   />
                 </div>
                 <div className="col-lg-6">
                   <DetailView
                     darkMode={darkMode}
                     onChangeSection={(e: string) => setActiveSection(e)}
+                    data={carDetails}
                   />
                 </div>
               </div>
@@ -255,6 +274,7 @@ const LocationMainPage = () => {
               <DetailView
                 darkMode={darkMode}
                 onChangeSection={(e: string) => setActiveSection(e)}
+                data={carDetails}
               />
             )
           ) : activeSection === "section4" ? (

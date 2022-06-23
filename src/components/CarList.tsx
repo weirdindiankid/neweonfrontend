@@ -7,12 +7,14 @@ interface Types {
   darkMode: boolean;
   data: any;
   onChangeSection: any;
+  onChangeCarDetails: any;
 }
 
 export const CarList: React.FC<Types> = ({
   darkMode,
   data,
   onChangeSection,
+  onChangeCarDetails,
 }: Types) => {
   const mystyle = {
     backgroundColor: !darkMode ? "#F5F5F5" : "#1F1F1F",
@@ -54,7 +56,10 @@ export const CarList: React.FC<Types> = ({
           return (
             <div
               className="m-4 cursor"
-              onClick={() => onChangeSection("section3")}
+              onClick={() => {
+                onChangeSection("section3");
+                onChangeCarDetails(item);
+              }}
             >
               <div
                 className="card border-0 p-2 position-relative"
