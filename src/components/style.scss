@@ -34,9 +34,7 @@ hr {
 .pricing-menu {
   display: inline-block;
   list-style-type: none;
-
-  display: inline-block;
-  list-style-type: none;
+  padding-left: 0;
 
   .parent {
     position: relative;
@@ -45,6 +43,7 @@ hr {
   a {
     display: block;
     padding: 8px 15px;
+    border: 1px solid white;
     border-radius: 25px;
     text-decoration: none;
   }
@@ -60,6 +59,7 @@ hr {
         border-left: 1px solid #000 !important;
         border-right: 1px solid #000 !important;
         border-radius: 25px 25px 0 0;
+        padding: 8px 15px 20px 15px;
         position: relative;
       }
 
@@ -123,9 +123,8 @@ hr {
 .autopilot-menu {
   display: inline-block;
   list-style-type: none;
+  padding-left: .5rem;
 
-  display: inline-block;
-  list-style-type: none;
 
   .parent {
     position: relative;
@@ -134,6 +133,7 @@ hr {
   a {
     display: block;
     padding: 8px 15px;
+    border: 1px solid white;
     border-radius: 25px;
     text-decoration: none;
   }
@@ -148,6 +148,7 @@ hr {
         border-top: 1px solid #000 !important;
         border-left: 1px solid #000 !important;
         border-right: 1px solid #000 !important;
+        padding: 8px 15px 20px 15px;
         border-radius: 25px 25px 0 0;
         position: relative;
       }
@@ -212,9 +213,7 @@ hr {
 .speed-menu {
   display: inline-block;
   list-style-type: none;
-
-  display: inline-block;
-  list-style-type: none;
+  padding-left: .5rem;
 
   .parent {
     position: relative;
@@ -223,6 +222,7 @@ hr {
   a {
     display: block;
     padding: 8px 15px;
+    border: 1px solid white;
     border-radius: 25px;
     text-decoration: none;
   }
@@ -237,6 +237,7 @@ hr {
         border-top: 1px solid #000 !important;
         border-left: 1px solid #000 !important;
         border-right: 1px solid #000 !important;
+        padding: 8px 15px 20px 15px;
         border-radius: 25px 25px 0 0;
         position: relative;
       }
@@ -301,9 +302,7 @@ hr {
 .model-menu {
   display: inline-block;
   list-style-type: none;
-
-  display: inline-block;
-  list-style-type: none;
+  padding-left: .5rem;
 
   .parent {
     position: relative;
@@ -312,6 +311,7 @@ hr {
   a {
     display: block;
     padding: 8px 15px;
+    border: 1px solid white;
     border-radius: 25px;
     text-decoration: none;
   }
@@ -326,6 +326,7 @@ hr {
         border-top: 1px solid #000 !important;
         border-left: 1px solid #000 !important;
         border-right: 1px solid #000 !important;
+        padding: 8px 15px 20px 15px;
         border-radius: 25px 25px 0 0;
         position: relative;
       }
@@ -390,9 +391,7 @@ hr {
 .range-menu {
   display: inline-block;
   list-style-type: none;
-
-  display: inline-block;
-  list-style-type: none;
+  padding-left: .5rem;
 
   .parent {
     position: relative;
@@ -401,6 +400,7 @@ hr {
   a {
     display: block;
     padding: 8px 15px;
+    border: 1px solid white;
     border-radius: 25px;
     text-decoration: none;
   }
@@ -415,6 +415,7 @@ hr {
         border-top: 1px solid #000 !important;
         border-left: 1px solid #000 !important;
         border-right: 1px solid #000 !important;
+        padding: 8px 15px 20px 15px;
         border-radius: 25px 25px 0 0;
         position: relative;
       }
