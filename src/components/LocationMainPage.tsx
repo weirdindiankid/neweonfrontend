@@ -23,7 +23,7 @@ import { BookingComplete } from "./BookingComplete";
 import { Wrapper, Status } from "@googlemaps/react-wrapper";
 import { useSelector } from "react-redux";
 import { RootState } from "../store/reducers/rootReducer";
-import useWindowDimensions from './../hooks/windowDimension';
+import useWindowDimensions from "./../hooks/windowDimension";
 
 const data1 = [{}];
 const data2 = [
@@ -214,14 +214,11 @@ const LocationMainPage = () => {
 
   return (
     <>
-    <div>
-      width: {width} ~ height: {height}
-    </div>
       <div className="row flex-column-reverse flex-sm-row">
         <div
           className={
             activeSection === "section3"
-              ? "col-12 col-sm-4 col-md-6 col-lg-8"
+              ? "col-12 col-sm-6 col-md-6 col-lg-8"
               : "col-12 col-sm-4 col-md-6 col-lg-4"
           }
         >
@@ -238,21 +235,28 @@ const LocationMainPage = () => {
               onChangeSection={(e: String) => setActiveSection(e)}
             />
           ) : activeSection === "section3" ? (
-            <div className="row">
-              <div className="col-lg-6">
-                <LeftSectionTwo
-                  darkMode={darkMode}
-                  data={data2}
-                  onChangeSection={(e: String) => setActiveSection(e)}
-                />
+            width > 996 ? (
+              <div className="row">
+                <div className="col-lg-6">
+                  <LeftSectionTwo
+                    darkMode={darkMode}
+                    data={data2}
+                    onChangeSection={(e: String) => setActiveSection(e)}
+                  />
+                </div>
+                <div className="col-lg-6">
+                  <DetailView
+                    darkMode={darkMode}
+                    onChangeSection={(e: String) => setActiveSection(e)}
+                  />
+                </div>
               </div>
-              <div className="col-lg-6">
-                <DetailView
-                  darkMode={darkMode}
-                  onChangeSection={(e: String) => setActiveSection(e)}
-                />
-              </div>
-            </div>
+            ) : (
+              <DetailView
+                darkMode={darkMode}
+                onChangeSection={(e: String) => setActiveSection(e)}
+              />
+            )
           ) : activeSection === "section4" ? (
             <CheckoutStepOne
               darkMode={darkMode}
@@ -270,7 +274,7 @@ const LocationMainPage = () => {
         <div
           className={
             activeSection === "section3"
-              ? "col-12 col-sm-8 col-md-6 col-lg-4"
+              ? "col-12 col-sm-6 col-md-6 col-lg-4"
               : "col-12 col-sm-8 col-md-6 col-lg-8"
           }
         >
