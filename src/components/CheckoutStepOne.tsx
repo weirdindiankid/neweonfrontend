@@ -25,7 +25,13 @@ export const CheckoutStepOne: React.FC<Types> = ({
   };
 
   return (
-    <div>
+    <div
+      style={{
+        height: "100vh",
+        overflow: "scroll",
+        overflowX: "hidden",
+      }}
+    >
       <div className="mt-5">
         <div className="d-flex justify-content-between mx-4">
           <div className="d-flex align-items-center">

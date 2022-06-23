@@ -21,7 +21,6 @@ export const SuggestedLocation: React.FC<Types> = ({
     <>
       <div
         style={{
-          maxWidth: "480px",
           height: "100vh",
           overflow: "scroll",
           overflowX: "hidden",

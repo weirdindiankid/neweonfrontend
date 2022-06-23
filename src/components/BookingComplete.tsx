@@ -9,7 +9,6 @@ export const BookingComplete: React.FC<Types> = ({ darkMode }: Types) => {
   return (
     <div
       style={{
-        maxWidth: "480px",
         height: "100vh",
         overflow: "scroll",
         overflowX: "hidden",
