@@ -4,6 +4,7 @@ import { ThemeProvider } from "styled-components";
 import { GlobalStyles } from "./GlobalStyles";
 import { lightTheme, darkTheme } from "./Themes";
 import { useSelector, useDispatch } from "react-redux";
+import { Routes, Route, Link } from "react-router-dom";
 import { RootState } from "./store/reducers/rootReducer";
 import { CHANGE_THEME_MODE } from "./store/constants/themeContsant";
 import "./App.css";
@@ -33,9 +34,9 @@ function App() {
       <button className="btn btn-primary m-2" onClick={themeToggler}>
         Switch Theme
       </button>
-      <div>
-        <LocationMainPage />
-      </div>
+      <Routes>
+        <Route path="/" element={<LocationMainPage />} />
+      </Routes>
     </ThemeProvider>
   );
 }
