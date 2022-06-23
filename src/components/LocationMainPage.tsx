@@ -219,7 +219,7 @@ const LocationMainPage = () => {
           className={
             activeSection === "section3"
               ? "col-12 col-sm-6 col-md-6 col-lg-8"
-              : "col-12 col-sm-4 col-md-6 col-lg-4"
+              : "col-12 col-sm-6 col-md-6 col-lg-4"
           }
         >
           {activeSection === "section1" ? (
@@ -275,7 +275,7 @@ const LocationMainPage = () => {
           className={
             activeSection === "section3"
               ? "col-12 col-sm-6 col-md-6 col-lg-4"
-              : "col-12 col-sm-8 col-md-6 col-lg-8"
+              : "col-12 col-sm-6 col-md-6 col-lg-8"
           }
         >
           <Wrapper
