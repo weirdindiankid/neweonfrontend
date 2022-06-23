@@ -5,9 +5,10 @@ import restartAltIcon from "../../assets/restart_alt.svg";
 
 interface Types {
   darkMode: boolean;
+  close: () => void;
 }
 
-export const AutopilotFilter: React.FC<Types> = ({ darkMode }: Types) => {
+export const AutopilotFilter: React.FC<Types> = ({ darkMode, close }: Types) => {
   const mystyle = {
     backgroundColor: !darkMode ? "#F5F5F5" : "#1F1F1F",
     borderRadius: "20px",
@@ -23,7 +24,7 @@ export const AutopilotFilter: React.FC<Types> = ({ darkMode }: Types) => {
           <div className="d-flex align-items-center">
             <button
               type="button"
-              // onClick={() => onChangeSection("section1")}
+              onClick={() => close()}
               className={
                 !darkMode
                   ? "btn btn-light rounded-circle"

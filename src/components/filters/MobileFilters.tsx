@@ -155,19 +155,16 @@ export const MobileFilters: React.FC<Types> = ({ darkMode }: Types) => {
             {/* <button onClick={() => snapTo(0)}>Snap to index 0</button>
             <button onClick={() => snapTo(1)}>Snap to index 1</button>
             <button onClick={() => snapTo(2)}>Snap to index 2</button> */}
-            <div className="d-flex justify-content-end me-3">
-              <button className="btn btn-dark" onClick={() => snapTo(3)}>X</button>
-            </div>
             {activeSection === "pricing" ? (
-              <PricingFilter darkMode={false} />
+              <PricingFilter darkMode={false} close={() => snapTo(3)} />
             ) : activeSection === "autopilot" ? (
-              <AutopilotFilter darkMode={false} />
+              <AutopilotFilter darkMode={false} close={() => snapTo(3)} />
             ) : activeSection === "speed" ? (
-              <SpeedFilter darkMode={false} />
+              <SpeedFilter darkMode={false} close={() => snapTo(3)} />
             ) : activeSection === "model" ? (
-              <ModelFilter darkMode={false} />
+              <ModelFilter darkMode={false} close={() => snapTo(3)} />
             ) : activeSection === "range" ? (
-              <RangeFilter darkMode={false} />
+              <RangeFilter darkMode={false} close={() => snapTo(3)} />
             ) : null}
           </Sheet.Content>
         </Sheet.Container>

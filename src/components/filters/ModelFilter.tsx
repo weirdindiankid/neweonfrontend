@@ -9,9 +9,10 @@ import blackCar from "../../assets/filters_assets/black_car.png";
 
 interface Types {
   darkMode: boolean;
+  close: ()=> void;
 }
 
-export const ModelFilter: React.FC<Types> = ({ darkMode }: Types) => {
+export const ModelFilter: React.FC<Types> = ({ darkMode, close }: Types) => {
   const mystyle = {
     backgroundColor: !darkMode ? "#F5F5F5" : "#1F1F1F",
     borderRadius: "20px",
@@ -27,7 +28,7 @@ export const ModelFilter: React.FC<Types> = ({ darkMode }: Types) => {
           <div className="d-flex align-items-center">
             <button
               type="button"
-              // onClick={() => onChangeSection("section1")}
+              onClick={() => close()}
               className={
                 !darkMode
                   ? "btn btn-light rounded-circle"
