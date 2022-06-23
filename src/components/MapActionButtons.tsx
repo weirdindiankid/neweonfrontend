@@ -1,8 +1,8 @@
 import React from "react";
 import attachMoneyLight from "../assets/attach_money_light.svg";
 import attachMoneyDark from "../assets/attach_money_dark.svg";
-import smartTotLight from "../assets/smart_toy_light.svg";
-import smartTotDark from "../assets/smart_toy_dark.svg";
+import smartToyLight from "../assets/smart_toy_light.svg";
+import smartToyDark from "../assets/smart_toy_dark.svg";
 import speedLight from "../assets/speed_light.svg";
 import speedDark from "../assets/speed_dark.svg";
 import mileLight from "../assets/battery_4_bar_light.svg";
@@ -28,7 +28,7 @@ export const MapActionButtons: React.FC<Types> = ({ darkMode }: Types) => {
     <div className="d-flex justify-content-center">
       <div className="d-flex justify-content-center position-absolute top-0 pt-4">
         <div>
-          <ul className="menu">
+          <ul className="pricing-menu">
             <li className="parent">
               <a
                 href="!#"
@@ -145,7 +145,142 @@ export const MapActionButtons: React.FC<Types> = ({ darkMode }: Types) => {
                   </div>
                   <div className="d-flex justify-content-between mt-2">
                     <div>
-                      <button className="btn btn-primary">Show 8 results</button>
+                      <button className="btn btn-primary">
+                        Show 8 results
+                      </button>
+                    </div>
+                    <div>
+                      <a href="!#">
+                        Clear
+                        <img
+                          className="img-fluid ms-2"
+                          src={restartAltIcon}
+                          alt=""
+                        />
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </ul>
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <ul className="autopilot-menu">
+            <li className="parent">
+              <a
+                href="!#"
+                className={
+                  !darkMode
+                    ? "bg-light text-dark shadow"
+                    : "bg-dark text-light shadow"
+                }
+              >
+                {!darkMode ? (
+                  <img className="img-fluid" src={smartToyLight} alt="" />
+                ) : (
+                  <img className="img-fluid" src={smartToyDark} alt="" />
+                )}
+                <span className="px-3">Autopilot</span>
+                {!darkMode ? (
+                  <img src={arrowDownLight} alt="" />
+                ) : (
+                  <img src={arrowDownDark} alt="" />
+                )}
+              </a>
+              <ul className="children">
+                <hr className="m-0" />
+                <div className="container">
+                  <div className="row">
+                    <div>
+                      <div
+                        className="p-3 rounded cursor m-1 col"
+                        style={mystyle}
+                      >
+                        <div className="d-flex flex-column lh-sm">
+                          <div className="form-check">
+                            <input
+                              className="form-check-input"
+                              type="checkbox"
+                              value=""
+                              id="flexCheckDefault"
+                            />
+                            <label
+                              className="form-check-label fw-bold"
+                              htmlFor="flexCheckDefault"
+                              style={{ fontSize: "14px" }}
+                            >
+                              Standard autopilot
+                            </label>
+                          </div>
+                          <span className="ps-4" style={{ fontSize: "14px" }}>
+                            Automatic emergency braking.
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                    <div>
+                      <div
+                        className="p-3 rounded cursor m-1 col"
+                        style={mystyle}
+                      >
+                        <div className="d-flex flex-column lh-sm">
+                          <div className="form-check">
+                            <input
+                              className="form-check-input"
+                              type="checkbox"
+                              value=""
+                              id="flexCheckDefault"
+                            />
+                            <label
+                              className="form-check-label fw-bold"
+                              htmlFor="flexCheckDefault"
+                              style={{ fontSize: "14px" }}
+                            >
+                              Enhanced autopilot
+                            </label>
+                          </div>
+                          <span className="ps-4" style={{ fontSize: "14px" }}>
+                            + Autosteer, auto lane change, traffic aware cruise
+                            control, autopark, summon.
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                    <div>
+                      <div
+                        className="p-3 rounded cursor m-1 col"
+                        style={mystyle}
+                      >
+                        <div className="d-flex flex-column lh-sm">
+                          <div className="form-check">
+                            <input
+                              className="form-check-input"
+                              type="checkbox"
+                              value=""
+                              id="flexCheckDefault"
+                            />
+                            <label
+                              className="form-check-label fw-bold"
+                              htmlFor="flexCheckDefault"
+                              style={{ fontSize: "14px" }}
+                            >
+                              Full self driving autopilot
+                            </label>
+                          </div>
+                          <span className="ps-4" style={{ fontSize: "14px" }}>
+                            + Navigate on autopilot.
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="d-flex justify-content-between mt-2">
+                    <div>
+                      <button className="btn btn-primary">
+                        Show 8 results
+                      </button>
                     </div>
                     <div>
                       <a href="!#">
