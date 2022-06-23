@@ -24,7 +24,7 @@ interface Types {
 }
 
 export const MobileFilters: React.FC<Types> = ({ darkMode }: Types) => {
-  const [activeSection, setActiveSection] = useState<String>("section1");
+  const [activeSection, setActiveSection] = useState<string>("section1");
 
   const [isOpen, setOpen] = React.useState(false);
   const ref = React.useRef<SheetRef>();

@@ -5,7 +5,7 @@ import "./style.scss";
 
 interface Types {
   darkMode: boolean;
-  activeSection?: String;
+  activeSection?: string;
   center: any;
   zoom: number;
 }

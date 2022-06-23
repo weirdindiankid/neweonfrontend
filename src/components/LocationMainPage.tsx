@@ -205,7 +205,7 @@ const render = (status: Status) => {
 const LocationMainPage = () => {
   const { darkMode } = useSelector((state: RootState) => state.themeReducer);
   const { height, width } = useWindowDimensions();
-  const [activeSection, setActiveSection] = useState<String>("section1");
+  const [activeSection, setActiveSection] = useState<string>("section1");
   const [zoom, setZoom] = React.useState(10); // initial zoom
   const [center, setCenter] = React.useState<google.maps.LatLngLiteral>({
     lat: 42.407211,
@@ -232,7 +232,7 @@ const LocationMainPage = () => {
             <LeftSectionTwo
               darkMode={darkMode}
               data={data2}
-              onChangeSection={(e: String) => setActiveSection(e)}
+              onChangeSection={(e: string) => setActiveSection(e)}
             />
           ) : activeSection === "section3" ? (
             width > 996 ? (
@@ -241,31 +241,31 @@ const LocationMainPage = () => {
                   <LeftSectionTwo
                     darkMode={darkMode}
                     data={data2}
-                    onChangeSection={(e: String) => setActiveSection(e)}
+                    onChangeSection={(e: string) => setActiveSection(e)}
                   />
                 </div>
                 <div className="col-lg-6">
                   <DetailView
                     darkMode={darkMode}
-                    onChangeSection={(e: String) => setActiveSection(e)}
+                    onChangeSection={(e: string) => setActiveSection(e)}
                   />
                 </div>
               </div>
             ) : (
               <DetailView
                 darkMode={darkMode}
-                onChangeSection={(e: String) => setActiveSection(e)}
+                onChangeSection={(e: string) => setActiveSection(e)}
               />
             )
           ) : activeSection === "section4" ? (
             <CheckoutStepOne
               darkMode={darkMode}
-              onChangeSection={(e: String) => setActiveSection(e)}
+              onChangeSection={(e: string) => setActiveSection(e)}
             />
           ) : activeSection === "section5" ? (
             <CheckoutStepTwo
               darkMode={darkMode}
-              onChangeSection={(e: String) => setActiveSection(e)}
+              onChangeSection={(e: string) => setActiveSection(e)}
             />
           ) : (
             <BookingComplete darkMode={darkMode} />

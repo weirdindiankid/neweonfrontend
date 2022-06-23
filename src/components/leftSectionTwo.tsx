@@ -111,7 +111,7 @@ export const LeftSectionTwo: React.FC<Types> = ({
         <CarList
           darkMode={darkMode}
           data={data}
-          onChangeSection={(e: String) => onChangeSection(e)}
+          onChangeSection={(e: string) => onChangeSection(e)}
         />
       )}
     </div>
