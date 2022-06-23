@@ -12,6 +12,10 @@ import modelDark from "../assets/directions_car_dark.svg";
 import arrowDownLight from "../assets/arrow_down_light.svg";
 import arrowDownDark from "../assets/arrow_down_dark.svg";
 import restartAltIcon from "../assets/restart_alt.svg";
+import whiteCar from "../assets/filters_assets/white_car.png";
+import blueCar from "../assets/filters_assets/blue_car.png";
+import grayCar from "../assets/filters_assets/gray_car.png";
+import blackCar from "../assets/filters_assets/black_car.png";
 import Dropdown from "react-bootstrap/Dropdown";
 import "./style.scss";
 
@@ -427,31 +431,154 @@ export const MapActionButtons: React.FC<Types> = ({ darkMode }: Types) => {
           </ul>
         </div>
 
-        {/*
-        <Dropdown className="m-1">
-          <Dropdown.Toggle
-            className={
-              !darkMode
-                ? "rounded-pill bg-light shadow border-0"
-                : "rounded-pill bg-dark shadow border-0"
-            }
-            variant={!darkMode ? "basic" : "dark"}
-            id="dropdown-basic"
-          >
-            {!darkMode ? (
-              <img className="img-fluid" src={modelLight} alt="" />
-            ) : (
-              <img className="img-fluid" src={modelDark} alt="" />
-            )}
-            <span className="me-2 ms-2">Model</span>
-          </Dropdown.Toggle>
+        <div>
+          <ul className="model-menu">
+            <li className="parent">
+              <a
+                href="!#"
+                className={
+                  !darkMode
+                    ? "bg-light text-dark shadow-sm"
+                    : "bg-dark text-light shadow-sm"
+                }
+              >
+                {!darkMode ? (
+                  <img className="img-fluid" src={modelLight} alt="" />
+                ) : (
+                  <img className="img-fluid" src={modelDark} alt="" />
+                )}
+                <span className="px-3">Model</span>
+                {!darkMode ? (
+                  <img src={arrowDownLight} alt="" />
+                ) : (
+                  <img src={arrowDownDark} alt="" />
+                )}
+              </a>
+              <ul className="children">
+                <hr className="m-0" />
+                <div className="container">
+                  <div className="row">
+                    <div>
+                      <div
+                        className="p-3 rounded cursor m-1 col d-flex justify-content-between"
+                        style={mystyle}
+                      >
+                        <div className="form-check">
+                          <input
+                            className="form-check-input"
+                            type="checkbox"
+                            value=""
+                            id="flexCheckDefault"
+                          />
+                          <label
+                            className="form-check-label font-size"
+                            htmlFor="flexCheckDefault"
+                          >
+                            Model S
+                          </label>
+                        </div>
+                        <div className="text-end">
+                          <img className="img-fluid" src={whiteCar} alt="" />
+                        </div>
+                      </div>
+                    </div>
+                    <div>
+                      <div
+                        className="p-3 rounded cursor m-1 col d-flex justify-content-between"
+                        style={mystyle}
+                      >
+                        <div className="form-check">
+                          <input
+                            className="form-check-input"
+                            type="checkbox"
+                            value=""
+                            id="flexCheckDefault"
+                          />
+                          <label
+                            className="form-check-label font-size"
+                            htmlFor="flexCheckDefault"
+                          >
+                            Model 3
+                          </label>
+                        </div>
+                        <div className="text-end">
+                          <img className="img-fluid" src={blueCar} alt="" />
+                        </div>
+                      </div>
+                    </div>
+                    <div>
+                      <div
+                        className="p-3 rounded cursor m-1 col d-flex justify-content-between"
+                        style={mystyle}
+                      >
+                        <div className="form-check">
+                          <input
+                            className="form-check-input"
+                            type="checkbox"
+                            value=""
+                            id="flexCheckDefault"
+                          />
+                          <label
+                            className="form-check-label font-size"
+                            htmlFor="flexCheckDefault"
+                          >
+                            Model X
+                          </label>
+                        </div>
+                        <div className="text-end">
+                          <img className="img-fluid" src={grayCar} alt="" />
+                        </div>
+                      </div>
+                    </div>
+                    <div>
+                      <div
+                        className="p-3 rounded cursor m-1 col d-flex justify-content-between"
+                        style={mystyle}
+                      >
+                        <div className="form-check">
+                          <input
+                            className="form-check-input"
+                            type="checkbox"
+                            value=""
+                            id="flexCheckDefault"
+                          />
+                          <label
+                            className="form-check-label font-size"
+                            htmlFor="flexCheckDefault"
+                          >
+                            Model Y
+                          </label>
+                        </div>
+                        <div className="text-end">
+                          <img className="img-fluid" src={blackCar} alt="" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="d-flex justify-content-between mt-2">
+                    <div>
+                      <button className="btn btn-primary">
+                        Show 8 results
+                      </button>
+                    </div>
+                    <div>
+                      <a href="!#">
+                        Clear
+                        <img
+                          className="img-fluid ms-2"
+                          src={restartAltIcon}
+                          alt=""
+                        />
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </ul>
+            </li>
+          </ul>
+        </div>
 
-          <Dropdown.Menu>
-            <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
-            <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
-            <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
-          </Dropdown.Menu>
-        </Dropdown>
+        {/*
 
         <Dropdown className="m-1">
           <Dropdown.Toggle
