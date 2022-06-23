@@ -16,14 +16,7 @@ export const DeliverTo: React.FC<Types> = ({
   onChangeSection,
 }: Types) => {
   return (
-    <div
-      style={{
-        maxWidth: "480px",
-        height: "100vh",
-        overflow: "scroll",
-        overflowX: "hidden",
-      }}
-    >
+    <div>
       <div className="mt-5">
         <div className="d-flex align-items-center">
           <div className="me-3">
