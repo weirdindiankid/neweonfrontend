@@ -12,7 +12,6 @@ export const PricingFilter: React.FC<Types> = ({
 }: Types) => {
   const mystyle = {
     backgroundColor: !darkMode ? "#F5F5F5" : "#1F1F1F",
-    borderRadius: "20px",
   };
   const nestedCard = {
     backgroundColor: !darkMode ? "rgba(0, 0, 0, 0.04)" : "#2F2F2F",

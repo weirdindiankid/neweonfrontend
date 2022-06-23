@@ -11,6 +11,7 @@ import modelLight from "../assets/directions_car_light.svg";
 import modelDark from "../assets/directions_car_dark.svg";
 import arrowDownLight from "../assets/arrow_down_light.svg";
 import arrowDownDark from "../assets/arrow_down_dark.svg";
+import restartAltIcon from "../assets/restart_alt.svg";
 import Dropdown from "react-bootstrap/Dropdown";
 import "./style.scss";
 
@@ -19,33 +20,13 @@ interface Types {
 }
 
 export const MapActionButtons: React.FC<Types> = ({ darkMode }: Types) => {
+  const mystyle = {
+    backgroundColor: !darkMode ? "#F5F5F5" : "#1F1F1F",
+  };
+
   return (
     <div className="d-flex justify-content-center">
       <div className="d-flex justify-content-center position-absolute top-0 pt-4">
-        {/* <Dropdown className="m-1">
-          <Dropdown.Toggle
-            className={
-              !darkMode
-                ? "rounded-pill bg-light shadow border-0"
-                : "rounded-pill bg-dark shadow border-0"
-            }
-            variant={!darkMode ? "basic" : "dark"}
-            id="dropdown-basic"
-          >
-            {!darkMode ? (
-              <img className="img-fluid" src={attachMoneyLight} alt="" />
-            ) : (
-              <img className="img-fluid" src={attachMoneyDark} alt="" />
-            )}
-            <span className="me-2 ms-2">Price</span>
-          </Dropdown.Toggle>
-
-          <Dropdown.Menu>
-            <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
-            <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
-            <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
-          </Dropdown.Menu>
-        </Dropdown> */}
         <div>
           <ul className="menu">
             <li className="parent">
@@ -71,18 +52,113 @@ export const MapActionButtons: React.FC<Types> = ({ darkMode }: Types) => {
               </a>
               <ul className="children">
                 <hr className="m-0" />
-                <li className="p-3">
-                  <span>Item</span>
-                </li>
-                <li>
-                  <span>Item</span>
-                </li>
-                <li>
-                  <span>Item</span>
-                </li>
-                <li>
-                  <span>Item</span>
-                </li>
+                <div className="container">
+                  <div className="row row-cols-2">
+                    <div>
+                      <div
+                        className="p-2 rounded cursor m-1 col"
+                        style={mystyle}
+                      >
+                        <div className="form-check">
+                          <input
+                            className="form-check-input"
+                            type="checkbox"
+                            value=""
+                            id="flexCheckDefault"
+                          />
+                          <label
+                            className="form-check-label"
+                            htmlFor="flexCheckDefault"
+                            style={{ fontSize: "14px" }}
+                          >
+                            150 - 200
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                    <div>
+                      <div
+                        className="p-2 rounded cursor m-1 col"
+                        style={mystyle}
+                      >
+                        <div className="form-check">
+                          <input
+                            className="form-check-input"
+                            type="checkbox"
+                            value=""
+                            id="flexCheckDefault"
+                          />
+                          <label
+                            className="form-check-label"
+                            htmlFor="flexCheckDefault"
+                            style={{ fontSize: "14px" }}
+                          >
+                            200 - 250
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                    <div>
+                      <div
+                        className="p-2 rounded cursor m-1 col"
+                        style={mystyle}
+                      >
+                        <div className="form-check">
+                          <input
+                            className="form-check-input"
+                            type="checkbox"
+                            value=""
+                            id="flexCheckDefault"
+                          />
+                          <label
+                            className="form-check-label"
+                            htmlFor="flexCheckDefault"
+                            style={{ fontSize: "14px" }}
+                          >
+                            250 - 300
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                    <div>
+                      <div
+                        className="p-2 rounded cursor m-1 col"
+                        style={mystyle}
+                      >
+                        <div className="form-check">
+                          <input
+                            className="form-check-input"
+                            type="checkbox"
+                            value=""
+                            id="flexCheckDefault"
+                          />
+                          <label
+                            className="form-check-label"
+                            htmlFor="flexCheckDefault"
+                            style={{ fontSize: "14px" }}
+                          >
+                            300 - 350
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="d-flex justify-content-between mt-2">
+                    <div>
+                      <button className="btn btn-primary">Show 8 results</button>
+                    </div>
+                    <div>
+                      <a href="!#">
+                        Clear
+                        <img
+                          className="img-fluid ms-2"
+                          src={restartAltIcon}
+                          alt=""
+                        />
+                      </a>
+                    </div>
+                  </div>
+                </div>
               </ul>
             </li>
           </ul>
