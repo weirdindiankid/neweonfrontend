@@ -34,8 +34,8 @@ export const MapActionButtons: React.FC<Types> = ({ darkMode }: Types) => {
                 href="!#"
                 className={
                   !darkMode
-                    ? "bg-light text-dark shadow"
-                    : "bg-dark text-light shadow"
+                    ? "bg-light text-dark shadow-sm"
+                    : "bg-dark text-light shadow-sm"
                 }
               >
                 {!darkMode ? (
@@ -67,9 +67,8 @@ export const MapActionButtons: React.FC<Types> = ({ darkMode }: Types) => {
                             id="flexCheckDefault"
                           />
                           <label
-                            className="form-check-label"
+                            className="form-check-label font-size"
                             htmlFor="flexCheckDefault"
-                            style={{ fontSize: "14px" }}
                           >
                             150 - 200
                           </label>
@@ -89,9 +88,8 @@ export const MapActionButtons: React.FC<Types> = ({ darkMode }: Types) => {
                             id="flexCheckDefault"
                           />
                           <label
-                            className="form-check-label"
+                            className="form-check-label font-size"
                             htmlFor="flexCheckDefault"
-                            style={{ fontSize: "14px" }}
                           >
                             200 - 250
                           </label>
@@ -111,9 +109,8 @@ export const MapActionButtons: React.FC<Types> = ({ darkMode }: Types) => {
                             id="flexCheckDefault"
                           />
                           <label
-                            className="form-check-label"
+                            className="form-check-label font-size"
                             htmlFor="flexCheckDefault"
-                            style={{ fontSize: "14px" }}
                           >
                             250 - 300
                           </label>
@@ -133,9 +130,8 @@ export const MapActionButtons: React.FC<Types> = ({ darkMode }: Types) => {
                             id="flexCheckDefault"
                           />
                           <label
-                            className="form-check-label"
+                            className="form-check-label font-size"
                             htmlFor="flexCheckDefault"
-                            style={{ fontSize: "14px" }}
                           >
                             300 - 350
                           </label>
@@ -173,8 +169,8 @@ export const MapActionButtons: React.FC<Types> = ({ darkMode }: Types) => {
                 href="!#"
                 className={
                   !darkMode
-                    ? "bg-light text-dark shadow"
-                    : "bg-dark text-light shadow"
+                    ? "bg-light text-dark shadow-sm"
+                    : "bg-dark text-light shadow-sm"
                 }
               >
                 {!darkMode ? (
@@ -207,9 +203,8 @@ export const MapActionButtons: React.FC<Types> = ({ darkMode }: Types) => {
                               id="flexCheckDefault"
                             />
                             <label
-                              className="form-check-label fw-bold"
+                              className="form-check-label fw-bold font-size"
                               htmlFor="flexCheckDefault"
-                              style={{ fontSize: "14px" }}
                             >
                               Standard autopilot
                             </label>
@@ -234,9 +229,8 @@ export const MapActionButtons: React.FC<Types> = ({ darkMode }: Types) => {
                               id="flexCheckDefault"
                             />
                             <label
-                              className="form-check-label fw-bold"
+                              className="form-check-label fw-bold font-size"
                               htmlFor="flexCheckDefault"
-                              style={{ fontSize: "14px" }}
                             >
                               Enhanced autopilot
                             </label>
@@ -262,9 +256,8 @@ export const MapActionButtons: React.FC<Types> = ({ darkMode }: Types) => {
                               id="flexCheckDefault"
                             />
                             <label
-                              className="form-check-label fw-bold"
+                              className="form-check-label fw-bold font-size"
                               htmlFor="flexCheckDefault"
-                              style={{ fontSize: "14px" }}
                             >
                               Full self driving autopilot
                             </label>
@@ -299,56 +292,142 @@ export const MapActionButtons: React.FC<Types> = ({ darkMode }: Types) => {
           </ul>
         </div>
 
-        {/* <Dropdown className="m-1">
-          <Dropdown.Toggle
-            className={
-              !darkMode
-                ? "rounded-pill bg-light shadow border-0"
-                : "rounded-pill bg-dark shadow border-0"
-            }
-            variant={!darkMode ? "basic" : "dark"}
-            id="dropdown-basic"
-          >
-            {!darkMode ? (
-              <img className="img-fluid" src={smartTotLight} alt="" />
-            ) : (
-              <img className="img-fluid" src={smartTotDark} alt="" />
-            )}
-            <span className="me-2 ms-2">Autopilot</span>
-          </Dropdown.Toggle>
+        <div>
+          <ul className="speed-menu">
+            <li className="parent">
+              <a
+                href="!#"
+                className={
+                  !darkMode
+                    ? "bg-light text-dark shadow-sm"
+                    : "bg-dark text-light shadow-sm"
+                }
+              >
+                {!darkMode ? (
+                  <img className="img-fluid" src={speedLight} alt="" />
+                ) : (
+                  <img className="img-fluid" src={speedDark} alt="" />
+                )}
+                <span className="px-3">Speed</span>
+                {!darkMode ? (
+                  <img src={arrowDownLight} alt="" />
+                ) : (
+                  <img src={arrowDownDark} alt="" />
+                )}
+              </a>
+              <ul className="children">
+                <hr className="m-0" />
+                <div className="container">
+                  <div className="row row-cols-2">
+                    <div>
+                      <div
+                        className="p-2 rounded cursor m-1 col"
+                        style={mystyle}
+                      >
+                        <div className="form-check">
+                          <input
+                            className="form-check-input"
+                            type="checkbox"
+                            value=""
+                            id="flexCheckDefault"
+                          />
+                          <label
+                            className="form-check-label font-size"
+                            htmlFor="flexCheckDefault"
+                          >
+                            1-2 s
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                    <div>
+                      <div
+                        className="p-2 rounded cursor m-1 col"
+                        style={mystyle}
+                      >
+                        <div className="form-check">
+                          <input
+                            className="form-check-input"
+                            type="checkbox"
+                            value=""
+                            id="flexCheckDefault"
+                          />
+                          <label
+                            className="form-check-label font-size"
+                            htmlFor="flexCheckDefault"
+                          >
+                            2-3 s
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                    <div>
+                      <div
+                        className="p-2 rounded cursor m-1 col"
+                        style={mystyle}
+                      >
+                        <div className="form-check">
+                          <input
+                            className="form-check-input"
+                            type="checkbox"
+                            value=""
+                            id="flexCheckDefault"
+                          />
+                          <label
+                            className="form-check-label font-size"
+                            htmlFor="flexCheckDefault"
+                          >
+                            3 -4 s
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                    <div>
+                      <div
+                        className="p-2 rounded cursor m-1 col"
+                        style={mystyle}
+                      >
+                        <div className="form-check">
+                          <input
+                            className="form-check-input"
+                            type="checkbox"
+                            value=""
+                            id="flexCheckDefault"
+                          />
+                          <label
+                            className="form-check-label font-size"
+                            htmlFor="flexCheckDefault"
+                          >
+                            4 - 5 s
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="d-flex justify-content-between mt-2">
+                    <div>
+                      <button className="btn btn-primary">
+                        Show 8 results
+                      </button>
+                    </div>
+                    <div>
+                      <a href="!#">
+                        Clear
+                        <img
+                          className="img-fluid ms-2"
+                          src={restartAltIcon}
+                          alt=""
+                        />
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </ul>
+            </li>
+          </ul>
+        </div>
 
-          <Dropdown.Menu>
-            <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
-            <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
-            <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
-          </Dropdown.Menu>
-        </Dropdown>
-
-        <Dropdown className="m-1">
-          <Dropdown.Toggle
-            className={
-              !darkMode
-                ? "rounded-pill bg-light shadow border-0"
-                : "rounded-pill bg-dark shadow border-0"
-            }
-            variant={!darkMode ? "basic" : "dark"}
-            id="dropdown-basic"
-          >
-            {!darkMode ? (
-              <img className="img-fluid" src={speedLight} alt="" />
-            ) : (
-              <img className="img-fluid" src={speedDark} alt="" />
-            )}
-            <span className="me-2 ms-2">Speed</span>
-          </Dropdown.Toggle>
-
-          <Dropdown.Menu>
-            <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
-            <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
-            <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
-          </Dropdown.Menu>
-        </Dropdown>
-
+        {/*
         <Dropdown className="m-1">
           <Dropdown.Toggle
             className={
