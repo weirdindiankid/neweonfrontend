@@ -17,7 +17,7 @@ export const Map: React.FC<Types> = ({
   zoom,
 }: Types) => {
   const ref = React.useRef<HTMLDivElement>(null);
-  const { height, width } = useWindowDimensions();
+  const { width } = useWindowDimensions();
 
   useEffect(() => {
     if (ref?.current) {
