@@ -64,6 +64,7 @@ export const DeliverTo: React.FC<Types> = ({
               Delivery to airport, hotel or destination of your choice. Includes
               both delivery and pick up.
             </small>
+          </div>
             <div className="mt-4">
               {searchTerm && (
                 <LocationList
@@ -73,7 +74,6 @@ export const DeliverTo: React.FC<Types> = ({
                 />
               )}
             </div>
-          </div>
         </div>
       </div>
     </div>
