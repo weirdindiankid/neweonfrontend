@@ -53,7 +53,9 @@ export const MapActionButtons: React.FC<Types> = ({ darkMode }: Types) => {
                   <img src={arrowDownDark} alt="" />
                 )}
               </a>
-              <ul className="children">
+              <ul
+                className={!darkMode ? "bg-light children" : "bg-dark children"}
+              >
                 <hr className="m-0" />
                 <div className="container">
                   <div className="row row-cols-2">
@@ -142,21 +144,21 @@ export const MapActionButtons: React.FC<Types> = ({ darkMode }: Types) => {
                       </div>
                     </div>
                   </div>
-                  <div className="d-flex justify-content-between mt-2">
+                  <div className="d-flex justify-content-between align-items-center mt-2">
                     <div>
                       <button className="btn btn-primary">
                         Show 8 results
                       </button>
                     </div>
                     <div>
-                      <a href="!#">
+                      <span style={{ color: "#0C72C0" }}>
                         Clear
                         <img
                           className="img-fluid ms-2"
                           src={restartAltIcon}
                           alt=""
                         />
-                      </a>
+                      </span>
                     </div>
                   </div>
                 </div>
@@ -188,7 +190,9 @@ export const MapActionButtons: React.FC<Types> = ({ darkMode }: Types) => {
                   <img src={arrowDownDark} alt="" />
                 )}
               </a>
-              <ul className="children">
+              <ul
+                className={!darkMode ? "bg-light children" : "bg-dark children"}
+              >
                 <hr className="m-0" />
                 <div className="container">
                   <div className="row">
@@ -272,21 +276,21 @@ export const MapActionButtons: React.FC<Types> = ({ darkMode }: Types) => {
                       </div>
                     </div>
                   </div>
-                  <div className="d-flex justify-content-between mt-2">
+                  <div className="d-flex justify-content-between align-items-center mt-2">
                     <div>
                       <button className="btn btn-primary">
                         Show 8 results
                       </button>
                     </div>
                     <div>
-                      <a href="!#">
+                      <span style={{ color: "#0C72C0" }}>
                         Clear
                         <img
                           className="img-fluid ms-2"
                           src={restartAltIcon}
                           alt=""
                         />
-                      </a>
+                      </span>
                     </div>
                   </div>
                 </div>
@@ -318,7 +322,9 @@ export const MapActionButtons: React.FC<Types> = ({ darkMode }: Types) => {
                   <img src={arrowDownDark} alt="" />
                 )}
               </a>
-              <ul className="children">
+              <ul
+                className={!darkMode ? "bg-light children" : "bg-dark children"}
+              >
                 <hr className="m-0" />
                 <div className="container">
                   <div className="row row-cols-2">
@@ -407,21 +413,21 @@ export const MapActionButtons: React.FC<Types> = ({ darkMode }: Types) => {
                       </div>
                     </div>
                   </div>
-                  <div className="d-flex justify-content-between mt-2">
+                  <div className="d-flex justify-content-between align-items-center mt-2">
                     <div>
                       <button className="btn btn-primary">
                         Show 8 results
                       </button>
                     </div>
                     <div>
-                      <a href="!#">
+                      <span style={{ color: "#0C72C0" }}>
                         Clear
                         <img
                           className="img-fluid ms-2"
                           src={restartAltIcon}
                           alt=""
                         />
-                      </a>
+                      </span>
                     </div>
                   </div>
                 </div>
@@ -453,7 +459,9 @@ export const MapActionButtons: React.FC<Types> = ({ darkMode }: Types) => {
                   <img src={arrowDownDark} alt="" />
                 )}
               </a>
-              <ul className="children">
+              <ul
+                className={!darkMode ? "bg-light children" : "bg-dark children"}
+              >
                 <hr className="m-0" />
                 <div className="container">
                   <div className="row">
@@ -554,21 +562,21 @@ export const MapActionButtons: React.FC<Types> = ({ darkMode }: Types) => {
                       </div>
                     </div>
                   </div>
-                  <div className="d-flex justify-content-between mt-2">
+                  <div className="d-flex justify-content-between align-items-center mt-2">
                     <div>
                       <button className="btn btn-primary">
                         Show 8 results
                       </button>
                     </div>
                     <div>
-                      <a href="!#">
+                      <span style={{ color: "#0C72C0" }}>
                         Clear
                         <img
                           className="img-fluid ms-2"
                           src={restartAltIcon}
                           alt=""
                         />
-                      </a>
+                      </span>
                     </div>
                   </div>
                 </div>
@@ -600,7 +608,9 @@ export const MapActionButtons: React.FC<Types> = ({ darkMode }: Types) => {
                   <img src={arrowDownDark} alt="" />
                 )}
               </a>
-              <ul className="children">
+              <ul
+                className={!darkMode ? "bg-light children" : "bg-dark children"}
+              >
                 <hr className="m-0" />
                 <div className="container">
                   <div className="row">
@@ -647,21 +657,21 @@ export const MapActionButtons: React.FC<Types> = ({ darkMode }: Types) => {
                       </div>
                     </div>
                   </div>
-                  <div className="d-flex justify-content-between mt-2">
+                  <div className="d-flex justify-content-between align-items-center mt-2">
                     <div>
                       <button className="btn btn-primary">
                         Show 8 results
                       </button>
                     </div>
                     <div>
-                      <a href="!#">
+                      <span style={{ color: "#0C72C0" }}>
                         Clear
                         <img
                           className="img-fluid ms-2"
                           src={restartAltIcon}
                           alt=""
                         />
-                      </a>
+                      </span>
                     </div>
                   </div>
                 </div>
