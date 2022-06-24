@@ -3,6 +3,8 @@ import arrowLeftLight from "../assets/arrow_back_light.svg";
 import arrowLeftDark from "../assets/arrow_back_dark.svg";
 import FloatingLabel from "react-bootstrap/FloatingLabel";
 import Form from "react-bootstrap/Form";
+import { LocationList } from "./LocationList";
+import List from "./../data/LocationList.json";
 
 interface Types {
   darkMode: boolean;
@@ -15,6 +17,7 @@ export const DeliverTo: React.FC<Types> = ({
   data,
   onChangeSection,
 }: Types) => {
+  const [searchTerm, setSearchTerm] = React.useState<string>("");
   return (
     <div>
       <div className="mt-5">
@@ -43,7 +46,13 @@ export const DeliverTo: React.FC<Types> = ({
 
         <div className="container mt-3 px-4">
           <FloatingLabel controlId="floatingInputGrid" label="Address">
-            <Form.Control type="search" placeholder="Type address" />
+            <Form.Control
+              type="search"
+              placeholder="Type address"
+              onChange={(e) => {
+                setSearchTerm(e.target.value);
+              }}
+            />
           </FloatingLabel>
           <div className="ms-2 me-5 lh-1">
             <small
@@ -55,6 +64,15 @@ export const DeliverTo: React.FC<Types> = ({
               Delivery to airport, hotel or destination of your choice. Includes
               both delivery and pick up.
             </small>
+            <div className="mt-4">
+              {searchTerm && (
+                <LocationList
+                  darkMode={darkMode}
+                  onChangeSection={onChangeSection}
+                  data={List}
+                />
+              )}
+            </div>
           </div>
         </div>
       </div>
