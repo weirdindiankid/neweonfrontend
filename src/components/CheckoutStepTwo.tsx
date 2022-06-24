@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import arrowLeftLight from "../assets/arrow_back_light.svg";
 import arrowLeftDark from "../assets/arrow_back_dark.svg";
 import arrowRightLight from "../assets/arrow_right_light.svg";
@@ -23,6 +23,7 @@ import Card from "react-bootstrap/Card";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Accordion from "react-bootstrap/Accordion";
+import SignatureCanvas from "react-signature-canvas";
 
 interface Types {
   darkMode: boolean;
@@ -36,6 +37,18 @@ export const CheckoutStepTwo: React.FC<Types> = ({
   const mystyle = {
     backgroundColor: !darkMode ? "#F5F5F5" : "#1F1F1F",
   };
+  const signDoc = {
+    backgroundColor: !darkMode ? "#E8F0F9" : "#275891",
+    borderRadius: "4px 4px 0 0",
+  };
+  const [signPad, setSignPad] = React.useState<any>(null);
+  const clear = () => {
+    signPad.clear();
+  };
+
+  useEffect(() => {
+    // clear();
+  }, [darkMode]);
 
   return (
     <div
@@ -342,18 +355,31 @@ export const CheckoutStepTwo: React.FC<Types> = ({
           </div>
           <div className="mt-3 d-flex">
             <Card className="w-100">
-              <Card.Body
-                className="py-5"
-                style={{ backgroundColor: "#E8F0F9" }}
-              >
-                <Card.Text className="my-5 py-3"></Card.Text>
+              <Card.Body className="py-1" style={signDoc}>
+                <Card.Text>
+                  <SignatureCanvas
+                    penColor={!darkMode ? "black" : "white"}
+                    canvasProps={{
+                      width: 400,
+                      height: 200,
+                      className: "sigCanvas",
+                    }}
+                    ref={(ref) => {
+                      setSignPad(ref);
+                    }}
+                  />
+                </Card.Text>
                 {/* <Button variant="primary">Go somewhere</Button> */}
               </Card.Body>
               <Card.Footer className="d-flex">
                 <p className="text-dark">
                   Sign above to agree with the terms & conditions.
                 </p>
-                <Button variant="link" className="text-decoration-none">
+                <Button
+                  variant="link"
+                  className="text-decoration-none"
+                  onClick={() => clear()}
+                >
                   Clear
                 </Button>
               </Card.Footer>
