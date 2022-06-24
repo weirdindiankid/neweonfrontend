@@ -1,0 +1,30 @@
+[
+    {
+        "title": "Chicago",
+        "desciption": "Illinois"
+    },
+    {
+        "title": "Denver / Boulder",
+        "desciption": "Colorado"
+    },
+    {
+        "title": "Los Angeles",
+        "desciption": "California"
+    },
+    {
+        "title": "Miami",
+        "desciption": "Florida"
+    },
+    {
+        "title": "New York City / Jersey City",
+        "desciption": "New York"
+    },
+    {
+        "title": "Oklahoma City",
+        "desciption": "Oklahoma"
+    },
+    {
+        "title": "Portsmouth",
+        "desciption": "New Hampshire"
+    }
+]
