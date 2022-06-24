@@ -181,7 +181,7 @@ export const MapActionButtons: React.FC<Types> = ({ darkMode }: Types) => {
                 ) : (
                   <img className="img-fluid" src={smartToyDark} alt="" />
                 )}
-                <span className="px-3">Autopilot</span>
+                <span className="px-2">Autopilot</span>
                 {!darkMode ? (
                   <img src={arrowDownLight} alt="" />
                 ) : (
