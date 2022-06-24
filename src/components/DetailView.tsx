@@ -1,17 +1,6 @@
 import React from "react";
 import arrowLeftLight from "../assets/arrow_back_light.svg";
 import arrowLeftDark from "../assets/arrow_back_dark.svg";
-import grayCarDettail from "../assets/gray_car_detail.png";
-import smartTotLight from "../assets/smart_toy_light.svg";
-import smartTotDark from "../assets/smart_toy_dark.svg";
-import speedLight from "../assets/speed_light.svg";
-import speedDark from "../assets/speed_dark.svg";
-import mileLight from "../assets/battery_4_bar_light.svg";
-import mileDark from "../assets/battery_4_bar_dark.svg";
-import seatLight from "../assets/airline_seat_recline_extra_light.svg";
-import seatDark from "../assets/airline_seat_recline_extra_dark.svg";
-import interiorLight from "../assets/interior_light.svg";
-import interiorDark from "../assets/interior_dark.svg";
 import Form from "react-bootstrap/Form";
 
 interface Types {
@@ -81,27 +70,6 @@ export const DetailView: React.FC<Types> = ({
 
       <div className="m-4">
         <p>{data?.description}</p>
-        {/* {data?.features.map((feature: any, i: number) => {
-          return (
-            <div className={i < 2 ? "col-6" : "col-4"}>
-              <div
-                className="py-2 m-2 px-3 shadow-sm rounded d-flex"
-                style={nestedCards}
-              >
-                <div className="me-3">
-                  <img
-                    src={!darkMode ? feature.iconLight : feature.iconDark}
-                    alt=""
-                  />
-                </div>
-                <div>
-                  <small style={{ fontSize: "12px" }}>{feature.title}</small>
-                </div>
-              </div>
-            </div>
-          );
-        })} */}
-
         <div className="mt-4">
           <div className="d-flex flex-wrap justify-content-between">
             {data.features.map((feature: any, i: number) => {
@@ -128,102 +96,6 @@ export const DetailView: React.FC<Types> = ({
             })}
           </div>
         </div>
-
-        {/* <div className="mt-4">
-          <div className="d-flex justify-content-between">
-            <div className="w-100">
-              <div
-                className="py-2 m-1 px-3 shadow-sm rounded d-flex"
-                style={nestedCards}
-              >
-                <div className="me-3">
-                  {!darkMode ? (
-                    <img className="img-fluid" src={smartTotLight} alt="" />
-                  ) : (
-                    <img className="img-fluid" src={smartTotDark} alt="" />
-                  )}
-                </div>
-                <div>
-                  <small style={{ fontSize: "12px" }}>Enhanced autopilot</small>
-                </div>
-              </div>
-            </div>
-
-            <div className="w-100">
-              <div
-                className="py-2 m-1 px-3 shadow-sm rounded d-flex"
-                style={nestedCards}
-              >
-                <div className="me-3">
-                  {!darkMode ? (
-                    <img className="img-fluid" src={speedLight} alt="" />
-                  ) : (
-                    <img className="img-fluid" src={speedDark} alt="" />
-                  )}
-                </div>
-                <div>
-                  <small style={{ fontSize: "12px" }}>0-60 in 4.9s</small>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="d-flex justify-content-between">
-            <div className="w-100">
-              <div
-                className="py-2 px-3 m-1 shadow-sm rounded d-flex"
-                style={nestedCards}
-              >
-                <div className="me-2">
-                  {!darkMode ? (
-                    <img className="img-fluid" src={mileLight} alt="" />
-                  ) : (
-                    <img className="img-fluid" src={mileDark} alt="" />
-                  )}
-                </div>
-                <div>
-                  <small style={{ fontSize: "12px" }}>295 miles</small>
-                </div>
-              </div>
-            </div>
-
-            <div className="w-100">
-              <div
-                className="py-2 px-3 m-1 shadow-sm rounded d-flex"
-                style={nestedCards}
-              >
-                <div className="me-2">
-                  {!darkMode ? (
-                    <img className="img-fluid" src={seatLight} alt="" />
-                  ) : (
-                    <img className="img-fluid" src={seatDark} alt="" />
-                  )}
-                </div>
-                <div>
-                  <small style={{ fontSize: "12px" }}>5 seats</small>
-                </div>
-              </div>
-            </div>
-
-            <div className="w-100">
-              <div
-                className="py-2 px-3 m-1 shadow-sm rounded d-flex"
-                style={nestedCards}
-              >
-                <div className="me-2">
-                  {!darkMode ? (
-                    <img className="img-fluid" src={interiorLight} alt="" />
-                  ) : (
-                    <img className="img-fluid" src={interiorDark} alt="" />
-                  )}
-                </div>
-                <div>
-                  <small style={{ fontSize: "12px" }}>Interior</small>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div> */}
 
         <div className="mt-5">
           <div>
