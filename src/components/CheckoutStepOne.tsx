@@ -5,11 +5,10 @@ import lockLight from "../assets/lock_light.svg";
 import lockDark from "../assets/lock_dark.svg";
 import modelLight from "../assets/directions_car_light.svg";
 import modelDark from "../assets/directions_car_dark.svg";
-import arrowDownLight from "../assets/arrow_down_light.svg";
-import arrowDownDark from "../assets/arrow_down_dark.svg";
 import Form from "react-bootstrap/Form";
 import FloatingLabel from "react-bootstrap/FloatingLabel";
 import Accordion from "react-bootstrap/Accordion";
+import "./style.scss"
 
 interface Types {
   darkMode: boolean;
@@ -21,7 +20,7 @@ export const CheckoutStepOne: React.FC<Types> = ({
   onChangeSection,
 }: Types) => {
   const mystyle = {
-    backgroundColor: !darkMode ? "#F5F5F5" : "#1F1F1F",
+    backgroundColor:!darkMode ? "#F5F5F5" : "#1F1F1F",
   };
 
   return (

@@ -45,10 +45,15 @@ export const DeliverTo: React.FC<Types> = ({
         </div>
 
         <div className="container mt-3 px-4">
-          <FloatingLabel controlId="floatingInputGrid" label="Address">
+          <FloatingLabel
+            className="text-dark"
+            controlId="floatingInputGrid"
+            label="Address"
+          >
             <Form.Control
               type="search"
               placeholder="Type address"
+              className="text-dark"
               onChange={(e) => {
                 setSearchTerm(e.target.value);
               }}
@@ -65,15 +70,15 @@ export const DeliverTo: React.FC<Types> = ({
               both delivery and pick up.
             </small>
           </div>
-            <div className="mt-4">
-              {searchTerm && (
-                <LocationList
-                  darkMode={darkMode}
-                  onChangeSection={onChangeSection}
-                  data={List}
-                />
-              )}
-            </div>
+          <div className="mt-4">
+            {searchTerm && (
+              <LocationList
+                darkMode={darkMode}
+                onChangeSection={onChangeSection}
+                data={List}
+              />
+            )}
+          </div>
         </div>
       </div>
     </div>

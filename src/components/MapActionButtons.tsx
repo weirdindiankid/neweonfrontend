@@ -37,8 +37,8 @@ export const MapActionButtons: React.FC<Types> = ({ darkMode }: Types) => {
                 href="!#"
                 className={
                   !darkMode
-                    ? "bg-light text-dark shadow-sm"
-                    : "bg-dark text-light shadow-sm"
+                    ? "bg-light text-dark shadow-sm d-flex justify-content-center"
+                    : "bg-dark text-light shadow-sm d-flex justify-content-center"
                 }
               >
                 {!darkMode ? (
@@ -174,8 +174,8 @@ export const MapActionButtons: React.FC<Types> = ({ darkMode }: Types) => {
                 href="!#"
                 className={
                   !darkMode
-                    ? "bg-light text-dark shadow-sm"
-                    : "bg-dark text-light shadow-sm"
+                    ? "bg-light text-dark shadow-sm d-flex justify-content-center"
+                    : "bg-dark text-light shadow-sm d-flex justify-content-center"
                 }
               >
                 {!darkMode ? (
@@ -306,8 +306,8 @@ export const MapActionButtons: React.FC<Types> = ({ darkMode }: Types) => {
                 href="!#"
                 className={
                   !darkMode
-                    ? "bg-light text-dark shadow-sm"
-                    : "bg-dark text-light shadow-sm"
+                    ? "bg-light text-dark shadow-sm d-flex justify-content-center"
+                    : "bg-dark text-light shadow-sm d-flex justify-content-center"
                 }
               >
                 {!darkMode ? (
@@ -443,8 +443,8 @@ export const MapActionButtons: React.FC<Types> = ({ darkMode }: Types) => {
                 href="!#"
                 className={
                   !darkMode
-                    ? "bg-light text-dark shadow-sm"
-                    : "bg-dark text-light shadow-sm"
+                    ? "bg-light text-dark shadow-sm d-flex justify-content-center"
+                    : "bg-dark text-light shadow-sm d-flex justify-content-center"
                 }
               >
                 {!darkMode ? (
@@ -592,8 +592,8 @@ export const MapActionButtons: React.FC<Types> = ({ darkMode }: Types) => {
                 href="!#"
                 className={
                   !darkMode
-                    ? "bg-light text-dark shadow-sm"
-                    : "bg-dark text-light shadow-sm"
+                    ? "bg-light text-dark shadow-sm d-flex justify-content-center"
+                    : "bg-dark text-light shadow-sm d-flex justify-content-center"
                 }
               >
                 {!darkMode ? (

@@ -57,7 +57,7 @@ export const CarList: React.FC<Types> = ({
         {data.map((item: any) => {
           return (
             <div
-              className={carDetails?.id !== item.id ? "m-4 cursor in-active" : "m-4 cursor"}
+              className={carDetails?.id !== item.id ? "m-2 cursor in-active" : "m-2 cursor"}
               onClick={() => {
                 onChangeSection("section3");
                 onChangeCarDetails(item);
@@ -84,15 +84,15 @@ export const CarList: React.FC<Types> = ({
                 </div>
 
                 <div className="mt-4">
-                  <div className="d-flex flex-wrap justify-content-between">
+                  <div className="row">
                     {item.features.map((feature: any, i: number) => {
                       return (
-                        <div className={i < 2 ? "col-6" : "col-4"}>
+                        <div className={i < 2 ? "col-6 lh-1" : "col-4 lh-1"}>
                           <div
-                            className="py-2 m-2 px-3 shadow-sm rounded d-flex"
+                            className="p-2 m-2 shadow-sm rounded d-flex"
                             style={nestedCards}
                           >
-                            <div className="me-3">
+                            <div className="me-2">
                               <img
                                 src={
                                   !darkMode

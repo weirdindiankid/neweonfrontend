@@ -31,7 +31,7 @@ export const DetailView: React.FC<Types> = ({
         overflowX: "hidden",
       }}
     >
-      <div className="d-flex justify-content-between mx-2">
+      <div className="d-flex justify-content-between mx-2 my-4">
         <div className="d-flex align-items-center">
           <div className="me-3">
             <button
@@ -66,20 +66,20 @@ export const DetailView: React.FC<Types> = ({
             <img src={data?.img} className="card-img img-fluid" alt="..." />
           </div>
         </div>
+        <small>{data?.description}</small>
       </div>
 
-      <div className="m-4">
-        <p>{data?.description}</p>
+      <div className="m-2">
         <div className="mt-4">
-          <div className="d-flex flex-wrap justify-content-between">
+          <div className="row">
             {data.features.map((feature: any, i: number) => {
               return (
-                <div className={i < 2 ? "col-6" : "col-4"}>
+                <div className={i < 2 ? "col-6 lh-1" : "col-4 lh-1"}>
                   <div
-                    className="py-2 m-2 px-3 shadow-sm rounded d-flex"
+                    className="p-2 m-2 shadow-sm rounded d-flex"
                     style={nestedCards}
                   >
-                    <div className="me-3">
+                    <div className="me-2">
                       <img
                         src={!darkMode ? feature.iconLight : feature.iconDark}
                         alt=""
