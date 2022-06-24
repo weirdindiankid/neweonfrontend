@@ -2,7 +2,7 @@ import React from "react";
 import arrowRightLight from "../assets/arrow_right_light.svg";
 import arrowRightDark from "../assets/arrow_right_dark.svg";
 import { LocationList } from "./LocationList";
-import List from "./../data/Data.json";
+import List from "./../data/LocationList.json";
 
 interface Types {
   darkMode: boolean;
