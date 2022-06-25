@@ -371,10 +371,10 @@ export const CheckoutStepTwo: React.FC<Types> = ({
                 </Card.Text>
                 {/* <Button variant="primary">Go somewhere</Button> */}
               </Card.Body>
-              <Card.Footer className="d-flex">
-                <p className="text-dark">
+              <Card.Footer className="d-flex justify-content-center align-items-center">
+                <span className="text-dark pe-3">
                   Sign above to agree with the terms & conditions.
-                </p>
+                </span>
                 <Button
                   variant="link"
                   className="text-decoration-none"
