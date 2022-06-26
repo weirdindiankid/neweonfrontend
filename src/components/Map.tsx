@@ -24,6 +24,8 @@ export const Map: React.FC<Types> = ({
       new window.google.maps.Map(ref?.current, {
         center,
         zoom,
+        zoomControl: true,
+        disableDefaultUI: true,
       });
     }
   });
