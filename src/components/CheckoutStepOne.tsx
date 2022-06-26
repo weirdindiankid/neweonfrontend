@@ -131,7 +131,7 @@ export const CheckoutStepOne: React.FC<Types> = ({
                 <div>
                   <span>
                     Changed your mind?{" "}
-                    <a href="!#" className="text-decoration-none">
+                    <a href="#!" className="text-decoration-none">
                       Alter options.
                     </a>
                   </span>

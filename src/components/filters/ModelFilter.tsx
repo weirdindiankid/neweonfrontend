@@ -44,7 +44,7 @@ export const ModelFilter: React.FC<Types> = ({ darkMode, close }: Types) => {
             <span className="fs-2 fw-bold ms-3">Model</span>
           </div>
           <div>
-            <a href="!#">
+            <a href="#!">
               Clear
               <img className="img-fluid ms-2" src={restartAltIcon} alt="" />
             </a>

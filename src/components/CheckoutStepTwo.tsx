@@ -158,7 +158,7 @@ export const CheckoutStepTwo: React.FC<Types> = ({
                 <div>
                   <span>
                     Changed your mind?{" "}
-                    <a href="!#" className="text-decoration-none">
+                    <a href="#!" className="text-decoration-none">
                       Alter options.
                     </a>
                   </span>
@@ -259,7 +259,7 @@ export const CheckoutStepTwo: React.FC<Types> = ({
                 <div>
                   <span>
                     Not you?{" "}
-                    <a href="!#" className="text-decoration-none">
+                    <a href="#!" className="text-decoration-none">
                       Continue as guest.
                     </a>
                   </span>

@@ -34,7 +34,7 @@ export const MapActionButtons: React.FC<Types> = ({ darkMode }: Types) => {
           <ul className="pricing-menu">
             <li className="parent">
               <a
-                href="!#"
+                href="#!"
                 className={
                   !darkMode
                     ? "bg-light text-dark shadow-sm d-flex justify-content-center"
@@ -171,7 +171,7 @@ export const MapActionButtons: React.FC<Types> = ({ darkMode }: Types) => {
           <ul className="autopilot-menu">
             <li className="parent">
               <a
-                href="!#"
+                href="#!"
                 className={
                   !darkMode
                     ? "bg-light text-dark shadow-sm d-flex justify-content-center"
@@ -303,7 +303,7 @@ export const MapActionButtons: React.FC<Types> = ({ darkMode }: Types) => {
           <ul className="speed-menu">
             <li className="parent">
               <a
-                href="!#"
+                href="#!"
                 className={
                   !darkMode
                     ? "bg-light text-dark shadow-sm d-flex justify-content-center"
@@ -440,7 +440,7 @@ export const MapActionButtons: React.FC<Types> = ({ darkMode }: Types) => {
           <ul className="model-menu">
             <li className="parent">
               <a
-                href="!#"
+                href="#!"
                 className={
                   !darkMode
                     ? "bg-light text-dark shadow-sm d-flex justify-content-center"
@@ -589,7 +589,7 @@ export const MapActionButtons: React.FC<Types> = ({ darkMode }: Types) => {
           <ul className="range-menu">
             <li className="parent">
               <a
-                href="!#"
+                href="#!"
                 className={
                   !darkMode
                     ? "bg-light text-dark shadow-sm d-flex justify-content-center"
