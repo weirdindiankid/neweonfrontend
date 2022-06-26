@@ -12,6 +12,10 @@ import modelDark from "../assets/directions_car_dark.svg";
 import arrowDownLight from "../assets/arrow_down_light.svg";
 import arrowDownDark from "../assets/arrow_down_dark.svg";
 import restartAltIcon from "../assets/restart_alt.svg";
+import arrowLeftLight from "../assets/arrow_back_light.svg";
+import arrowLeftDark from "../assets/arrow_back_dark.svg";
+import arrowRightLight from "../assets/arrow_right_light.svg";
+import arrowRightDark from "../assets/arrow_right_dark.svg";
 import whiteCar from "../assets/filters_assets/white_car.png";
 import blueCar from "../assets/filters_assets/blue_car.png";
 import grayCar from "../assets/filters_assets/gray_car.png";
@@ -30,6 +34,22 @@ export const MapActionButtons: React.FC<Types> = ({ darkMode }: Types) => {
   return (
     <div className="d-flex justify-content-center">
       <div className="d-flex position-absolute top-0 pt-4">
+        {/* <div className="m-1">
+          <button
+            type="button"
+            className={
+              !darkMode
+                ? "btn btn-light rounded-circle"
+                : "btn btn-dark rounded-circle"
+            }
+          >
+            {!darkMode ? (
+              <img className="img-fluid" src={arrowLeftLight} alt="" />
+            ) : (
+              <img className="img-fluid" src={arrowLeftDark} alt="" />
+            )}
+          </button>
+        </div> */}
         <div>
           <ul className="pricing-menu">
             <li className="parent">
@@ -679,6 +699,22 @@ export const MapActionButtons: React.FC<Types> = ({ darkMode }: Types) => {
             </li>
           </ul>
         </div>
+        {/* <div className="m-1">
+          <button
+            type="button"
+            className={
+              !darkMode
+                ? "btn btn-light rounded-circle"
+                : "btn btn-dark rounded-circle"
+            }
+          >
+            {!darkMode ? (
+              <img className="img-fluid" src={arrowRightLight} alt="" />
+            ) : (
+              <img className="img-fluid" src={arrowRightDark} alt="" />
+            )}
+          </button>
+        </div> */}
       </div>
     </div>
   );
