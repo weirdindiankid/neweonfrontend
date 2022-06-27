@@ -8,7 +8,7 @@ import modelDark from "../assets/directions_car_dark.svg";
 import Form from "react-bootstrap/Form";
 import FloatingLabel from "react-bootstrap/FloatingLabel";
 import Accordion from "react-bootstrap/Accordion";
-import "./style.scss"
+import "./style.scss";
 
 interface Types {
   darkMode: boolean;
@@ -20,7 +20,7 @@ export const CheckoutStepOne: React.FC<Types> = ({
   onChangeSection,
 }: Types) => {
   const mystyle = {
-    backgroundColor:!darkMode ? "#F5F5F5" : "#1F1F1F",
+    backgroundColor: !darkMode ? "#F5F5F5" : "#1F1F1F",
   };
 
   return (
@@ -83,9 +83,9 @@ export const CheckoutStepOne: React.FC<Types> = ({
                   </div>
                 </div>
               </Accordion.Header>
-              <Accordion.Body>
+              <Accordion.Body className="pt-0">
                 <div>
-                  <div className="my-4">
+                  <div className="mb-4 mt-2">
                     <div className="d-flex justify-content-between">
                       <span>Where</span>
                       <span>Boston, MA</span>

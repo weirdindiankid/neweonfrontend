@@ -110,7 +110,7 @@ export const CheckoutStepTwo: React.FC<Types> = ({
                   </div>
                 </div>
               </Accordion.Header>
-              <Accordion.Body>
+              <Accordion.Body className="pt-0">
                 <div>
                   <div className="my-4">
                     <div className="d-flex justify-content-between">
@@ -181,7 +181,7 @@ export const CheckoutStepTwo: React.FC<Types> = ({
                   <span className="ms-3">Jhon Doe</span>
                 </div>
               </Accordion.Header>
-              <Accordion.Body>
+              <Accordion.Body className="pt-0">
                 <div className="w-100 my-3">
                   <Form.Floating>
                     <Form.Control
