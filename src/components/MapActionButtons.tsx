@@ -33,7 +33,10 @@ export const MapActionButtons: React.FC<Types> = ({ darkMode }: Types) => {
 
   return (
     <div className="d-flex justify-content-center">
-      <div className="d-flex position-absolute top-0 pt-4">
+      <div
+        className="d-flex position-absolute top-0 pt-4"
+        style={{ zIndex: "1", width: "80%" }}
+      >
         {/* <div className="m-1">
           <button
             type="button"

@@ -29,6 +29,16 @@
   box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
 }
 
+::-webkit-scrollbar:horizontal {
+  height: 0;
+  width: 0;
+  display: none;
+}
+
+::-webkit-scrollbar-thumb:horizontal {
+  display: none;
+}
+
 .bg-light {
   background-color: white !important;
 }

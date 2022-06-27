@@ -33,12 +33,12 @@ export const Map: React.FC<Types> = ({
   return (
     <>
       <div className="position-relative">
-        <div ref={ref} className="map-responsive"></div>
         {activeSection !== "section1" ? (
           width > 575 ? (
             <MapActionButtons darkMode={darkMode} />
           ) : null
         ) : null}
+        <div ref={ref} className="map-responsive"></div>
       </div>
     </>
   );
