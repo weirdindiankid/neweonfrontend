@@ -24,6 +24,9 @@ interface Types {
 }
 
 export const MobileFilters: React.FC<Types> = ({ darkMode }: Types) => {
+  const darkStyle = {
+    backgroundColor: !darkMode ? "#fff" : "#000",
+  };
   const [activeSection, setActiveSection] = useState<string>("section1");
 
   const [isOpen, setOpen] = React.useState(false);
@@ -35,7 +38,11 @@ export const MobileFilters: React.FC<Types> = ({ darkMode }: Types) => {
       <div className="d-flex scroll-inner" style={{ overflowX: "auto" }}>
         <button
           type="button"
-          className="btn btn-light border rounded-pill shadow d-flex align-items-center m-2"
+          className={
+            !darkMode
+              ? "btn btn-light border-secondary rounded-pill shadow d-flex align-items-center m-2"
+              : "btn btn-dark border-secondary rounded-pill shadow d-flex align-items-center m-2"
+          }
           onClick={() => {
             setActiveSection("pricing");
             setOpen(true);
@@ -56,7 +63,11 @@ export const MobileFilters: React.FC<Types> = ({ darkMode }: Types) => {
 
         <button
           type="button"
-          className="btn btn-light border rounded-pill shadow d-flex align-items-center m-2"
+          className={
+            !darkMode
+              ? "btn btn-light border-secondary rounded-pill shadow d-flex align-items-center m-2"
+              : "btn btn-dark border-secondary rounded-pill shadow d-flex align-items-center m-2"
+          }
           onClick={() => {
             setActiveSection("autopilot");
             setOpen(true);
@@ -77,7 +88,11 @@ export const MobileFilters: React.FC<Types> = ({ darkMode }: Types) => {
 
         <button
           type="button"
-          className="btn btn-light border rounded-pill shadow d-flex align-items-center m-2"
+          className={
+            !darkMode
+              ? "btn btn-light border-secondary rounded-pill shadow d-flex align-items-center m-2"
+              : "btn btn-dark border-secondary rounded-pill shadow d-flex align-items-center m-2"
+          }
           onClick={() => {
             setActiveSection("speed");
             setOpen(true);
@@ -98,7 +113,11 @@ export const MobileFilters: React.FC<Types> = ({ darkMode }: Types) => {
 
         <button
           type="button"
-          className="btn btn-light border rounded-pill shadow d-flex align-items-center m-2"
+          className={
+            !darkMode
+              ? "btn btn-light border-secondary rounded-pill shadow d-flex align-items-center m-2"
+              : "btn btn-dark border-secondary rounded-pill shadow d-flex align-items-center m-2"
+          }
           onClick={() => {
             setActiveSection("model");
             setOpen(true);
@@ -119,7 +138,11 @@ export const MobileFilters: React.FC<Types> = ({ darkMode }: Types) => {
 
         <button
           type="button"
-          className="btn btn-light border rounded-pill shadow d-flex align-items-center m-2"
+          className={
+            !darkMode
+              ? "btn btn-light border-secondary rounded-pill shadow d-flex align-items-center m-2"
+              : "btn btn-dark border-secondary rounded-pill shadow d-flex align-items-center m-2"
+          }
           onClick={() => {
             setActiveSection("range");
             setOpen(true);
@@ -149,22 +172,19 @@ export const MobileFilters: React.FC<Types> = ({ darkMode }: Types) => {
           console.log("> Current snap point index:", snapIndex)
         }
       >
-        <Sheet.Container style={{}}>
+        <Sheet.Container style={darkStyle}>
           <Sheet.Header />
           <Sheet.Content>
-            {/* <button onClick={() => snapTo(0)}>Snap to index 0</button>
-            <button onClick={() => snapTo(1)}>Snap to index 1</button>
-            <button onClick={() => snapTo(2)}>Snap to index 2</button> */}
             {activeSection === "pricing" ? (
-              <PricingFilter darkMode={false} close={() => snapTo(3)} />
+              <PricingFilter darkMode={darkMode} close={() => snapTo(3)} />
             ) : activeSection === "autopilot" ? (
-              <AutopilotFilter darkMode={false} close={() => snapTo(3)} />
+              <AutopilotFilter darkMode={darkMode} close={() => snapTo(3)} />
             ) : activeSection === "speed" ? (
-              <SpeedFilter darkMode={false} close={() => snapTo(3)} />
+              <SpeedFilter darkMode={darkMode} close={() => snapTo(3)} />
             ) : activeSection === "model" ? (
-              <ModelFilter darkMode={false} close={() => snapTo(3)} />
+              <ModelFilter darkMode={darkMode} close={() => snapTo(3)} />
             ) : activeSection === "range" ? (
-              <RangeFilter darkMode={false} close={() => snapTo(3)} />
+              <RangeFilter darkMode={darkMode} close={() => snapTo(3)} />
             ) : null}
           </Sheet.Content>
         </Sheet.Container>

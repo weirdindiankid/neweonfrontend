@@ -9,15 +9,11 @@ import blackCar from "../../assets/filters_assets/black_car.png";
 
 interface Types {
   darkMode: boolean;
-  close: ()=> void;
+  close: () => void;
 }
 
 export const ModelFilter: React.FC<Types> = ({ darkMode, close }: Types) => {
-  const mystyle = {
-    backgroundColor: !darkMode ? "#F5F5F5" : "#1F1F1F",
-    borderRadius: "20px",
-  };
-  const nestedCard = {
+  const nestedCards = {
     backgroundColor: !darkMode ? "rgba(0, 0, 0, 0.04)" : "#2F2F2F",
   };
 
@@ -55,7 +51,7 @@ export const ModelFilter: React.FC<Types> = ({ darkMode, close }: Types) => {
             <div>
               <div
                 className="p-3 rounded cursor m-1 col d-flex justify-content-between"
-                style={mystyle}
+                style={nestedCards}
               >
                 <div className="form-check">
                   <input
@@ -79,7 +75,7 @@ export const ModelFilter: React.FC<Types> = ({ darkMode, close }: Types) => {
             <div>
               <div
                 className="p-3 rounded cursor m-1 col d-flex justify-content-between"
-                style={mystyle}
+                style={nestedCards}
               >
                 <div className="form-check">
                   <input
@@ -103,7 +99,7 @@ export const ModelFilter: React.FC<Types> = ({ darkMode, close }: Types) => {
             <div>
               <div
                 className="p-3 rounded cursor m-1 col d-flex justify-content-between"
-                style={mystyle}
+                style={nestedCards}
               >
                 <div className="form-check">
                   <input
@@ -127,7 +123,7 @@ export const ModelFilter: React.FC<Types> = ({ darkMode, close }: Types) => {
             <div>
               <div
                 className="p-3 rounded cursor m-1 col d-flex justify-content-between"
-                style={mystyle}
+                style={nestedCards}
               >
                 <div className="form-check">
                   <input

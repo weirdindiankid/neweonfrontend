@@ -8,12 +8,11 @@ interface Types {
   close: () => void;
 }
 
-export const AutopilotFilter: React.FC<Types> = ({ darkMode, close }: Types) => {
-  const mystyle = {
-    backgroundColor: !darkMode ? "#F5F5F5" : "#1F1F1F",
-    borderRadius: "20px",
-  };
-  const nestedCard = {
+export const AutopilotFilter: React.FC<Types> = ({
+  darkMode,
+  close,
+}: Types) => {
+  const nestedCards = {
     backgroundColor: !darkMode ? "rgba(0, 0, 0, 0.04)" : "#2F2F2F",
   };
 
@@ -49,7 +48,7 @@ export const AutopilotFilter: React.FC<Types> = ({ darkMode, close }: Types) => 
         <div className="my-3 container">
           <div className="row">
             <div>
-              <div className="p-3 rounded cursor m-1 col" style={mystyle}>
+              <div className="p-3 rounded cursor m-1 col" style={nestedCards}>
                 <div className="d-flex flex-column lh-sm">
                   <div className="form-check">
                     <input
@@ -70,7 +69,7 @@ export const AutopilotFilter: React.FC<Types> = ({ darkMode, close }: Types) => 
               </div>
             </div>
             <div>
-              <div className="p-3 rounded cursor m-1 col" style={mystyle}>
+              <div className="p-3 rounded cursor m-1 col" style={nestedCards}>
                 <div className="d-flex flex-column lh-sm">
                   <div className="form-check">
                     <input
@@ -94,7 +93,7 @@ export const AutopilotFilter: React.FC<Types> = ({ darkMode, close }: Types) => 
               </div>
             </div>
             <div>
-              <div className="p-3 rounded cursor m-1 col" style={mystyle}>
+              <div className="p-3 rounded cursor m-1 col" style={nestedCards}>
                 <div className="d-flex flex-column lh-sm">
                   <div className="form-check">
                     <input

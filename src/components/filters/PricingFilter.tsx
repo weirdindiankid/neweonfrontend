@@ -8,14 +8,8 @@ interface Types {
   close: () => void;
 }
 
-export const PricingFilter: React.FC<Types> = ({
-  darkMode,
-  close,
-}: Types) => {
-  const mystyle = {
-    backgroundColor: !darkMode ? "#F5F5F5" : "#1F1F1F",
-  };
-  const nestedCard = {
+export const PricingFilter: React.FC<Types> = ({ darkMode, close }: Types) => {
+  const nestedCards = {
     backgroundColor: !darkMode ? "rgba(0, 0, 0, 0.04)" : "#2F2F2F",
   };
 
@@ -51,7 +45,7 @@ export const PricingFilter: React.FC<Types> = ({
         <div className="my-3 container">
           <div className="row row-cols-2">
             <div>
-              <div className="p-3 rounded cursor m-1 col" style={mystyle}>
+              <div className="p-3 rounded cursor m-1 col" style={nestedCards}>
                 <div className="form-check">
                   <input
                     className="form-check-input"
@@ -69,7 +63,7 @@ export const PricingFilter: React.FC<Types> = ({
               </div>
             </div>
             <div>
-              <div className="p-3 rounded cursor m-1 col" style={mystyle}>
+              <div className="p-3 rounded cursor m-1 col" style={nestedCards}>
                 <div className="form-check">
                   <input
                     className="form-check-input"
@@ -87,7 +81,7 @@ export const PricingFilter: React.FC<Types> = ({
               </div>
             </div>
             <div>
-              <div className="p-3 rounded cursor m-1 col" style={mystyle}>
+              <div className="p-3 rounded cursor m-1 col" style={nestedCards}>
                 <div className="form-check">
                   <input
                     className="form-check-input"
@@ -105,7 +99,7 @@ export const PricingFilter: React.FC<Types> = ({
               </div>
             </div>
             <div>
-              <div className="p-3 rounded cursor m-1 col" style={mystyle}>
+              <div className="p-3 rounded cursor m-1 col" style={nestedCards}>
                 <div className="form-check">
                   <input
                     className="form-check-input"
