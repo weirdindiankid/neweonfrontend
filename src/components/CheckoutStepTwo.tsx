@@ -93,8 +93,19 @@ export const CheckoutStepTwo: React.FC<Types> = ({
         </div>
 
         <div className="my-3">
-          <Accordion defaultActiveKey="0" style={mystyle}>
-            <Accordion.Item eventKey="0">
+          <Accordion
+            defaultActiveKey="0"
+            style={mystyle}
+            id={!darkMode ? "" : "dark"}
+          >
+            <Accordion.Item
+              eventKey="0"
+              className={
+                !darkMode
+                  ? "bg-light text-dark border border-secondary rounded-bottom"
+                  : "bg-dark text-white border border-secondary rounded-bottom"
+              }
+            >
               <Accordion.Header>
                 <div className="d-flex justify-content-between w-100">
                   <div className="me-2 d-flex align-items-center">
@@ -110,7 +121,9 @@ export const CheckoutStepTwo: React.FC<Types> = ({
                   </div>
                 </div>
               </Accordion.Header>
-              <Accordion.Body className="pt-0">
+              <Accordion.Body
+                className={!darkMode ? "pt-0 bg-light" : "pt-0 bg-dark"}
+              >
                 <div>
                   <div className="my-4">
                     <div className="d-flex justify-content-between">
@@ -169,8 +182,19 @@ export const CheckoutStepTwo: React.FC<Types> = ({
         </div>
 
         <div>
-          <Accordion defaultActiveKey="0" style={mystyle}>
-            <Accordion.Item eventKey="0">
+          <Accordion
+            defaultActiveKey="0"
+            style={mystyle}
+            id={!darkMode ? "" : "dark"}
+          >
+            <Accordion.Item
+              eventKey="0"
+              className={
+                !darkMode
+                  ? "bg-light text-dark border border-secondary"
+                  : "bg-dark text-white border border-secondary"
+              }
+            >
               <Accordion.Header>
                 <div className="me-2 d-flex align-items-center">
                   {!darkMode ? (
@@ -181,7 +205,9 @@ export const CheckoutStepTwo: React.FC<Types> = ({
                   <span className="ms-3">Jhon Doe</span>
                 </div>
               </Accordion.Header>
-              <Accordion.Body className="pt-0">
+              <Accordion.Body
+                className={!darkMode ? "pt-0 bg-light" : "pt-0 bg-dark"}
+              >
                 <div className="w-100 my-3">
                   <Form.Floating>
                     <Form.Control

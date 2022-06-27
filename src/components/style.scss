@@ -499,3 +499,30 @@ hr {
   background-image: var(--bs-accordion-btn-icon) !important;
   transform: var(--bs-accordion-btn-icon-transform);
 }
+
+.accordion-item {
+  border: none !important;
+}
+
+#dark {
+  .accordion-item:last-of-type .accordion-button.collapsed {
+    color: #F5F5F5;
+    background-color: #2F2F2F !important;
+    border: none !important;
+  }
+
+  .accordion-button:not(.collapsed) {
+    color: #fff !important;
+    background-color: #2F2F2F !important;
+    box-shadow: none !important;
+  }
+
+  .accordion-button:focus {
+    box-shadow: none !important;
+  }
+
+  .accordion-button:not(.collapsed)::after {
+    background-image: var("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23ffffff'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>") !important;
+    transform: var(--bs-accordion-btn-icon-transform);
+  }
+}

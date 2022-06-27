@@ -66,10 +66,27 @@ export const CheckoutStepOne: React.FC<Types> = ({
         </div>
 
         <div className="mx-4 mt-4">
-          <Accordion defaultActiveKey="0" style={mystyle}>
-            <Accordion.Item eventKey="0">
+          <Accordion
+            defaultActiveKey="0"
+            style={mystyle}
+            id={!darkMode ? "" : "dark"}
+          >
+            <Accordion.Item
+              eventKey="0"
+              className={
+                !darkMode
+                  ? "bg-light text-dark border border-secondary"
+                  : "bg-dark text-white border border-secondary"
+              }
+            >
               <Accordion.Header>
-                <div className="d-flex justify-content-between w-100">
+                <div
+                  className={
+                    !darkMode
+                      ? "d-flex justify-content-between w-100"
+                      : "d-flex justify-content-between w-100"
+                  }
+                >
                   <div className="me-2 d-flex align-items-center">
                     {!darkMode ? (
                       <img className="img-fluid" src={modelLight} alt="" />
@@ -83,7 +100,9 @@ export const CheckoutStepOne: React.FC<Types> = ({
                   </div>
                 </div>
               </Accordion.Header>
-              <Accordion.Body className="pt-0">
+              <Accordion.Body
+                className={!darkMode ? "pt-0 bg-light" : "pt-0 bg-dark"}
+              >
                 <div>
                   <div className="mb-4 mt-2">
                     <div className="d-flex justify-content-between">
