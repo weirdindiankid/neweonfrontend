@@ -128,31 +128,11 @@ export const DetailView: React.FC<Types> = ({
           <div>
             <span className="fs-4 fw-bold">Choose insurance</span>
           </div>
-          {/* <div className="w-100">
-            <div
-              className="py-2 px-3 my-3 shadow-sm rounded d-flex justify-content-between"
-              style={nestedCards}
-            >
-              <div className="me-2">
-                <Form>
-                  <Form.Check
-                    className="fs-6 fw-bold"
-                    inline
-                    label="Your insurance"
-                    name="group1"
-                    type="radio"
-                  />
-                </Form>
-              </div>
-              <div>
-                <span className="fs-6 fw-bold" style={{ color: "GrayText" }}>
-                  Free
-                </span>
-              </div>
-            </div>
-          </div> */}
           <div className="mt-3">
-            <div className="border border-secondary rounded p-3 d-flex justify-content-between">
+            <div
+              className="border border-secondary rounded p-3 d-flex justify-content-between"
+              style={!checkBox ? nestedCards : undefined}
+            >
               <div className="d-flex flex-column lh-sm">
                 <Form>
                   <Form.Check
@@ -178,31 +158,11 @@ export const DetailView: React.FC<Types> = ({
               <span className="fs-6 fw-bold">Free</span>
             </div>
           </div>
-          {/* <div className="w-100">
-            <div
-              className="py-2 px-3 my-3 shadow-sm rounded d-flex justify-content-between"
-              style={nestedCards}
-            >
-              <div className="me-2">
-                <Form>
-                  <Form.Check
-                    className="fs-6 fw-bold"
-                    inline
-                    label="Our insurance"
-                    name="group1"
-                    type="radio"
-                  />
-                </Form>
-              </div>
-              <div>
-                <span className="fs-6 fw-bold" style={{ color: "GrayText" }}>
-                  +167.30 / day
-                </span>
-              </div>
-            </div>
-          </div> */}
           <div className="mt-3">
-            <div className="border border-secondary rounded p-3 d-flex justify-content-between">
+            <div
+              className="border border-secondary rounded p-3 d-flex justify-content-between"
+              style={!checkBox ? nestedCards : undefined}
+            >
               <div className="d-flex flex-column lh-sm">
                 <Form>
                   <Form.Check
@@ -234,30 +194,11 @@ export const DetailView: React.FC<Types> = ({
           <div>
             <span className="fs-4 fw-bold">Anything else?</span>
           </div>
-          {/* <div className="w-100">
-            <div
-              className="py-2 px-3 my-3 shadow-sm rounded d-flex justify-content-between"
-              style={nestedCards}
-            >
-              <div className="me-2">
-                <Form>
-                  <Form.Check
-                    className="fs-6 fw-bold"
-                    inline
-                    label="Unlimited toll usage"
-                    name="group1"
-                  />
-                </Form>
-              </div>
-              <div>
-                <span className="fs-6 fw-bold" style={{ color: "GrayText" }}>
-                  +9 / day
-                </span>
-              </div>
-            </div>
-          </div> */}
           <div className="mt-3">
-            <div className="border border-secondary rounded p-3 d-flex justify-content-between">
+            <div
+              className="border border-secondary rounded p-3 d-flex justify-content-between"
+              style={!anything.unlimited ? nestedCards : undefined}
+            >
               <div className="d-flex flex-column lh-sm">
                 <Form>
                   <Form.Check
@@ -283,30 +224,11 @@ export const DetailView: React.FC<Types> = ({
               <span className="fs-6 fw-bold text-nowrap">+9 / day</span>
             </div>
           </div>
-          {/* <div className="w-100">
-            <div
-              className="py-2 px-3 my-3 shadow-sm rounded d-flex justify-content-between"
-              style={nestedCards}
-            >
-              <div className="me-2">
-                <Form>
-                  <Form.Check
-                    className="fs-6 fw-bold"
-                    inline
-                    label="Roadside protection"
-                    name="group1"
-                  />
-                </Form>
-              </div>
-              <div>
-                <span className="fs-6 fw-bold" style={{ color: "GrayText" }}>
-                  +13 / day
-                </span>
-              </div>
-            </div>
-          </div> */}
           <div className="mt-3">
-            <div className="border border-secondary rounded p-3 d-flex justify-content-between">
+            <div
+              className="border border-secondary rounded p-3 d-flex justify-content-between"
+              style={!anything.roadside ? nestedCards : undefined}
+            >
               <div className="d-flex flex-column lh-sm">
                 <Form>
                   <Form.Check
@@ -333,25 +255,11 @@ export const DetailView: React.FC<Types> = ({
               <span className="fs-6 fw-bold text-nowrap">+13 / day</span>
             </div>
           </div>
-          {/* <div className="w-100">
-            <div
-              className="py-2 px-3 my-3 shadow-sm rounded"
-              style={nestedCards}
-            >
-              <div className="me-2">
-                <Form>
-                  <Form.Check
-                    className="fs-6 fw-bold"
-                    inline
-                    label="Add discount code"
-                    name="group1"
-                  />
-                </Form>
-              </div>
-            </div>
-          </div> */}
           <div className="mt-3">
-            <div className="border border-secondary rounded p-3 d-flex justify-content-between">
+            <div
+              className="border border-secondary rounded p-3 d-flex justify-content-between"
+              style={!anything.discount ? nestedCards : undefined}
+            >
               <div className="d-flex flex-column w-75">
                 <Form>
                   <Form.Check
@@ -414,7 +322,7 @@ export const DetailView: React.FC<Types> = ({
         </div>
       </div>
 
-      <div className="m-4">
+      <div className="ms-2">
         <button
           className="btn btn-primary"
           onClick={() => onChangeSection("section4")}
