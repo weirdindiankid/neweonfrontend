@@ -30,16 +30,32 @@ export const MapActionButtons: React.FC<Types> = ({ darkMode }: Types) => {
   const mystyle = {
     backgroundColor: !darkMode ? "#F5F5F5" : "#1F1F1F",
   };
-
+  const slide = (direction: string) => {
+    let container: HTMLElement | null = document.getElementById(
+      "map-action-buttons-container"
+    );
+    let scrollCompleted = 0;
+    const slideVar = setInterval(function () {
+      if (container) {
+        if (direction === "left") {
+          container.scrollLeft -= 10;
+        } else {
+          container.scrollLeft += 10;
+        }
+        scrollCompleted += 10;
+        if (scrollCompleted >= 100) {
+          window.clearInterval(slideVar);
+        }
+      }
+    }, 50);
+  };
   return (
-    <div className="d-flex justify-content-center">
-      <div
-        className="d-flex position-absolute top-0 pt-4"
-        style={{ zIndex: "1", width: "80%" }}
-      >
-        {/* <div className="m-1">
+    <>
+      <div className="d-flex justify-content-center position-absolute top-0 updateHeight">
+        <div className="m-1 web-filter-scrolling-arrow">
           <button
             type="button"
+            onClick={() => slide("left")}
             className={
               !darkMode
                 ? "btn btn-light rounded-circle"
@@ -52,659 +68,692 @@ export const MapActionButtons: React.FC<Types> = ({ darkMode }: Types) => {
               <img className="img-fluid" src={arrowLeftDark} alt="" />
             )}
           </button>
-        </div> */}
-        <div>
-          <ul className="pricing-menu">
-            <li className="parent">
-              <a
-                href="#!"
-                className={
-                  !darkMode
-                    ? "bg-light text-dark shadow-sm d-flex justify-content-center"
-                    : "bg-dark text-light shadow-sm d-flex justify-content-center"
-                }
-              >
-                {!darkMode ? (
-                  <img src={attachMoneyLight} alt="" />
-                ) : (
-                  <img src={attachMoneyDark} alt="" />
-                )}
-                <span className="px-3">Price</span>
-                {!darkMode ? (
-                  <img src={arrowDownLight} alt="" />
-                ) : (
-                  <img src={arrowDownDark} alt="" />
-                )}
-              </a>
-              <ul
-                className={!darkMode ? "bg-light children" : "bg-dark children"}
-              >
-                <hr className="m-0" />
-                <div className="container">
-                  <div className="row row-cols-2">
-                    <div>
-                      <div
-                        className="p-2 rounded cursor m-1 col"
-                        style={mystyle}
-                      >
-                        <div className="form-check">
-                          <input
-                            className="form-check-input"
-                            type="checkbox"
-                            value=""
-                            id="flexCheckDefault"
-                          />
-                          <label
-                            className="form-check-label font-size"
-                            htmlFor="flexCheckDefault"
-                          >
-                            150 - 200
-                          </label>
-                        </div>
-                      </div>
-                    </div>
-                    <div>
-                      <div
-                        className="p-2 rounded cursor m-1 col"
-                        style={mystyle}
-                      >
-                        <div className="form-check">
-                          <input
-                            className="form-check-input"
-                            type="checkbox"
-                            value=""
-                            id="flexCheckDefault"
-                          />
-                          <label
-                            className="form-check-label font-size"
-                            htmlFor="flexCheckDefault"
-                          >
-                            200 - 250
-                          </label>
-                        </div>
-                      </div>
-                    </div>
-                    <div>
-                      <div
-                        className="p-2 rounded cursor m-1 col"
-                        style={mystyle}
-                      >
-                        <div className="form-check">
-                          <input
-                            className="form-check-input"
-                            type="checkbox"
-                            value=""
-                            id="flexCheckDefault"
-                          />
-                          <label
-                            className="form-check-label font-size"
-                            htmlFor="flexCheckDefault"
-                          >
-                            250 - 300
-                          </label>
-                        </div>
-                      </div>
-                    </div>
-                    <div>
-                      <div
-                        className="p-2 rounded cursor m-1 col"
-                        style={mystyle}
-                      >
-                        <div className="form-check">
-                          <input
-                            className="form-check-input"
-                            type="checkbox"
-                            value=""
-                            id="flexCheckDefault"
-                          />
-                          <label
-                            className="form-check-label font-size"
-                            htmlFor="flexCheckDefault"
-                          >
-                            300 - 350
-                          </label>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="d-flex justify-content-between align-items-center mt-2">
-                    <div>
-                      <button className="btn btn-primary">
-                        Show 8 results
-                      </button>
-                    </div>
-                    <div>
-                      <span style={{ color: "#0C72C0" }}>
-                        Clear
-                        <img
-                          className="img-fluid ms-2"
-                          src={restartAltIcon}
-                          alt=""
-                        />
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              </ul>
-            </li>
-          </ul>
         </div>
-
-        <div>
-          <ul className="autopilot-menu">
-            <li className="parent">
-              <a
-                href="#!"
-                className={
-                  !darkMode
-                    ? "bg-light text-dark shadow-sm d-flex justify-content-center"
-                    : "bg-dark text-light shadow-sm d-flex justify-content-center"
-                }
-              >
-                {!darkMode ? (
-                  <img className="img-fluid" src={smartToyLight} alt="" />
-                ) : (
-                  <img className="img-fluid" src={smartToyDark} alt="" />
-                )}
-                <span className="px-2">Autopilot</span>
-                {!darkMode ? (
-                  <img src={arrowDownLight} alt="" />
-                ) : (
-                  <img src={arrowDownDark} alt="" />
-                )}
-              </a>
-              <ul
-                className={!darkMode ? "bg-light children" : "bg-dark children"}
-              >
-                <hr className="m-0" />
-                <div className="container">
-                  <div className="row">
-                    <div>
-                      <div
-                        className="p-3 rounded cursor m-1 col"
-                        style={mystyle}
-                      >
-                        <div className="d-flex flex-column lh-sm">
-                          <div className="form-check">
-                            <input
-                              className="form-check-input"
-                              type="checkbox"
-                              value=""
-                              id="flexCheckDefault"
-                            />
-                            <label
-                              className="form-check-label fw-bold font-size"
-                              htmlFor="flexCheckDefault"
-                            >
-                              Standard autopilot
-                            </label>
+        <section id="map-action-buttons-container">
+          <div id="filters-section">
+            <div className="ml-5">
+              <ul className="pricing-menu">
+                <li className="parent">
+                  <a
+                    href="#!"
+                    className={
+                      !darkMode
+                        ? "bg-light text-dark shadow-sm d-flex justify-content-center"
+                        : "bg-dark text-light shadow-sm d-flex justify-content-center"
+                    }
+                  >
+                    {!darkMode ? (
+                      <img src={attachMoneyLight} alt="" />
+                    ) : (
+                      <img src={attachMoneyDark} alt="" />
+                    )}
+                    <span className="px-3">Price</span>
+                    {!darkMode ? (
+                      <img src={arrowDownLight} alt="" />
+                    ) : (
+                      <img src={arrowDownDark} alt="" />
+                    )}
+                  </a>
+                  <ul
+                    className={
+                      !darkMode ? "bg-light children" : "bg-dark children"
+                    }
+                  >
+                    <hr className="m-0" />
+                    <div className="container">
+                      <div className="row row-cols-2">
+                        <div>
+                          <div
+                            className="p-2 rounded cursor m-1 col"
+                            style={mystyle}
+                          >
+                            <div className="form-check">
+                              <input
+                                className="form-check-input"
+                                type="checkbox"
+                                value=""
+                                id="flexCheckDefault"
+                              />
+                              <label
+                                className="form-check-label font-size"
+                                htmlFor="flexCheckDefault"
+                              >
+                                150 - 200
+                              </label>
+                            </div>
                           </div>
-                          <span className="ps-4" style={{ fontSize: "14px" }}>
-                            Automatic emergency braking.
+                        </div>
+                        <div>
+                          <div
+                            className="p-2 rounded cursor m-1 col"
+                            style={mystyle}
+                          >
+                            <div className="form-check">
+                              <input
+                                className="form-check-input"
+                                type="checkbox"
+                                value=""
+                                id="flexCheckDefault"
+                              />
+                              <label
+                                className="form-check-label font-size"
+                                htmlFor="flexCheckDefault"
+                              >
+                                200 - 250
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+                        <div>
+                          <div
+                            className="p-2 rounded cursor m-1 col"
+                            style={mystyle}
+                          >
+                            <div className="form-check">
+                              <input
+                                className="form-check-input"
+                                type="checkbox"
+                                value=""
+                                id="flexCheckDefault"
+                              />
+                              <label
+                                className="form-check-label font-size"
+                                htmlFor="flexCheckDefault"
+                              >
+                                250 - 300
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+                        <div>
+                          <div
+                            className="p-2 rounded cursor m-1 col"
+                            style={mystyle}
+                          >
+                            <div className="form-check">
+                              <input
+                                className="form-check-input"
+                                type="checkbox"
+                                value=""
+                                id="flexCheckDefault"
+                              />
+                              <label
+                                className="form-check-label font-size"
+                                htmlFor="flexCheckDefault"
+                              >
+                                300 - 350
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="d-flex justify-content-between align-items-center mt-2">
+                        <div>
+                          <button className="btn btn-primary">
+                            Show 8 results
+                          </button>
+                        </div>
+                        <div>
+                          <span style={{ color: "#0C72C0" }}>
+                            Clear
+                            <img
+                              className="img-fluid ms-2"
+                              src={restartAltIcon}
+                              alt=""
+                            />
                           </span>
                         </div>
                       </div>
                     </div>
-                    <div>
-                      <div
-                        className="p-3 rounded cursor m-1 col"
-                        style={mystyle}
-                      >
-                        <div className="d-flex flex-column lh-sm">
-                          <div className="form-check">
-                            <input
-                              className="form-check-input"
-                              type="checkbox"
-                              value=""
-                              id="flexCheckDefault"
-                            />
-                            <label
-                              className="form-check-label fw-bold font-size"
-                              htmlFor="flexCheckDefault"
-                            >
-                              Enhanced autopilot
-                            </label>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <ul className="autopilot-menu">
+                <li className="parent">
+                  <a
+                    href="#!"
+                    className={
+                      !darkMode
+                        ? "bg-light text-dark shadow-sm d-flex justify-content-center"
+                        : "bg-dark text-light shadow-sm d-flex justify-content-center"
+                    }
+                  >
+                    {!darkMode ? (
+                      <img className="img-fluid" src={smartToyLight} alt="" />
+                    ) : (
+                      <img className="img-fluid" src={smartToyDark} alt="" />
+                    )}
+                    <span className="px-2">Autopilot</span>
+                    {!darkMode ? (
+                      <img src={arrowDownLight} alt="" />
+                    ) : (
+                      <img src={arrowDownDark} alt="" />
+                    )}
+                  </a>
+                  <ul
+                    className={
+                      !darkMode ? "bg-light children" : "bg-dark children"
+                    }
+                  >
+                    <hr className="m-0" />
+                    <div className="container">
+                      <div className="row">
+                        <div>
+                          <div
+                            className="p-3 rounded cursor m-1 col"
+                            style={mystyle}
+                          >
+                            <div className="d-flex flex-column lh-sm">
+                              <div className="form-check">
+                                <input
+                                  className="form-check-input"
+                                  type="checkbox"
+                                  value=""
+                                  id="flexCheckDefault"
+                                />
+                                <label
+                                  className="form-check-label fw-bold font-size"
+                                  htmlFor="flexCheckDefault"
+                                >
+                                  Standard autopilot
+                                </label>
+                              </div>
+                              <span
+                                className="ps-4"
+                                style={{ fontSize: "14px" }}
+                              >
+                                Automatic emergency braking.
+                              </span>
+                            </div>
                           </div>
-                          <span className="ps-4" style={{ fontSize: "14px" }}>
-                            + Autosteer, auto lane change, traffic aware cruise
-                            control, autopark, summon.
+                        </div>
+                        <div>
+                          <div
+                            className="p-3 rounded cursor m-1 col"
+                            style={mystyle}
+                          >
+                            <div className="d-flex flex-column lh-sm">
+                              <div className="form-check">
+                                <input
+                                  className="form-check-input"
+                                  type="checkbox"
+                                  value=""
+                                  id="flexCheckDefault"
+                                />
+                                <label
+                                  className="form-check-label fw-bold font-size"
+                                  htmlFor="flexCheckDefault"
+                                >
+                                  Enhanced autopilot
+                                </label>
+                              </div>
+                              <div>
+                                <span
+                                  className="ps-4 w-75"
+                                  style={{ fontSize: "14px" }}
+                                >
+                                  + Autosteer, auto lane change, traffic aware
+                                  cruise control, autopark, summon.
+                                </span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div>
+                          <div
+                            className="p-3 rounded cursor m-1 col"
+                            style={mystyle}
+                          >
+                            <div className="d-flex flex-column lh-sm">
+                              <div className="form-check">
+                                <input
+                                  className="form-check-input"
+                                  type="checkbox"
+                                  value=""
+                                  id="flexCheckDefault"
+                                />
+                                <label
+                                  className="form-check-label fw-bold font-size"
+                                  htmlFor="flexCheckDefault"
+                                >
+                                  Full self driving autopilot
+                                </label>
+                              </div>
+                              <span
+                                className="ps-4"
+                                style={{ fontSize: "14px" }}
+                              >
+                                + Navigate on autopilot.
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="d-flex justify-content-between align-items-center mt-2">
+                        <div>
+                          <button className="btn btn-primary">
+                            Show 8 results
+                          </button>
+                        </div>
+                        <div>
+                          <span style={{ color: "#0C72C0" }}>
+                            Clear
+                            <img
+                              className="img-fluid ms-2"
+                              src={restartAltIcon}
+                              alt=""
+                            />
                           </span>
                         </div>
                       </div>
                     </div>
-                    <div>
-                      <div
-                        className="p-3 rounded cursor m-1 col"
-                        style={mystyle}
-                      >
-                        <div className="d-flex flex-column lh-sm">
-                          <div className="form-check">
-                            <input
-                              className="form-check-input"
-                              type="checkbox"
-                              value=""
-                              id="flexCheckDefault"
-                            />
-                            <label
-                              className="form-check-label fw-bold font-size"
-                              htmlFor="flexCheckDefault"
-                            >
-                              Full self driving autopilot
-                            </label>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <ul className="speed-menu">
+                <li className="parent">
+                  <a
+                    href="#!"
+                    className={
+                      !darkMode
+                        ? "bg-light text-dark shadow-sm d-flex justify-content-center"
+                        : "bg-dark text-light shadow-sm d-flex justify-content-center"
+                    }
+                  >
+                    {!darkMode ? (
+                      <img className="img-fluid" src={speedLight} alt="" />
+                    ) : (
+                      <img className="img-fluid" src={speedDark} alt="" />
+                    )}
+                    <span className="px-3">Speed</span>
+                    {!darkMode ? (
+                      <img src={arrowDownLight} alt="" />
+                    ) : (
+                      <img src={arrowDownDark} alt="" />
+                    )}
+                  </a>
+                  <ul
+                    className={
+                      !darkMode ? "bg-light children" : "bg-dark children"
+                    }
+                  >
+                    <hr className="m-0" />
+                    <div className="container">
+                      <div className="row row-cols-2">
+                        <div>
+                          <div
+                            className="p-2 rounded cursor m-1 col"
+                            style={mystyle}
+                          >
+                            <div className="form-check">
+                              <input
+                                className="form-check-input"
+                                type="checkbox"
+                                value=""
+                                id="flexCheckDefault"
+                              />
+                              <label
+                                className="form-check-label font-size"
+                                htmlFor="flexCheckDefault"
+                              >
+                                1-2 s
+                              </label>
+                            </div>
                           </div>
-                          <span className="ps-4" style={{ fontSize: "14px" }}>
-                            + Navigate on autopilot.
+                        </div>
+                        <div>
+                          <div
+                            className="p-2 rounded cursor m-1 col"
+                            style={mystyle}
+                          >
+                            <div className="form-check">
+                              <input
+                                className="form-check-input"
+                                type="checkbox"
+                                value=""
+                                id="flexCheckDefault"
+                              />
+                              <label
+                                className="form-check-label font-size"
+                                htmlFor="flexCheckDefault"
+                              >
+                                2-3 s
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+                        <div>
+                          <div
+                            className="p-2 rounded cursor m-1 col"
+                            style={mystyle}
+                          >
+                            <div className="form-check">
+                              <input
+                                className="form-check-input"
+                                type="checkbox"
+                                value=""
+                                id="flexCheckDefault"
+                              />
+                              <label
+                                className="form-check-label font-size"
+                                htmlFor="flexCheckDefault"
+                              >
+                                3 -4 s
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+                        <div>
+                          <div
+                            className="p-2 rounded cursor m-1 col"
+                            style={mystyle}
+                          >
+                            <div className="form-check">
+                              <input
+                                className="form-check-input"
+                                type="checkbox"
+                                value=""
+                                id="flexCheckDefault"
+                              />
+                              <label
+                                className="form-check-label font-size"
+                                htmlFor="flexCheckDefault"
+                              >
+                                4 - 5 s
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="d-flex justify-content-between align-items-center mt-2">
+                        <div>
+                          <button className="btn btn-primary">
+                            Show 8 results
+                          </button>
+                        </div>
+                        <div>
+                          <span style={{ color: "#0C72C0" }}>
+                            Clear
+                            <img
+                              className="img-fluid ms-2"
+                              src={restartAltIcon}
+                              alt=""
+                            />
                           </span>
                         </div>
                       </div>
                     </div>
-                  </div>
-                  <div className="d-flex justify-content-between align-items-center mt-2">
-                    <div>
-                      <button className="btn btn-primary">
-                        Show 8 results
-                      </button>
-                    </div>
-                    <div>
-                      <span style={{ color: "#0C72C0" }}>
-                        Clear
-                        <img
-                          className="img-fluid ms-2"
-                          src={restartAltIcon}
-                          alt=""
-                        />
-                      </span>
-                    </div>
-                  </div>
-                </div>
+                  </ul>
+                </li>
               </ul>
-            </li>
-          </ul>
-        </div>
+            </div>
 
-        <div>
-          <ul className="speed-menu">
-            <li className="parent">
-              <a
-                href="#!"
-                className={
-                  !darkMode
-                    ? "bg-light text-dark shadow-sm d-flex justify-content-center"
-                    : "bg-dark text-light shadow-sm d-flex justify-content-center"
-                }
-              >
-                {!darkMode ? (
-                  <img className="img-fluid" src={speedLight} alt="" />
-                ) : (
-                  <img className="img-fluid" src={speedDark} alt="" />
-                )}
-                <span className="px-3">Speed</span>
-                {!darkMode ? (
-                  <img src={arrowDownLight} alt="" />
-                ) : (
-                  <img src={arrowDownDark} alt="" />
-                )}
-              </a>
-              <ul
-                className={!darkMode ? "bg-light children" : "bg-dark children"}
-              >
-                <hr className="m-0" />
-                <div className="container">
-                  <div className="row row-cols-2">
-                    <div>
-                      <div
-                        className="p-2 rounded cursor m-1 col"
-                        style={mystyle}
-                      >
-                        <div className="form-check">
-                          <input
-                            className="form-check-input"
-                            type="checkbox"
-                            value=""
-                            id="flexCheckDefault"
-                          />
-                          <label
-                            className="form-check-label font-size"
-                            htmlFor="flexCheckDefault"
+            <div>
+              <ul className="model-menu">
+                <li className="parent">
+                  <a
+                    href="#!"
+                    className={
+                      !darkMode
+                        ? "bg-light text-dark shadow-sm d-flex justify-content-center"
+                        : "bg-dark text-light shadow-sm d-flex justify-content-center"
+                    }
+                  >
+                    {!darkMode ? (
+                      <img className="img-fluid" src={modelLight} alt="" />
+                    ) : (
+                      <img className="img-fluid" src={modelDark} alt="" />
+                    )}
+                    <span className="px-3">Model</span>
+                    {!darkMode ? (
+                      <img src={arrowDownLight} alt="" />
+                    ) : (
+                      <img src={arrowDownDark} alt="" />
+                    )}
+                  </a>
+                  <ul
+                    className={
+                      !darkMode ? "bg-light children" : "bg-dark children"
+                    }
+                  >
+                    <hr className="m-0" />
+                    <div className="container">
+                      <div className="row">
+                        <div>
+                          <div
+                            className="p-3 rounded cursor m-1 col d-flex justify-content-between"
+                            style={mystyle}
                           >
-                            1-2 s
-                          </label>
+                            <div className="form-check">
+                              <input
+                                className="form-check-input"
+                                type="checkbox"
+                                value=""
+                                id="flexCheckDefault"
+                              />
+                              <label
+                                className="form-check-label font-size"
+                                htmlFor="flexCheckDefault"
+                              >
+                                Model S
+                              </label>
+                            </div>
+                            <div className="text-end">
+                              <img
+                                className="img-fluid"
+                                src={whiteCar}
+                                alt=""
+                              />
+                            </div>
+                          </div>
+                        </div>
+                        <div>
+                          <div
+                            className="p-3 rounded cursor m-1 col d-flex justify-content-between"
+                            style={mystyle}
+                          >
+                            <div className="form-check">
+                              <input
+                                className="form-check-input"
+                                type="checkbox"
+                                value=""
+                                id="flexCheckDefault"
+                              />
+                              <label
+                                className="form-check-label font-size"
+                                htmlFor="flexCheckDefault"
+                              >
+                                Model 3
+                              </label>
+                            </div>
+                            <div className="text-end">
+                              <img className="img-fluid" src={blueCar} alt="" />
+                            </div>
+                          </div>
+                        </div>
+                        <div>
+                          <div
+                            className="p-3 rounded cursor m-1 col d-flex justify-content-between"
+                            style={mystyle}
+                          >
+                            <div className="form-check">
+                              <input
+                                className="form-check-input"
+                                type="checkbox"
+                                value=""
+                                id="flexCheckDefault"
+                              />
+                              <label
+                                className="form-check-label font-size"
+                                htmlFor="flexCheckDefault"
+                              >
+                                Model X
+                              </label>
+                            </div>
+                            <div className="text-end">
+                              <img className="img-fluid" src={grayCar} alt="" />
+                            </div>
+                          </div>
+                        </div>
+                        <div>
+                          <div
+                            className="p-3 rounded cursor m-1 col d-flex justify-content-between"
+                            style={mystyle}
+                          >
+                            <div className="form-check">
+                              <input
+                                className="form-check-input"
+                                type="checkbox"
+                                value=""
+                                id="flexCheckDefault"
+                              />
+                              <label
+                                className="form-check-label font-size"
+                                htmlFor="flexCheckDefault"
+                              >
+                                Model Y
+                              </label>
+                            </div>
+                            <div className="text-end">
+                              <img
+                                className="img-fluid"
+                                src={blackCar}
+                                alt=""
+                              />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="d-flex justify-content-between align-items-center mt-2">
+                        <div>
+                          <button className="btn btn-primary">
+                            Show 8 results
+                          </button>
+                        </div>
+                        <div>
+                          <span style={{ color: "#0C72C0" }}>
+                            Clear
+                            <img
+                              className="img-fluid ms-2"
+                              src={restartAltIcon}
+                              alt=""
+                            />
+                          </span>
                         </div>
                       </div>
                     </div>
-                    <div>
-                      <div
-                        className="p-2 rounded cursor m-1 col"
-                        style={mystyle}
-                      >
-                        <div className="form-check">
-                          <input
-                            className="form-check-input"
-                            type="checkbox"
-                            value=""
-                            id="flexCheckDefault"
-                          />
-                          <label
-                            className="form-check-label font-size"
-                            htmlFor="flexCheckDefault"
-                          >
-                            2-3 s
-                          </label>
-                        </div>
-                      </div>
-                    </div>
-                    <div>
-                      <div
-                        className="p-2 rounded cursor m-1 col"
-                        style={mystyle}
-                      >
-                        <div className="form-check">
-                          <input
-                            className="form-check-input"
-                            type="checkbox"
-                            value=""
-                            id="flexCheckDefault"
-                          />
-                          <label
-                            className="form-check-label font-size"
-                            htmlFor="flexCheckDefault"
-                          >
-                            3 -4 s
-                          </label>
-                        </div>
-                      </div>
-                    </div>
-                    <div>
-                      <div
-                        className="p-2 rounded cursor m-1 col"
-                        style={mystyle}
-                      >
-                        <div className="form-check">
-                          <input
-                            className="form-check-input"
-                            type="checkbox"
-                            value=""
-                            id="flexCheckDefault"
-                          />
-                          <label
-                            className="form-check-label font-size"
-                            htmlFor="flexCheckDefault"
-                          >
-                            4 - 5 s
-                          </label>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="d-flex justify-content-between align-items-center mt-2">
-                    <div>
-                      <button className="btn btn-primary">
-                        Show 8 results
-                      </button>
-                    </div>
-                    <div>
-                      <span style={{ color: "#0C72C0" }}>
-                        Clear
-                        <img
-                          className="img-fluid ms-2"
-                          src={restartAltIcon}
-                          alt=""
-                        />
-                      </span>
-                    </div>
-                  </div>
-                </div>
+                  </ul>
+                </li>
               </ul>
-            </li>
-          </ul>
-        </div>
+            </div>
 
-        <div>
-          <ul className="model-menu">
-            <li className="parent">
-              <a
-                href="#!"
-                className={
-                  !darkMode
-                    ? "bg-light text-dark shadow-sm d-flex justify-content-center"
-                    : "bg-dark text-light shadow-sm d-flex justify-content-center"
-                }
-              >
-                {!darkMode ? (
-                  <img className="img-fluid" src={modelLight} alt="" />
-                ) : (
-                  <img className="img-fluid" src={modelDark} alt="" />
-                )}
-                <span className="px-3">Model</span>
-                {!darkMode ? (
-                  <img src={arrowDownLight} alt="" />
-                ) : (
-                  <img src={arrowDownDark} alt="" />
-                )}
-              </a>
-              <ul
-                className={!darkMode ? "bg-light children" : "bg-dark children"}
-              >
-                <hr className="m-0" />
-                <div className="container">
-                  <div className="row">
-                    <div>
-                      <div
-                        className="p-3 rounded cursor m-1 col d-flex justify-content-between"
-                        style={mystyle}
-                      >
-                        <div className="form-check">
-                          <input
-                            className="form-check-input"
-                            type="checkbox"
-                            value=""
-                            id="flexCheckDefault"
-                          />
-                          <label
-                            className="form-check-label font-size"
-                            htmlFor="flexCheckDefault"
+            <div>
+              <ul className="range-menu">
+                <li className="parent">
+                  <a
+                    href="#!"
+                    className={
+                      !darkMode
+                        ? "bg-light text-dark shadow-sm d-flex justify-content-center"
+                        : "bg-dark text-light shadow-sm d-flex justify-content-center"
+                    }
+                  >
+                    {!darkMode ? (
+                      <img className="img-fluid" src={mileLight} alt="" />
+                    ) : (
+                      <img className="img-fluid" src={mileDark} alt="" />
+                    )}
+                    <span className="px-3">Range</span>
+                    {!darkMode ? (
+                      <img src={arrowDownLight} alt="" />
+                    ) : (
+                      <img src={arrowDownDark} alt="" />
+                    )}
+                  </a>
+                  <ul
+                    className={
+                      !darkMode ? "bg-light children" : "bg-dark children"
+                    }
+                  >
+                    <hr className="m-0" />
+                    <div className="container">
+                      <div className="row">
+                        <div>
+                          <div
+                            className="p-3 rounded cursor m-1 col"
+                            style={mystyle}
                           >
-                            Model S
-                          </label>
+                            <div className="form-check">
+                              <input
+                                className="form-check-input"
+                                type="checkbox"
+                                value=""
+                                id="flexCheckDefault"
+                              />
+                              <label
+                                className="form-check-label font-size"
+                                htmlFor="flexCheckDefault"
+                              >
+                                180 - 300 miles
+                              </label>
+                            </div>
+                          </div>
                         </div>
-                        <div className="text-end">
-                          <img className="img-fluid" src={whiteCar} alt="" />
+                        <div>
+                          <div
+                            className="p-3 rounded cursor m-1 col"
+                            style={mystyle}
+                          >
+                            <div className="form-check">
+                              <input
+                                className="form-check-input"
+                                type="checkbox"
+                                value=""
+                                id="flexCheckDefault"
+                              />
+                              <label
+                                className="form-check-label font-size"
+                                htmlFor="flexCheckDefault"
+                              >
+                                300 - 420 miles
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="d-flex justify-content-between align-items-center mt-2">
+                        <div>
+                          <button className="btn btn-primary">
+                            Show 8 results
+                          </button>
+                        </div>
+                        <div>
+                          <span style={{ color: "#0C72C0" }}>
+                            Clear
+                            <img
+                              className="img-fluid ms-2"
+                              src={restartAltIcon}
+                              alt=""
+                            />
+                          </span>
                         </div>
                       </div>
                     </div>
-                    <div>
-                      <div
-                        className="p-3 rounded cursor m-1 col d-flex justify-content-between"
-                        style={mystyle}
-                      >
-                        <div className="form-check">
-                          <input
-                            className="form-check-input"
-                            type="checkbox"
-                            value=""
-                            id="flexCheckDefault"
-                          />
-                          <label
-                            className="form-check-label font-size"
-                            htmlFor="flexCheckDefault"
-                          >
-                            Model 3
-                          </label>
-                        </div>
-                        <div className="text-end">
-                          <img className="img-fluid" src={blueCar} alt="" />
-                        </div>
-                      </div>
-                    </div>
-                    <div>
-                      <div
-                        className="p-3 rounded cursor m-1 col d-flex justify-content-between"
-                        style={mystyle}
-                      >
-                        <div className="form-check">
-                          <input
-                            className="form-check-input"
-                            type="checkbox"
-                            value=""
-                            id="flexCheckDefault"
-                          />
-                          <label
-                            className="form-check-label font-size"
-                            htmlFor="flexCheckDefault"
-                          >
-                            Model X
-                          </label>
-                        </div>
-                        <div className="text-end">
-                          <img className="img-fluid" src={grayCar} alt="" />
-                        </div>
-                      </div>
-                    </div>
-                    <div>
-                      <div
-                        className="p-3 rounded cursor m-1 col d-flex justify-content-between"
-                        style={mystyle}
-                      >
-                        <div className="form-check">
-                          <input
-                            className="form-check-input"
-                            type="checkbox"
-                            value=""
-                            id="flexCheckDefault"
-                          />
-                          <label
-                            className="form-check-label font-size"
-                            htmlFor="flexCheckDefault"
-                          >
-                            Model Y
-                          </label>
-                        </div>
-                        <div className="text-end">
-                          <img className="img-fluid" src={blackCar} alt="" />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="d-flex justify-content-between align-items-center mt-2">
-                    <div>
-                      <button className="btn btn-primary">
-                        Show 8 results
-                      </button>
-                    </div>
-                    <div>
-                      <span style={{ color: "#0C72C0" }}>
-                        Clear
-                        <img
-                          className="img-fluid ms-2"
-                          src={restartAltIcon}
-                          alt=""
-                        />
-                      </span>
-                    </div>
-                  </div>
-                </div>
+                  </ul>
+                </li>
               </ul>
-            </li>
-          </ul>
-        </div>
-
-        <div>
-          <ul className="range-menu">
-            <li className="parent">
-              <a
-                href="#!"
-                className={
-                  !darkMode
-                    ? "bg-light text-dark shadow-sm d-flex justify-content-center"
-                    : "bg-dark text-light shadow-sm d-flex justify-content-center"
-                }
-              >
-                {!darkMode ? (
-                  <img className="img-fluid" src={mileLight} alt="" />
-                ) : (
-                  <img className="img-fluid" src={mileDark} alt="" />
-                )}
-                <span className="px-3">Range</span>
-                {!darkMode ? (
-                  <img src={arrowDownLight} alt="" />
-                ) : (
-                  <img src={arrowDownDark} alt="" />
-                )}
-              </a>
-              <ul
-                className={!darkMode ? "bg-light children" : "bg-dark children"}
-              >
-                <hr className="m-0" />
-                <div className="container">
-                  <div className="row">
-                    <div>
-                      <div
-                        className="p-3 rounded cursor m-1 col"
-                        style={mystyle}
-                      >
-                        <div className="form-check">
-                          <input
-                            className="form-check-input"
-                            type="checkbox"
-                            value=""
-                            id="flexCheckDefault"
-                          />
-                          <label
-                            className="form-check-label font-size"
-                            htmlFor="flexCheckDefault"
-                          >
-                            180 - 300 miles
-                          </label>
-                        </div>
-                      </div>
-                    </div>
-                    <div>
-                      <div
-                        className="p-3 rounded cursor m-1 col"
-                        style={mystyle}
-                      >
-                        <div className="form-check">
-                          <input
-                            className="form-check-input"
-                            type="checkbox"
-                            value=""
-                            id="flexCheckDefault"
-                          />
-                          <label
-                            className="form-check-label font-size"
-                            htmlFor="flexCheckDefault"
-                          >
-                            300 - 420 miles
-                          </label>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="d-flex justify-content-between align-items-center mt-2">
-                    <div>
-                      <button className="btn btn-primary">
-                        Show 8 results
-                      </button>
-                    </div>
-                    <div>
-                      <span style={{ color: "#0C72C0" }}>
-                        Clear
-                        <img
-                          className="img-fluid ms-2"
-                          src={restartAltIcon}
-                          alt=""
-                        />
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              </ul>
-            </li>
-          </ul>
-        </div>
-        {/* <div className="m-1">
+            </div>
+          </div>
+        </section>
+        <div className="m-1 web-filter-scrolling-arrow">
           <button
             type="button"
+            onClick={() => slide("right")}
             className={
               !darkMode
                 ? "btn btn-light rounded-circle"
@@ -717,8 +766,8 @@ export const MapActionButtons: React.FC<Types> = ({ darkMode }: Types) => {
               <img className="img-fluid" src={arrowRightDark} alt="" />
             )}
           </button>
-        </div> */}
+        </div>
       </div>
-    </div>
+    </>
   );
 };

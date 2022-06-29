@@ -35,7 +35,9 @@ export const Map: React.FC<Types> = ({
       <div className="position-relative">
         {activeSection !== "section1" ? (
           width > 575 ? (
-            <MapActionButtons darkMode={darkMode} />
+            <div className="d-flex justify-content-center">
+              <MapActionButtons darkMode={darkMode} />
+            </div>
           ) : null
         ) : null}
         <div ref={ref} className="map-responsive"></div>

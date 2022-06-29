@@ -99,7 +99,7 @@ hr {
     transform-origin: top center;
     transition: transform 0.8s cubic-bezier(0.17, 0.67, 0.59, 1.21),
       opacity 0.1s 0.1s;
-    z-index: 0;
+    z-index: 1;
     list-style-type: none;
     position: absolute;
     top: 99%;
@@ -189,7 +189,7 @@ hr {
     transform-origin: top center;
     transition: transform 0.8s cubic-bezier(0.17, 0.67, 0.59, 1.21),
       opacity 0.1s 0.1s;
-    z-index: 0;
+    z-index: 1;
     list-style-type: none;
     position: absolute;
     top: 99%;
@@ -279,7 +279,7 @@ hr {
     transform-origin: top center;
     transition: transform 0.8s cubic-bezier(0.17, 0.67, 0.59, 1.21),
       opacity 0.1s 0.1s;
-    z-index: 0;
+    z-index: 1;
     list-style-type: none;
     position: absolute;
     top: 99%;
@@ -369,7 +369,7 @@ hr {
     transform-origin: top center;
     transition: transform 0.8s cubic-bezier(0.17, 0.67, 0.59, 1.21),
       opacity 0.1s 0.1s;
-    z-index: 0;
+    z-index: 1;
     list-style-type: none;
     position: absolute;
     top: 99%;
@@ -459,7 +459,7 @@ hr {
     transform-origin: top center;
     transition: transform 0.8s cubic-bezier(0.17, 0.67, 0.59, 1.21),
       opacity 0.1s 0.1s;
-    z-index: 0;
+    z-index: 1;
     list-style-type: none;
     position: absolute;
     top: 99%;
@@ -525,4 +525,30 @@ hr {
     background-image: var("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23ffffff'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>") !important;
     transform: var(--bs-accordion-btn-icon-transform);
   }
+}
+
+.web-filter-scrolling-arrow {
+  min-width: 40px;
+}
+
+#map-action-buttons-container {
+  overflow: scroll;
+  overflow-y: hidden;
+  width: 400px;
+
+  #filters-section {
+    max-width: 300px;
+    min-height: 50px;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+  }
+}
+
+.updateHeight {
+  z-index: 1;
+}
+
+.updateHeight :hover {
+  height: 450px;
 }
