@@ -77,7 +77,7 @@ export const MapActionButtons: React.FC<Types> = ({
         </div>
         <section
           id="map-action-buttons-container"
-          style={{ width: screenWidth < 997 || activeSection !== "section2" ? "auto" : "500px" }}
+          style={{ width: screenWidth < 997 || activeSection !== "section2" ? "300px" : "500px" }}
         >
           <div id="filters-section">
             <div className="ml-5">
@@ -300,7 +300,7 @@ export const MapActionButtons: React.FC<Types> = ({
                               </div>
                               <div>
                                 <span
-                                  className="ps-4 w-75"
+                                  className="ps-4 text-wrap"
                                   style={{ fontSize: "14px" }}
                                 >
                                   + Autosteer, auto lane change, traffic aware
