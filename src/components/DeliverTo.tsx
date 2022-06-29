@@ -45,21 +45,23 @@ export const DeliverTo: React.FC<Types> = ({
         </div>
 
         <div className="container mt-3 px-4">
-          <FloatingLabel
-            className="text-dark"
-            controlId="floatingInputGrid"
-            label="Address"
-          >
-            <Form.Control
-              type="search"
-              placeholder="Type address"
+          <div className="mb-3">
+            <FloatingLabel
               className="text-dark"
-              onChange={(e) => {
-                setSearchTerm(e.target.value);
-              }}
-            />
-          </FloatingLabel>
-          <div className="ms-2 me-5 lh-1">
+              controlId="floatingInputGrid"
+              label="Delivery address"
+            >
+              <Form.Control
+                type="search"
+                placeholder="Type address"
+                className="text-dark"
+                onChange={(e) => {
+                  setSearchTerm(e.target.value);
+                }}
+              />
+            </FloatingLabel>
+          </div>
+          {/* <div className="ms-2 me-5 lh-1">
             <small
               style={{
                 fontSize: "12px",
@@ -69,6 +71,22 @@ export const DeliverTo: React.FC<Types> = ({
               Delivery to airport, hotel or destination of your choice. Includes
               both delivery and pick up.
             </small>
+          </div> */}
+          <div className="mb-3">
+            <FloatingLabel
+              className="text-dark"
+              controlId="floatingInputGrid"
+              label="Collect address"
+            >
+              <Form.Control
+                type="search"
+                placeholder="Type address"
+                className="text-dark"
+                onChange={(e) => {
+                  setSearchTerm(e.target.value);
+                }}
+              />
+            </FloatingLabel>
           </div>
           <div className="mt-4">
             {searchTerm && (
