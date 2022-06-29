@@ -25,11 +25,13 @@ import "./style.scss";
 interface Types {
   darkMode: boolean;
   screenWidth: number;
+  activeSection: string;
 }
 
 export const MapActionButtons: React.FC<Types> = ({
   darkMode,
   screenWidth,
+  activeSection
 }: Types) => {
   const mystyle = {
     backgroundColor: !darkMode ? "#F5F5F5" : "#1F1F1F",
@@ -75,7 +77,7 @@ export const MapActionButtons: React.FC<Types> = ({
         </div>
         <section
           id="map-action-buttons-container"
-          style={{ width: screenWidth < 997 ? "auto" : "500px" }}
+          style={{ width: screenWidth < 997 || activeSection !== "section2" ? "auto" : "500px" }}
         >
           <div id="filters-section">
             <div className="ml-5">

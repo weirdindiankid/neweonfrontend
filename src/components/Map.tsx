@@ -5,7 +5,7 @@ import "./style.scss";
 
 interface Types {
   darkMode: boolean;
-  activeSection?: string;
+  activeSection: string;
   center: any;
   zoom: number;
   screenWidth: number;
@@ -38,7 +38,7 @@ export const Map: React.FC<Types> = ({
         {activeSection !== "section1" ? (
           width > 575 ? (
             <div className="d-flex justify-content-center">
-              <MapActionButtons darkMode={darkMode} screenWidth={screenWidth} />
+              <MapActionButtons darkMode={darkMode} screenWidth={screenWidth} activeSection={activeSection} />
             </div>
           ) : null
         ) : null}
