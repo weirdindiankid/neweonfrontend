@@ -24,9 +24,13 @@ import "./style.scss";
 
 interface Types {
   darkMode: boolean;
+  screenWidth: number;
 }
 
-export const MapActionButtons: React.FC<Types> = ({ darkMode }: Types) => {
+export const MapActionButtons: React.FC<Types> = ({
+  darkMode,
+  screenWidth,
+}: Types) => {
   const mystyle = {
     backgroundColor: !darkMode ? "#F5F5F5" : "#1F1F1F",
   };
@@ -51,8 +55,8 @@ export const MapActionButtons: React.FC<Types> = ({ darkMode }: Types) => {
   };
   return (
     <>
-      <div className="d-flex justify-content-center position-absolute top-0 updateHeight">
-        <div className="m-1 web-filter-scrolling-arrow">
+      <div className="d-flex justify-content-center position-absolute top-0 updateHeight mt-4">
+        <div className="me-1 web-filter-scrolling-arrow">
           <button
             type="button"
             onClick={() => slide("left")}
@@ -69,7 +73,10 @@ export const MapActionButtons: React.FC<Types> = ({ darkMode }: Types) => {
             )}
           </button>
         </div>
-        <section id="map-action-buttons-container">
+        <section
+          id="map-action-buttons-container"
+          style={{ width: screenWidth < 997 ? "auto" : "500px" }}
+        >
           <div id="filters-section">
             <div className="ml-5">
               <ul className="pricing-menu">
@@ -750,7 +757,7 @@ export const MapActionButtons: React.FC<Types> = ({ darkMode }: Types) => {
             </div>
           </div>
         </section>
-        <div className="m-1 web-filter-scrolling-arrow">
+        <div className=" ms-1 web-filter-scrolling-arrow">
           <button
             type="button"
             onClick={() => slide("right")}

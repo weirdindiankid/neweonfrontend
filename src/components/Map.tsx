@@ -8,6 +8,7 @@ interface Types {
   activeSection?: string;
   center: any;
   zoom: number;
+  screenWidth: number;
 }
 
 export const Map: React.FC<Types> = ({
@@ -15,6 +16,7 @@ export const Map: React.FC<Types> = ({
   activeSection,
   center,
   zoom,
+  screenWidth
 }: Types) => {
   const ref = React.useRef<HTMLDivElement>(null);
   const { width } = useWindowDimensions();
@@ -36,7 +38,7 @@ export const Map: React.FC<Types> = ({
         {activeSection !== "section1" ? (
           width > 575 ? (
             <div className="d-flex justify-content-center">
-              <MapActionButtons darkMode={darkMode} />
+              <MapActionButtons darkMode={darkMode} screenWidth={screenWidth} />
             </div>
           ) : null
         ) : null}

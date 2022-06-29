@@ -534,7 +534,6 @@ hr {
 #map-action-buttons-container {
   overflow: scroll;
   overflow-y: hidden;
-  width: 400px;
 
   #filters-section {
     max-width: 300px;
@@ -549,6 +548,6 @@ hr {
   z-index: 1;
 }
 
-.updateHeight :hover {
+.updateHeight:hover {
   height: 450px;
 }

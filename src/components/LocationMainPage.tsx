@@ -224,7 +224,7 @@ const render = (status: Status) => {
 
 const LocationMainPage = () => {
   const { darkMode } = useSelector((state: RootState) => state.themeReducer);
-  const { height, width } = useWindowDimensions();
+  const { width } = useWindowDimensions();
   const [activeSection, setActiveSection] = useState<string>("section1");
   const [carDetails, setCarDetails] = useState<any>({});
   const [zoom, setZoom] = React.useState(10); // initial zoom
@@ -314,6 +314,7 @@ const LocationMainPage = () => {
               activeSection={activeSection}
               center={center}
               zoom={zoom}
+              screenWidth={width}
             />
           </Wrapper>
         </div>
