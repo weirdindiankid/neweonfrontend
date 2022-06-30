@@ -227,11 +227,13 @@ const LocationMainPage = () => {
   const { width } = useWindowDimensions();
   const [activeSection, setActiveSection] = useState<string>("section1");
   const [carDetails, setCarDetails] = useState<any>({});
-  const [zoom, setZoom] = React.useState(10); // initial zoom
-  const [center, setCenter] = React.useState<google.maps.LatLngLiteral>({
-    lat: 42.407211,
-    lng: -71.382439,
-  });
+  const [zoom, setZoom] = React.useState(4); // initial zoom
+  const [center, setCenter] = React.useState<google.maps.LatLngLiteral>(
+    {
+      lat: 42.407211,
+      lng: -71.382439,
+    },
+  );
 
   return (
     <>
