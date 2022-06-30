@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import arrowLeftLight from "../assets/arrow_back_light.svg";
 import arrowLeftDark from "../assets/arrow_back_dark.svg";
 import lockLight from "../assets/lock_light.svg";
@@ -22,6 +22,7 @@ export const CheckoutStepOne: React.FC<Types> = ({
   const mystyle = {
     backgroundColor: !darkMode ? "#F5F5F5" : "#1F1F1F",
   };
+  const [activeInput, setActiveInput] = useState<string>("phone");
 
   return (
     <div
@@ -161,28 +162,57 @@ export const CheckoutStepOne: React.FC<Types> = ({
         </div>
 
         <div className="container mt-5 px-4">
-          <div className="d-flex flex-column">
-            <span className="fs-4 fw-bold">Enter phone number</span>
-            <p>Your phone will function as your car keys.</p>
-          </div>
-          <FloatingLabel controlId="floatingInputGrid" label="Phone number">
-            <Form.Control
-              type="tel"
-              style={mystyle}
-              className={
-                !darkMode ? "border-0 text-dark" : "border-0 text-white"
-              }
-              placeholder="+1 (805) 34"
-            />
-          </FloatingLabel>
-          <div className="my-3">
-            <button
-              className="btn btn-primary"
-              onClick={() => onChangeSection("section5")}
-            >
-              Proceed checkout
-            </button>
-          </div>
+          {activeInput === "phone" ? (
+            <>
+              <div className="d-flex flex-column">
+                <span className="fs-4 fw-bold">Enter phone number</span>
+                <p>Your phone will function as your car keys.</p>
+              </div>
+              <FloatingLabel controlId="floatingInputGrid" label="Phone number">
+                <Form.Control
+                  type="tel"
+                  style={mystyle}
+                  className={
+                    !darkMode ? "border-0 text-dark" : "border-0 text-white"
+                  }
+                  placeholder="+1 (805) 34"
+                />
+              </FloatingLabel>
+              <div className="my-3">
+                <button
+                  className="btn btn-primary"
+                  onClick={() => setActiveInput("verifyCode")}
+                >
+                  Next
+                </button>
+              </div>
+            </>
+          ) : (
+            <div>
+              <div className="d-flex flex-column">
+                <span className="fs-4 fw-bold">Enter Verification Code</span>
+                <p>Your phone will function as your car keys.</p>
+              </div>
+              <FloatingLabel controlId="floatingInputGrid" label="Verification code">
+                <Form.Control
+                  type="tel"
+                  style={mystyle}
+                  className={
+                    !darkMode ? "border-0 text-dark" : "border-0 text-white"
+                  }
+                  placeholder="2234"
+                />
+              </FloatingLabel>
+              <div className="my-3">
+                <button
+                  className="btn btn-primary"
+                  onClick={() => onChangeSection("section5")}
+                >
+                  Proceed checkout
+                </button>
+              </div>
+            </div>
+          )}
         </div>
       </div>
     </div>
