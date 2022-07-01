@@ -68,12 +68,25 @@ export const DetailView: React.FC<Types> = ({
         </div>
       </div>
 
-      <div className="m-3">
-        <div className="card border-0" style={mystyle}>
-          <div className="m-3">
-            <img src={data?.img} className="card-img img-fluid" alt="..." />
-          </div>
+      <div className="d-flex scroll-inner" style={{ overflowX: "auto" }}>
+        <div className="mx-3 py-4" style={mystyle}>
+          <img src={data?.img} alt="..." />
         </div>
+        <div className="mx-3 py-4" style={mystyle}>
+          <img src={data?.img} alt="..." />
+        </div>
+        <div className="mx-3 py-4" style={mystyle}>
+          <img src={data?.img} alt="..." />
+        </div>
+
+        <div className="mx-3 py-4" style={mystyle}>
+          <img src={data?.img} alt="..." />
+        </div>
+        <div className="mx-3 py-4" style={mystyle}>
+          <img src={data?.img} alt="..." />
+        </div>
+      </div>
+      <div className="mx-3">
         <small>{data?.description}</small>
       </div>
 
@@ -281,7 +294,7 @@ export const DetailView: React.FC<Types> = ({
                     <div>
                       <Form.Floating>
                         <Form.Control
-                          style={mystyle}
+                          style={nestedCards}
                           id="floatingEnterCode"
                           type="text"
                           placeholder="↑↑↓↓←→←→BA"

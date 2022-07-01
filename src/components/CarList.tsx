@@ -57,7 +57,11 @@ export const CarList: React.FC<Types> = ({
         {data.map((item: any) => {
           return (
             <div
-              className={carDetails?.id !== item.id ? "m-2 cursor in-active" : "m-2 cursor"}
+              className={
+                carDetails?.id !== item.id
+                  ? "m-2 cursor in-active"
+                  : "m-2 cursor"
+              }
               onClick={() => {
                 onChangeSection("section3");
                 onChangeCarDetails(item);
