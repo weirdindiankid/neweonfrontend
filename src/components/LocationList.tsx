@@ -25,10 +25,11 @@ export const LocationList: React.FC<Types> = ({
             onClick={() => onChangeSection()}
             className="py-2 px-3 mt-2 rounded cursor d-flex justify-content-between"
             style={mystyle}
+            key={item.id}
           >
             <div className="d-flex flex-column">
-              <span style={{ fontSize: "13px" }}>{item.title}</span>
-              <span style={{ fontSize: "10px" }}>{item.desciption}</span>
+              <span style={{ fontSize: "13px" }}>{item.city}</span>
+              <span style={{ fontSize: "10px" }}>{item.geo_state}</span>
             </div>
             <div>
               {!darkMode ? (
