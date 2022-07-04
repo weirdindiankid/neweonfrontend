@@ -33,7 +33,7 @@ export const BookingComplete: React.FC<Types> = ({ darkMode }: Types) => {
           <div>
             <img src={grayCarDettail} className="img-fluid" alt="..." />
             <p>
-              You’ve payed and booked the Tesla Model X P100D. An e-mail
+              You’ve paid and booked the Tesla Model X P100D. An e-mail
               confirmation will be sent.
             </p>
           </div>

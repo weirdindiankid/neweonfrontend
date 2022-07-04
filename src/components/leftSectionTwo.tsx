@@ -39,13 +39,13 @@ export const LeftSectionTwo: React.FC<Types> = ({
           aria-label="Basic radio toggle button group"
         >
           <input
-            onClick={() => setDisplayDeliverySection(false)}
+            onChange={() => setDisplayDeliverySection(false)}
             type="radio"
             className="btn-check"
             name="btnradio"
             id="btnradio1"
             autoComplete="off"
-            checked
+            checked={!displayDeliverySection}
           />
           <label
             className={

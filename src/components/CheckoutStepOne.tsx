@@ -166,7 +166,7 @@ export const CheckoutStepOne: React.FC<Types> = ({
             <>
               <div className="d-flex flex-column">
                 <span className="fs-4 fw-bold">Enter phone number</span>
-                <p>Your phone will function as your car keys.</p>
+                <p>Your phone will function as your car key.</p>
               </div>
               <FloatingLabel controlId="floatingInputGrid" label="Phone number">
                 <Form.Control

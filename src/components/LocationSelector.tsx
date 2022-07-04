@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import arrowRightLight from "../assets/arrow_right_light.svg";
 import arrowRightDark from "../assets/arrow_right_dark.svg";
 import { LocationList } from "./LocationList";
-import List from "./../data/LocationList.json";
+import List from "../data/LocationList.json";
 import { retrieveCities } from "../api/API";
 
 interface Types {
@@ -11,7 +11,7 @@ interface Types {
   onChangeSection: any;
 }
 
-export const SuggestedLocation: React.FC<Types> = ({
+export const LocationSelector: React.FC<Types> = ({
   darkMode,
   data,
   onChangeSection,

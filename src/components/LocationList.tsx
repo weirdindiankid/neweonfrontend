@@ -1,6 +1,10 @@
 import React from "react";
 import arrowRightLight from "../assets/arrow_right_light.svg";
 import arrowRightDark from "../assets/arrow_right_dark.svg";
+import {
+  setReservationLocation
+} from '../store/reservation/reservation.action';
+import { useDispatch } from "react-redux";
 
 interface Types {
   darkMode: boolean;
@@ -17,12 +21,18 @@ export const LocationList: React.FC<Types> = ({
     backgroundColor: !darkMode ? "#F5F5F5" : "#1F1F1F",
   };
 
+  const dispatch = useDispatch();
+  const setReservationCity = (city: string) => {
+    dispatch(setReservationLocation(city));
+    onChangeSection();
+  };
+
   return (
     <>
       {data.map((item: any) => {
         return (
           <div
-            onClick={() => onChangeSection()}
+            onClick={() => setReservationCity(item.city)}
             className="py-2 px-3 mt-2 rounded cursor d-flex justify-content-between"
             style={mystyle}
             key={item.id}
