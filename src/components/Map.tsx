@@ -66,30 +66,28 @@ export const Map: React.FC<Types> = ({
         },
       ];
 
-      // Create markers.
       for (let i = 0; i < features.length; i++) {
-        // const marker = new window.google.maps.Marker({
-        //   position: features[i].position,
-        //   label: features[i].label,
-        //   map: map,
-        // });
         new google.maps.Marker({
           position: features[i].position,
           map: map,
           label: {
             text: features[i].label,
-            color: "#ffffff",
+            color: "#000",
             fontSize: "12px",
           },
-        });
-        // console.log("marker", window.google.maps)
-      }
+          icon: {
+            url: "https://res.cloudinary.com/dlfodca0a/image/upload/v1656954491/icons8-white-circle-48_powrzi.png",
+            //the size of the image is 32x32,
+            //when you want to add a border you must add 2*borderWidth to the size
+            // size: new google.maps.Size(100, 100),
+          },
+          //define the shape
 
-      // // The marker, positioned at Boston single marker
-      // const marker = new window.google.maps.Marker({
-      //   position: center,
-      //   map: map,
-      // });
+          //set optimized to false otherwise the marker  will be rendered via canvas
+          //and is not accessible via CSS
+          optimized: false,
+        });
+      }
     }
   });
 

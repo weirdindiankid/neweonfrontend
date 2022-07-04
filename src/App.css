@@ -59,3 +59,9 @@
   --bs-gutter-x: 0;
   --bs-gutter-y: 0;
 }
+
+img[src="https://res.cloudinary.com/dlfodca0a/image/upload/v1656954491/icons8-white-circle-48_powrzi.png"]
+{
+  border-radius: 16px;
+  /* border:1px solid #000 !important; */
+}
