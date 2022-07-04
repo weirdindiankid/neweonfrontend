@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import attachMoneyLight from "../assets/attach_money_light.svg";
 import attachMoneyDark from "../assets/attach_money_dark.svg";
 import smartToyLight from "../assets/smart_toy_light.svg";
@@ -36,6 +36,8 @@ export const MapActionButtons: React.FC<Types> = ({
   const mystyle = {
     backgroundColor: !darkMode ? "#F5F5F5" : "#1F1F1F",
   };
+  const [leftScroll, setLeftScroll] = useState(0);
+  const [rightScroll, setRightScroll] = useState(0);
   const slide = (direction: string) => {
     let container: HTMLElement | null = document.getElementById(
       "map-action-buttons-container"
@@ -45,41 +47,51 @@ export const MapActionButtons: React.FC<Types> = ({
       if (container) {
         if (direction === "left") {
           container.scrollLeft -= 10;
+          setLeftScroll(container.scrollLeft -= 10)
+          setRightScroll(container.scrollLeft -= 10)
         } else {
           container.scrollLeft += 10;
+          setLeftScroll(container.scrollLeft += 10)
+          setRightScroll(container.scrollLeft += 10)
         }
         scrollCompleted += 10;
+        // setRightScroll(scrollCompleted) 
         if (scrollCompleted >= 100) {
           window.clearInterval(slideVar);
         }
       }
     }, 50);
   };
+  useEffect(()=>{
+  },[])
   return (
     <>
-      <div className="d-flex justify-content-center position-absolute top-0 updateHeight mt-4">
-        <div className="me-1 web-filter-scrolling-arrow">
-          <button
-            type="button"
-            onClick={() => slide("left")}
-            className={
-              !darkMode
-                ? "btn btn-light rounded-circle"
-                : "btn btn-dark rounded-circle"
-            }
-          >
-            {!darkMode ? (
-              <img className="img-fluid" src={arrowLeftLight} alt="" />
-            ) : (
-              <img className="img-fluid" src={arrowLeftDark} alt="" />
-            )}
-          </button>
-        </div>
+      <div className="d-flex justify-content-center position-absolute top-0 updateHeight mt-4 w-100 px-2">
+        {
+          (screenWidth < 997 || activeSection !== "section2") && leftScroll > 0 &&
+          <div className="me-1 web-filter-scrolling-arrow rounded-circle" style={{position: 'absolute', top: '0', left: '8px', zIndex: '1',boxShadow: '0px 0px 5px rgba(0,0,0,0.5)'}}>
+            <button
+              type="button"
+              onClick={() => slide("left")}
+              className={
+                !darkMode
+                  ? "btn btn-light rounded-circle"
+                  : "btn btn-dark rounded-circle"
+              }
+            >
+              {!darkMode ? (
+                <img className="img-fluid" src={arrowLeftLight} alt="" />
+              ) : (
+                <img className="img-fluid" src={arrowLeftDark} alt="" />
+              )}
+            </button>
+          </div>
+        }
         <section
           id="map-action-buttons-container"
-          style={{ width: screenWidth < 997 || activeSection !== "section2" ? "300px" : "500px" }}
+          style={{ width: screenWidth < 997 || activeSection !== "section2" ? "100%" : "100%" }}
         >
-          <div id="filters-section">
+          <div id="filters-section" style={{width: '100%', maxWidth: '100%', justifyContent: screenWidth < 997 || activeSection !== "section2" ? "start" :'center'}}>
             <div className="ml-5">
               <ul className="pricing-menu">
                 <li className="parent">
@@ -759,23 +771,26 @@ export const MapActionButtons: React.FC<Types> = ({
             </div>
           </div>
         </section>
-        <div className=" ms-1 web-filter-scrolling-arrow">
-          <button
-            type="button"
-            onClick={() => slide("right")}
-            className={
-              !darkMode
-                ? "btn btn-light rounded-circle"
-                : "btn btn-dark rounded-circle"
-            }
-          >
-            {!darkMode ? (
-              <img className="img-fluid" src={arrowRightLight} alt="" />
-            ) : (
-              <img className="img-fluid" src={arrowRightDark} alt="" />
-            )}
-          </button>
-        </div>
+        {
+          (screenWidth < 997 || activeSection !== "section2") && rightScroll < 100 &&
+          <div className=" ms-1 web-filter-scrolling-arrow rounded-circle" style={{position: 'absolute', top: '0', right: '8px', boxShadow: '0px 0px 5px rgba(0,0,0,0.5)'}}>
+            <button
+              type="button"
+              onClick={() => slide("right")}
+              className={
+                !darkMode
+                  ? "btn btn-light rounded-circle"
+                  : "btn btn-dark rounded-circle"
+              }
+            >
+              {!darkMode ? (
+                <img className="img-fluid" src={arrowRightLight} alt="" />
+              ) : (
+                <img className="img-fluid" src={arrowRightDark} alt="" />
+              )}
+            </button>
+          </div>
+        }
       </div>
     </>
   );
