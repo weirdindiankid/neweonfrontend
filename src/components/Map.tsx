@@ -82,7 +82,7 @@ export const Map: React.FC<Types> = ({
             fontSize: "12px",
           },
         });
-        console.log("marker", window.google.maps)
+        // console.log("marker", window.google.maps)
       }
 
       // // The marker, positioned at Boston single marker
