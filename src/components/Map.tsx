@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { MapActionButtons } from "./MapActionButtons";
 import useWindowDimensions from "./../hooks/windowDimension";
 import "./style.scss";
+import { getInitials } from "../utils/commonFunction/getInitial";
 
 interface Types {
   darkMode: boolean;
@@ -43,7 +44,7 @@ export const Map: React.FC<Types> = ({
             }),
             label: "BO",
           };
-          let updatedLable = "NY";
+          let updatedLable = getInitials(item.city);
 
           updatedItem.label = updatedLable;
           console.log("updatedLable", updatedLable);
