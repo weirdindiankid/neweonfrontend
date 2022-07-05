@@ -24,6 +24,8 @@ const carsList = [
     description: `The Tesla Model X P100D is a battery electric mid-size luxury
           crossover. The vehicle is notable in that it uses falcon-wing doors
           for passenger access.`,
+    latitude: 41.510395,
+    longitude: -87.644287,
     features: [
       {
         iconLight: smartTotLight,
@@ -62,6 +64,8 @@ const carsList = [
     description: `The Tesla Model X P100D is a battery electric mid-size luxury
           crossover. The vehicle is notable in that it uses falcon-wing doors
           for passenger access.`,
+    latitude: 39.742043,
+    longitude: -104.991531,
     features: [
       {
         iconLight: smartTotLight,
@@ -100,6 +104,8 @@ const carsList = [
     description: `The Tesla Model X P100D is a battery electric mid-size luxury
           crossover. The vehicle is notable in that it uses falcon-wing doors
           for passenger access.`,
+    latitude: 34.052235,
+    longitude: -118.243683,
     features: [
       {
         iconLight: smartTotLight,
@@ -138,6 +144,8 @@ const carsList = [
     description: `The Tesla Model X P100D is a battery electric mid-size luxury
           crossover. The vehicle is notable in that it uses falcon-wing doors
           for passenger access.`,
+    latitude: 25.761681,
+    longitude: -80.191788,
     features: [
       {
         iconLight: smartTotLight,
@@ -176,6 +184,8 @@ const carsList = [
     description: `The Tesla Model X P100D is a battery electric mid-size luxury
           crossover. The vehicle is notable in that it uses falcon-wing doors
           for passenger access.`,
+    latitude: 40.73061,
+    longitude: -73.935242,
     features: [
       {
         iconLight: smartTotLight,
