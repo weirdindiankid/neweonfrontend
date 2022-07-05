@@ -9,6 +9,7 @@ interface Types {
   center: any;
   zoom: number;
   screenWidth: number;
+  data: any;
 }
 
 export const Map: React.FC<Types> = ({
@@ -17,6 +18,7 @@ export const Map: React.FC<Types> = ({
   center,
   zoom,
   screenWidth,
+  data,
 }: Types) => {
   const ref = React.useRef<HTMLDivElement>(null);
   const { width } = useWindowDimensions();
@@ -31,47 +33,29 @@ export const Map: React.FC<Types> = ({
       });
 
       // mutiple locations
-      const features = [
-        {
-          position: new window.google.maps.LatLng(center),
-          label: "BO",
-        },
-        {
-          position: new google.maps.LatLng(41.510395, -87.644287),
-          label: "CH",
-        },
-        {
-          position: new google.maps.LatLng(39.742043, -104.991531),
-          label: "DE",
-        },
-        {
-          position: new google.maps.LatLng(34.052235, -118.243683),
-          label: "LA",
-        },
-        {
-          position: new google.maps.LatLng(25.761681, -80.191788),
-          label: "MI",
-        },
-        {
-          position: new google.maps.LatLng(40.73061, -73.935242),
-          label: "NY",
-        },
-        {
-          position: new google.maps.LatLng(35.481918, -97.508469),
-          label: "OK",
-        },
-        {
-          position: new google.maps.LatLng(43.071568, -70.762245),
-          label: "PO",
-        },
-      ];
+      let citiesDataForMap: any = [];
+      if (data?.length) {
+        data.forEach((item: any) => {
+          let updatedItem = {
+            position: new window.google.maps.LatLng({
+              lat: item.latitude,
+              lng: item.longitude,
+            }),
+            label: "BO",
+          };
+          let updatedLable = "NY";
 
-      for (let i = 0; i < features.length; i++) {
+          updatedItem.label = updatedLable;
+          console.log("updatedLable", updatedLable);
+          citiesDataForMap.push(updatedItem);
+        });
+      }
+      for (let i = 0; i < citiesDataForMap.length; i++) {
         new google.maps.Marker({
-          position: features[i].position,
+          position: citiesDataForMap[i].position,
           map: map,
           label: {
-            text: features[i].label,
+            text: citiesDataForMap[i].label,
             color: "#000",
             fontSize: "12px",
           },
@@ -89,7 +73,7 @@ export const Map: React.FC<Types> = ({
         });
       }
     }
-  });
+  }, [data, center, zoom]);
 
   return (
     <>

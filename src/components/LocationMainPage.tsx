@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { LocationSelector } from "./LocationSelector";
 import DetailView from "./DetailView";
 import { Map } from "./Map";
@@ -11,6 +11,7 @@ import { useSelector } from "react-redux";
 import { RootState } from "../store/reducers/rootReducer";
 import useWindowDimensions from "./../hooks/windowDimension";
 import carsList from "../data/CarsList";
+import { retrieveCities } from "../api/API";
 
 const data1 = [{}];
 const data2 = carsList;
@@ -23,13 +24,22 @@ const LocationMainPage = () => {
   const { width } = useWindowDimensions();
   const [activeSection, setActiveSection] = useState<string>("section1");
   const [carDetails, setCarDetails] = useState<any>({});
-  const [zoom, setZoom] = React.useState(4); // initial zoom
-  const [center, setCenter] = React.useState<google.maps.LatLngLiteral>(
-    {
-      lat: 42.407211,
-      lng: -71.382439,
-    },
-  );
+  const [zoom, setZoom] = useState(4); // initial zoom
+  const [center, setCenter] = useState<google.maps.LatLngLiteral>({
+    lat: 42.407211,
+    lng: -71.382439,
+  });
+  const [cities, setCities] = useState<any[]>([]);
+
+  useEffect(() => {
+    retrieveCities()
+      .then((res) => {
+        setCities(res.cities);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
 
   return (
     <>
@@ -113,6 +123,7 @@ const LocationMainPage = () => {
               center={center}
               zoom={zoom}
               screenWidth={width}
+              data={cities}
             />
           </Wrapper>
         </div>
