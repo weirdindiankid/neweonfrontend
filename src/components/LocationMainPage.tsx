@@ -124,6 +124,7 @@ const LocationMainPage = () => {
               zoom={zoom}
               screenWidth={width}
               data={cities}
+              onChangeSection={() => setActiveSection("section2")}
             />
           </Wrapper>
         </div>
